@@ -9,12 +9,15 @@ AM2320 sensor;
 
 float SensorTemp;
 float SensorHum;
+float hum;
+float temp;
 bool i = true;
 
 void setup() {
   Wire.pins(14, 12);
   display.begin(SSD1306_SWITCHCAPVCC, 0x3C);
-  
+    
+  Serial.begin(9600);
   
   //Code to clear display
   display.clearDisplay();
@@ -37,7 +40,7 @@ void Temperature(void){
     display.println("temperature");
     }
   display.display();
-  delay(100);
+
  }
 
 void Humidity(void){
@@ -52,14 +55,36 @@ void Humidity(void){
     display.println("humidity");
   }
   display.display();
-  delay(200);
- }
 
+ }
+void humid(void){
+    if (sensor.measure()){
+      hum = sensor.getHumidity();
+      Serial.println(hum);
+      Serial.println("hum");
+    }
+}
+void tempurat(void){
+    if (sensor.measure()){
+      temp = sensor.getTemperature();
+      Serial.println(temp);
+      Serial.println("temp");
+    }
+}
 
 void loop() {
-
+  
+    delay(100);
+    humid();
+    delay(100);
+    tempurat();
+    delay(100);
     Temperature();
+    delay(100);
     Humidity();
+    delay(100);
+    
     delay(2000);
     display.clearDisplay();
+    
 } 
