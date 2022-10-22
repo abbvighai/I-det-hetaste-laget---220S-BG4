@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+    <link rel="stylesheet" href="test.css">
+    
+    <script type ="text/javascript" src="C:\Users\Noah\.vscode\Projekt-hetaste laget\JS-GrafV5.JS"></script>
+  </head>
+
+  <script>
+
+    // document.getElementsByClassName("boxtarget3").setAttribute("class", "boxtarget1")
+    
+    // document.getElementById("myH1").setAttribute("class", "democlass"); 
+      </script>
+  <body>
+    <!-- <div class="flex-container">
+    <div id="l1">1</div>
+    <div id="l2">2</div>
+    <div id="l3">3</div>
+  </div><h1>Rubrik</h1>
+  <span></span> -->
+  
+    <h1 id="Rubrik1">Rubrik</h1>
+    <div id="MainS">
+      <select name="hej" class="Options">
+        <option value="1">Simonsplats</option>
+        <option value="2">Hallonrummet</option>
+        <option value="3">Larsplats</option>
+        <option value="4">Biboteket</option>
+        <option value="5">Ingången</option>
+        <option value="6">Medeltempratur</option>
+        <option value="7">MedelHumidity</option>
+      </select>
+
+      <select name="hej" class="Options">
+        <option value="1">Temperatur</option>
+        <option value="2">Fuktighet</option>
+      </select>
+
+      <input class="OB" type="date" />
+      <button class="Options" onclick="Refreshgraph()">Refreach</button>
+    </div>
+    
+    <p style="margin-bottom:10px;"></p>
+    <div class="Graf">
+      <div class="Nummer">
+        <div id="Nummer1"><p>högsta mätningen</p></div>
+        <div id="Nummer2"><p></p></div>
+        <div id="Nummer3"><p></p></div>
+        <div id="Nummer4"><p></p></div>
+        <div id="Nummer5"><p></p></div>
+        <div id="Nummer6"><p></p></div>
+        <div id="Nummer7"><p></p></div>
+        <div id="Nummer8"><p></p></div>
+        <div id="Nummer9"><p></p></div>
+        <div id="Nummer10"><p>Lägsta Värdet</p></div>
+      </div>
+      <!-- Graf1: -->
+          <div class="MainGraf">
+            <div id="rad0"></div>
+            <div id="rad1"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><div id="boxtarget1"></div></div>
+            <div id="rad2"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><div id="boxtarget12-M1"></div></div>
+            <div id="rad1"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><div id="boxtarget12-M2"></div></div>
+            <div id="rad2"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><div id="boxtarget12-M3"></div></div>
+            <div id="rad1"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><div id="boxtarget2"></div></div>
+            <div id="rad2"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><div id="boxtarget23-M1"></div></div>
+            <div id="rad1"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><div id="boxtarget23-M2"></div></div>
+            <div id="rad2"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><div id="boxtarget23-M3"></div></div>
+            <div id="rad1"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><div id="boxtarget3"></div></div>
+            <div id="rad2"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><div id="boxtarget34-M1"></div></div>
+            <div id="rad1"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><div id="boxtarget34-M2"></div></div>
+            <div id="rad2"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><div id="boxtarget34-M3"></div></div>
+            <div id="rad1"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><div id="boxtarget4"></div></div>
+            <div id="rad2"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><div id="boxtarget45-M1"></div></div>
+            <div id="rad1"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><div id="boxtarget45-M2"></div></div>
+            <div id="rad2"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><div id="boxtarget45-M3"></div></div>
+            <div id="rad1"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><div id="boxtarget5"></div></div>
+            <div id="rad2"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><div id="boxtarget56-M1"></div></div>
+            <div id="rad1"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><div id="boxtarget56-M2"></div></div>
+            <div id="rad2"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><div id="boxtarget56-M3"></div></div>
+            <div id="rad1"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><div id="boxtarget6"></div></div>
+            <div id="rad2"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><div id="boxtarget67-M1"></div></div>
+            <div id="rad1"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><div id="boxtarget67-M2"></div></div>
+            <div id="rad2"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><div id="boxtarget67-M3"></div></div>
+            <div id="rad1"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><div id="boxtarget7"></div></div>
+            <div id="rad2"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><div id="boxtarget78-M1"></div></div>
+            <div id="rad1"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><div id="boxtarget78-M2"></div></div>
+            <div id="rad2"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><div id="boxtarget78-M3"></div></div>
+            <div id="rad1"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><div id="boxtarget8"></div></div>
+          </div>
+          
+    </div>
+    <div class="undergraf">
+            
+    </div>
+    <div id="Java">
+      <section id="svg-path">
+        <section id="card"></section>
+      </section>
+    </div>
+<script>
+      const svgPathParent = document.getElementById("svg-path");
+const card = document.getElementById("card");
+
+
+const dataPath2 = [60, 20, 30, 50, 14, 22, 38, 54, 74, 98, 130, 84, 60, 96, 120, 156, 0, 98, 138, 100, 160, 90, 76, 30, 78, 118, 132, 88, 44];
+
+
+
+function dataVisualization(array, frequency, linecount) {
+  const svgElment = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  const svgPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  const days = array.length;
+  const maxVal = Math.max(...array);
+  const widthSvg = days * frequency;
+  const heightSvg = maxVal + 30;
+  const graphLine = maxVal / (linecount - 1);
+
+  svgElment.setAttributeNS(null, "width", widthSvg);
+  svgElment.setAttributeNS(null, "height", heightSvg);
+
+  // g tager för grouping other tags
+  const gElCircle = document.createElementNS("http://www.w3.org/2000/svg", "g");
+  gElCircle.id = "graph-points";
+
+  const gElLine = document.createElementNS("http://www.w3.org/2000/svg", "g");
+  gElLine.id = "graph-lines";
+
+  const gElText = document.createElementNS("http://www.w3.org/2000/svg", "g");
+  gElText.id = "graph-texts";
+
+  // base linjen
+  let pathString = "M" + widthSvg + " " + heightSvg + " L" + 0 + " " + widthSvg;
+
+  for (let d = 0; d < days; d++) {
+      const yValue = heightSvg - dataPath2[d], xValue = d * frequency;
+      const newString = " L" + xValue + " " + yValue;
+      pathString += newString;
+
+      const circleEl = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+
+      circleEl.setAttributeNS(null, "cx", xValue);
+      circleEl.setAttributeNS(null, "cy", yValue);
+      circleEl.setAttributeNS(null, "r", "8");
+      circleEl.addEventListener("mouseover", (e) => {card.style = `top:${yValue}px; left:${xValue - 75}px; display: block;`;
+// skapar datum
+const date_ = new Date(Date.now() - ((days - d) * (24 * 60 * 60 * 1000))).toJSON().split("T")[0];
+card.innerHTML = `Views: ${dataPath2[d]} <br>Date: ${date_}`;});
+gElCircle.appendChild(circleEl);}
+
+
+  const ends = heightSvg - dataPath2[days - 1];
+  pathString += " L" + widthSvg + " " + ends;
+  pathString += " Z";
+  svgPath.setAttributeNS(null, "d", pathString);
+
+  // lines and texts
+  for (let l = 0; l < linecount; l++) {
+      const lineEl = document.createElementNS("http://www.w3.org/2000/svg", "line");
+      const textEl = document.createElementNS("http://www.w3.org/2000/svg", "text");
+      const yPosition = heightSvg - (l * graphLine);
+      lineEl.setAttributeNS(null, "x1", "0");
+      lineEl.setAttributeNS(null, "y1", yPosition);
+      lineEl.setAttributeNS(null, "x2", widthSvg);
+      lineEl.setAttributeNS(null, "y2", yPosition);
+      gElLine.appendChild(lineEl);
+
+      const txt = l * graphLine;
+      textEl.setAttributeNS(null, "dx", "-20");
+      textEl.setAttributeNS(null, "x", widthSvg);
+      textEl.setAttributeNS(null, "y", yPosition);
+      textEl.textContent = txt;
+
+      gElText.appendChild(textEl);
+
+  }
+
+  svgElment.appendChild(gElCircle);
+  svgElment.appendChild(gElLine);
+  svgElment.appendChild(gElText);
+  svgElment.appendChild(svgPath);
+
+  // base parent or graph container
+  svgPathParent.appendChild(svgElment);
+}
+
+dataVisualization(dataPath2, 40, 3);
+
+</script>
+
+<style>
+  #Rubrik1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 99%;
+    height: 100px;
+    border: 3px solid blue;
+  }#MainS {
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    
+  }.Graf {
+    display: flex;
+    justify-content: center;
+    width: 99%;
+    height: 320px;
+    border: 3px solid blue;
+  }.Nummer {
+      align-items: center;
+      width:13%;
+      height: 100%;
+      border: 2px solid white;
+    }#Nummer1 {
+          display:flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 10%;
+          background-color:gray;
+          color: white;
+          }#Nummer2 {
+          display:flex;
+          width: 100%;
+          height: 10%;
+          background-color:black;
+          }#Nummer3 {
+          display:flex;
+          width: 100%;
+          height: 10%;
+          background-color:gray;
+          }#Nummer4 {
+          display:flex;
+          width: 100%;
+          height: 10%;
+          background-color:black;
+          }#Nummer5 {
+          display:flex;
+          width: 100%;
+          height: 10%;
+          background-color:gray;
+          }#Nummer6 {
+          display:flex;
+          width: 100%;
+          height: 10%;
+          background-color:black;
+          }#Nummer7 {
+          display:flex;
+          width: 100%;
+          height: 10%;
+          background-color:gray;
+          }#Nummer8 {
+          display:flex;
+          width: 100%;
+          height: 10%;
+          background-color:black;
+          }#Nummer9 {
+          display:flex;
+          width: 100%;
+          height: 10%;
+          background-color:gray;
+          }#Nummer10 {
+          display:flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 10%;
+          background-color:black;
+          color: white;
+          }.MainGraf {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border: 2px solid white;
+  }#rad0 {
+          align-items: center;
+          width: 0.5%;
+          height: 100%;
+          background-color:white;                                      
+        } #rad1 {
+          align-items: center;
+          width: 3.4%;
+          height: 100%;
+          background-color:black;                                    
+          display: flex;
+          flex-direction: column-reverse;                                                      
+        } #rad2 {
+          align-items: center;
+          width: 3.4%;
+          height: 100%;
+          background-color:gray;
+          display: flex;
+          flex-direction: column-reverse;                
+          }
+        /* BOXAR: */
+        #boxtarget1 {
+          display: flex;
+          width: 100%;
+          height: 10%;
+          background-color: red;
+        }   #boxtarget12-M1 {
+          display: flex;
+          width: 100%;
+          height: 10%;
+          background-color: navy;           
+        } #boxtarget12-M2 {
+          display: flex;
+          width: 100%;
+          height: 10%;
+          background-color: navy;              
+        } #boxtarget12-M3 {
+          display: flex;
+          width: 100%;
+          height: 10%;
+          background-color: navy;           
+        }  #boxtarget2 {
+          display: flex;
+          width: 100%;
+          height: 10%;
+          background-color:  red;        
+        } #boxtarget23-M1 {
+          display: flex;
+          width: 100%;
+          height: 10%;
+          background-color: navy;        
+        } #boxtarget23-M2 {
+          display: flex;
+          width: 100%;
+          height: 10%;
+          background-color: navy;      
+        }  #boxtarget23-M3 {
+          display: flex;
+          width: 100%;
+          height: 10%;
+          background-color: navy;     
+        } #boxtarget3 {
+          display: flex;
+          width: 100%;
+          height: 10%;
+          background-color:  red;        
+        }  #boxtarget34-M1 {
+          display: flex;
+          width: 100%;
+          height: 10%;
+          background-color: navy;    
+        }  #boxtarget34-M2 {
+          display: flex;
+          width: 100%;
+          height: 10%;
+          background-color: navy;            
+        } #boxtarget34-M3 {
+          display: flex;
+          width: 100%;
+          height: 10%;
+          background-color: navy;   
+        } #boxtarget4 {
+          display: flex;
+          width: 100%;
+          height: 10%;
+          background-color:  red;      
+        } #boxtarget45-M1 {
+          display: flex;
+          width: 100%;
+          height: 10%;
+          background-color: navy;  
+        } #boxtarget45-M2 {
+          display: flex;
+          width: 100%;
+          height: 10%;
+          background-color: navy;     
+        } #boxtarget45-M3 {
+          display: flex;
+          width: 100%;
+          height: 10%;
+          background-color: navy;         
+        }  #boxtarget5 {
+          display: flex;
+          width: 100%;
+          height: 10%;
+          background-color:  red;        
+        }  #boxtarget56-M1 {
+          display: flex;
+          width: 100%;
+          height: 10%;
+          background-color: navy;     
+        }  #boxtarget56-M2 {
+          display: flex;
+          width: 100%;
+          height: 10%;
+          background-color: navy;       
+        }  #boxtarget56-M3 {
+          display: flex;
+          width: 100%;
+          height: 10%;
+          background-color: navy;   
+        } #boxtarget6 {
+          display: flex;
+          width: 100%;
+          height: 10%;
+          background-color:  red;  
+        } #boxtarget67-M1 {
+          display: flex;
+          width: 100%;
+          height: 10%;
+          background-color: navy;       
+        }  #boxtarget67-M2 {
+          display: flex;
+          width: 100%;
+          height: 10%;
+          background-color: navy;    
+        }  #boxtarget67-M3 {
+          display: flex;
+          width: 100%;
+          height: 10%;
+          background-color: navy;     
+        }  #boxtarget7 {
+          display: flex;
+          width: 100%;
+          height: 10%;
+          background-color:  red;
+        } #boxtarget78-M1 {
+          display: flex;
+          width: 100%;
+          height: 10%;
+          background-color: navy;         
+        } #boxtarget78-M2 {
+          display: flex;
+          width: 100%;
+          height: 10%;
+          background-color: navy;       
+        }  #boxtarget78-M3 {
+          display: flex;
+          width: 100%;
+          height: 10%;
+          background-color: navy;       
+        } #boxtarget8 {
+          display: flex;
+          width: 100%;
+          height: 10%;
+          background-color:  red;       
+        } #box1 {
+          display: flex;
+          width: 100%;
+          height: 10%;
+          background-color: lightblue;
+          order: 1
+        }  #box2 {
+          display: flex;
+          width: 100%;
+          height: 10%;
+          background-color: lightblue;
+          order:2
+        }     #box3 {
+          display: flex;
+          width: 100%;
+          height: 10%;
+          background-color: lightblue;
+          order:3
+        }     #box4 {
+          display: flex;
+          width: 100%;
+          height: 10%;
+          background-color: lightblue;
+          order:4
+        }     #box5 {
+          display: flex;
+          width: 100%;
+          height: 10%;
+          background-color: lightblue;
+          order:5
+        }     #box6 {
+          display: flex;
+          width: 100%;
+          height: 10%;
+          background-color: lightblue;
+          order:6
+        }     #box7 {
+          display: flex;
+          width: 100%;
+          height: 10%;
+          background-color: lightblue;
+          order:7
+        }     #box8 {
+          display: flex;
+          width: 100%;
+          height: 10%;
+          background-color: lightblue;
+          order:8
+        }     #box9 {
+          display: flex;
+          width: 100%;
+          height: 10%;
+          background-color: lightblue;
+          order:9
+        }
+        .boxP1 {
+         order:0
+        }
+        .boxP2 {
+          order:1
+        }     .boxP3 {
+          order:2
+        }     .boxP4 {
+          order:3
+        }     .boxP5 {
+          order:4
+        }     .boxP6 {
+          order:5
+        }     .boxP7 {
+          order:6
+        }     .boxP8 {
+          order:7
+        }     .boxP9 {
+          order:8
+        }   .boxP10 {
+          order:9
+        }
+        .boxtarget1 {
+          display: flex;
+          width: 100%;
+          height: 10%;
+          background-color: red;
+          order: 1                              
+        }   .Options {
+    align-items: center;
+    width: 100px;
+    height: 50px;
+    border: 2px solid;
+  }  .OB {
+    align-items: center;
+    width: 100px;
+    height: 46px;
+    border: 2px solid blue;
+  } .undergraf {
+    display: flex;
+    justify-content: center;
+    width: 99%;
+    height: 30px;
+    border: 3px solid blue;
+    background-color: black;
+  } #Java {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+</style>
+</body>
+<!-- !!!!!!!!!!!!!!! -->
+</html>
