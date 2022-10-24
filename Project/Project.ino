@@ -13,6 +13,10 @@
 
 String path = "/rum1test";
 String nodeID = "rum1testNode";
+String FIKA = "100";
+
+FirebaseData fbdo;
+
 
 Adafruit_SSD1306 display(128, 64, &Wire,-1,400000UL,100000UL);
 
@@ -156,11 +160,21 @@ void loop() {
       {
         FirebaseJson &json = firebaseData.jsonObject();
         FirebaseJsonData result;
+        
+ //       FirebaseJson json;
+        
         json.get(result, "/rum1test");
         if (result.success)
         {
          if (result.intValue) {
           Serial.println(result.intValue);
+ //         Firebase.push("/Fika1/antal", FIKA);
+          if (Firebase.pushJSON(fbdo, "/Fika1/antal", json)) {
+
+          }
+
+
+          
          } 
          else {
            Serial.println("FUCKING HELL WTF I AM GOIN TO KILL PEOPLE");
