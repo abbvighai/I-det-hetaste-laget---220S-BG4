@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+    <link rel="stylesheet" href="test.css">
+    
+  </head>
+
+  <body>
+    <!-- <div class="flex-container">
+    <div id="l1">1</div>
+    <div id="l2">2</div>
+    <div id="l3">3</div>
+  </div><h1>Rubrik</h1>
+  <span></span> -->
+  
+    <h1 id="Rubrik1">Temporär Rubrik</h1>
+    <div id="MainS">
+      <select name="hej" class="Options">
+        <option value="1">Simonsplats</option>
+        <option value="2">Hallonrummet</option>
+        <option value="3">Larsplats</option>
+        <option value="4">Biboteket</option>
+        <option value="5">Ingången</option>
+        <option value="6">Medeltempratur</option>
+        <option value="7">MedelHumidity</option>
+      </select>
+
+      <select name="hej" class="Options">
+        <option value="1">Temperatur</option>
+        <option value="2">Fuktighet</option>
+      </select>
+
+      <input class="OB" type="date" />
+      <button class="Options" onclick="test()">Refreach</button>
+    </div>
+    <p style="margin-bottom:10px;"></p>
+    
+  <div class="FlexGraf2">
+    <div id="Java">
+      <section id="svg-path">
+        <section id="card"></section>
+      </section>
+    </div>
+  </div>
+    <div class="Graf">
+      <div class="Nummer">
+        <div id="Nummer1"><p>högsta mätningen</p></div>
+        <div id="Nummer2"><p></p></div>
+        <div id="Nummer3"><p></p></div>
+        <div id="Nummer4"><p></p></div>
+        <div id="Nummer5"><p></p></div>
+        <div id="Nummer6"><p></p></div>
+        <div id="Nummer7"><p></p></div>
+        <div id="Nummer8"><p></p></div>
+        <div id="Nummer9"><p></p></div>
+        <div id="Nummer10"><p>Lägsta Värdet</p></div>
+      </div>
+          <div class="MainGraf">
+            <div id="rad0"></div>
+            <div id="rad1"><div id="rad1våg1"></div><div id="rad1våg2"></div></div>
+            <div id="rad2"></div>
+            <div id="rad3"></div>
+            <div id="rad4"></div>
+            <div id="rad5"></div>
+            <div id="rad6"></div>
+            <div id="rad7"></div>
+            <div id="rad8"></div>
+            <div id="rad9"></div>
+            <div id="rad10"></div>
+            <div id="rad11"></div>
+            <div id="rad12"></div>
+            <div id="rad13"></div>
+            <div id="rad14"></div>
+            <div id="rad15"></div>
+            <div id="rad16"></div>
+            <div id="rad17"></div>
+            <div id="rad18"></div>
+            <div id="rad19"></div>
+            <div id="rad20"></div>
+            <div id="rad21"></div>
+            <div id="rad22"></div>
+            <div id="rad23"></div>
+            <div id="rad24"></div>
+            <div id="rad25"></div>
+            <div id="rad26"></div>
+            <div id="rad27"></div>
+            <div id="rad28"></div>
+            <div id="rad29"></div>
+
+          </div>
+          
+    </div>
+    <div class="undergraf">
+            
+    </div>
+<script>
+      const svgPathParent = document.getElementById("svg-path");
+const card = document.getElementById("card");
+
+
+const dataPath2 = [22, 20, 19, 14, 17, 22, 26, 22, 21, 20, 11, 9, 7, 5, 8, 12, 16, 18, 26, 29, 18, 22, 26, 32, 12, 1, 2, 8, 9];
+
+
+
+function dataVisualization(array, frequency, linecount) {
+  const svgElment = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  const svgPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  const days = array.length;
+  const maxVal = Math.max(...array);
+  const widthSvg = days * frequency;
+  const heightSvg = maxVal + 30;
+  const graphLine = maxVal / (linecount - 1);
+
+  svgElment.setAttributeNS(null, "width", widthSvg);
+  svgElment.setAttributeNS(null, "height", heightSvg);
+
+  // g tager för grouping other tags
+  const gElCircle = document.createElementNS("http://www.w3.org/2000/svg", "g");
+  gElCircle.id = "graph-points";
+
+  const gElLine = document.createElementNS("http://www.w3.org/2000/svg", "g");
+  gElLine.id = "graph-lines";
+
+  const gElText = document.createElementNS("http://www.w3.org/2000/svg", "g");
+  gElText.id = "graph-texts";
+
+  // base linjen
+  let pathString = "M" + widthSvg + " " + heightSvg + " L" + 0 + " " + widthSvg;
+
+  for (let d = 0; d < days; d++) {
+      const yValue = heightSvg - dataPath2[d], xValue = d * frequency;
+      const newString = " L" + xValue + " " + yValue;
+      pathString += newString;
+
+      const circleEl = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+
+      circleEl.setAttributeNS(null, "cx", xValue);
+      circleEl.setAttributeNS(null, "cy", yValue);
+      circleEl.setAttributeNS(null, "r", "8");
+      circleEl.addEventListener("mouseover", (e) => {card.style = `top:${yValue}px; left:${xValue - 75}px; display: block;`;
+// skapar datum
+const date_ = new Date(Date.now() - ((days - d) * (24 * 60 * 60 * 1000))).toJSON().split("T")[0];
+card.innerHTML = `Views: ${dataPath2[d]} <br>Date: ${date_}`;});
+gElCircle.appendChild(circleEl);}
+
+
+  const ends = heightSvg - dataPath2[days - 1];
+  pathString += " L" + widthSvg + " " + ends;
+  pathString += " Z";
+  svgPath.setAttributeNS(null, "d", pathString);
+
+  // linjer + bockstäver
+  for (let l = 0; l < linecount; l++) {
+      const lineEl = document.createElementNS("http://www.w3.org/2000/svg", "line");
+      const textEl = document.createElementNS("http://www.w3.org/2000/svg", "text");
+      const yPosition = heightSvg - (l * graphLine);
+      lineEl.setAttributeNS(null, "x1", "0");
+      lineEl.setAttributeNS(null, "y1", yPosition);
+      lineEl.setAttributeNS(null, "x2", widthSvg);
+      lineEl.setAttributeNS(null, "y2", yPosition);
+      gElLine.appendChild(lineEl);
+
+      const txt = l * graphLine;
+      textEl.setAttributeNS(null, "dx", "-20");
+      textEl.setAttributeNS(null, "x", widthSvg);
+      textEl.setAttributeNS(null, "y", yPosition);
+      textEl.textContent = txt;
+
+      gElText.appendChild(textEl);
+
+  }
+
+  svgElment.appendChild(gElCircle);
+  svgElment.appendChild(gElLine);
+  svgElment.appendChild(gElText);
+  svgElment.appendChild(svgPath);
+
+  // base parent or graph container
+  svgPathParent.appendChild(svgElment);
+}
+
+dataVisualization(dataPath2, 40, 3);
+
+</script>
+
+<style>
+  #Rubrik1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 99%;
+    height: 100px;
+    border: 3px solid blue;
+  }
+
+  #MainS {
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    
+  }
+
+  .Graf {
+    display: flex;
+    justify-content: center;
+    width: 99%;
+    height: 320px;
+    border: 3px solid blue;
+  }
+    .Nummer {
+      align-items: center;
+      width:13%;
+      height: 100%;
+      border: 2px solid white;
+    }
+          #Nummer1 {
+          display:flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 10%;
+          background-color:gray;
+          color: white;
+          }
+          #Nummer2 {
+          display:flex;
+          width: 100%;
+          height: 10%;
+          background-color:black;
+          
+          }
+          #Nummer3 {
+          display:flex;
+          width: 100%;
+          height: 10%;
+          background-color:gray;
+          }
+          #Nummer4 {
+          display:flex;
+          width: 100%;
+          height: 10%;
+          background-color:black;
+          }
+          #Nummer5 {
+          display:flex;
+          width: 100%;
+          height: 10%;
+          background-color:gray;
+          }
+          #Nummer6 {
+          display:flex;
+          width: 100%;
+          height: 10%;
+          background-color:black;
+          }
+          #Nummer7 {
+          display:flex;
+          width: 100%;
+          height: 10%;
+          background-color:gray;
+          }
+          #Nummer8 {
+          display:flex;
+          width: 100%;
+          height: 10%;
+          background-color:black;
+          }
+          #Nummer9 {
+          display:flex;
+          width: 100%;
+          height: 10%;
+          background-color:gray;
+          }
+          #Nummer10 {
+          display:flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 10%;
+          background-color:black;
+          color: white;
+          }
+  .MainGraf {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border: 2px solid white;
+
+  }
+        #rad0 {
+          align-items: center;
+          width: 0.5%;
+          height: 100%;
+          background-color:white;
+        }
+        #rad1 {
+          align-items: center;
+          width: 3.4%;
+          height: 100%;
+          background-color:black;
+        }
+          #rad2 {
+          align-items: center;
+          width: 3.4%;
+          height: 100%;
+          background-color:gray;
+          }
+          #rad3 {
+          align-items: center;
+          width: 3.4%;
+          height: 100%;
+          background-color:black;
+        }
+        #rad4 {
+          align-items: center;
+          width: 3.4%;
+          height:100%;
+          background-color:gray;
+          }
+        #rad5 {
+          align-items: center;
+          width: 3.4%;
+          height: 100%;
+          background-color:black;
+        }
+        #rad6 {
+          align-items: center;
+          width: 3.4%;
+          height:100%;
+          background-color:gray;
+        }
+        #rad7 {
+          align-iems: center;
+          width: 3.4%;
+          height: 100%;
+          background-color:black;
+        }
+        #rad8 {
+          align-items: center;
+          width: 3.4%;
+          height:100%;
+          background-color:gray;
+        }
+        #rad9 {
+          align-items: center;
+          width: 3.4%;
+          height: 100%;
+          background-color:black;
+        }
+          #rad10 {
+          align-items: center;
+          width: 3.4%;
+          height: 100%;
+          background-color:gray;
+          }
+          #rad11 {
+          align-items: center;
+          width: 3.4%;
+          height: 100%;
+          background-color:black;
+        }
+        #rad12 {
+          align-items: center;
+          width: 3.4%;
+          height:100%;
+          background-color:gray;
+          }
+        #rad13 {
+          align-items: center;
+          width: 3.4%;
+          height: 100%;
+          background-color:black;
+        }
+        #rad14 {
+          align-items: center;
+          width: 3.4%;
+          height:100%;
+          background-color:gray;
+        }
+        #rad15 {
+          align-items: center;
+          width: 3.4%;
+          height: 100%;
+          background-color:black;
+        }
+        #rad16 {
+          align-items: center;
+          width: 3.4%;
+          height:100%;
+          background-color:gray;
+        }
+        #rad17 {
+          align-items: center;
+          width: 3.4%;
+          height: 100%;
+          background-color:black;
+        }
+          #rad18 {
+          align-items: center;
+          width: 3.4%;
+          height: 100%;
+          background-color:gray;
+          }
+          #rad19 {
+          align-items: center;
+          width: 3.4%;
+          height: 100%;
+          background-color:black;
+        }
+        #rad20 {
+          align-items: center;
+          width: 3.4%;
+          height:100%;
+          background-color:gray;
+          }
+        #rad21 {
+          align-items: center;
+          width: 3.4%;
+          height: 100%;
+          background-color:black;
+        }
+        #rad22 {
+          align-items: center;
+          width: 3.4%;
+          height:100%;
+          background-color:gray;
+        }
+        #rad23 {
+          align-items: center;
+          width: 3.4%;
+          height: 100%;
+          background-color:black;
+        }
+        #rad24 {
+          align-items: center;
+          width: 3.4%;
+          height:100%;
+          background-color:gray;
+        }
+        #rad25 {
+          align-items: center;
+          width: 3.4%;
+          height: 100%;
+          background-color:black;
+        }
+          #rad26 {
+          align-items: center;
+          width: 3.4%;
+          height: 100%;
+          background-color:gray;
+          }
+          #rad27 {
+          align-items: center;
+          width: 3.4%;
+          height: 100%;
+          background-color:black;
+        }
+        #rad28 {
+          align-items: center;
+          width: 3.4%;
+          height:100%;
+          background-color:gray;
+          }
+        #rad29 {
+          align-items: center;
+          width: 3.4%;
+          height: 100%;
+          background-color:black;
+        }
+        #rad1våg1 {
+          display: flex;
+          width: 100%;
+          height: 10%;
+          background-color: navy;
+        }
+        #rad1våg2 {
+          display: flex;
+          width: 100%;
+          height: 10%;
+          background-color: lightblue;
+        }
+  .Options {
+    align-items: center;
+    width: 100px;
+    height: 50px;
+    border: 2px solid;
+  }
+
+  .OB {
+    align-items: center;
+    width: 100px;
+    height: 46px;
+    border: 2px solid blue;
+  }
+  .undergraf {
+    display: flex;
+    justify-content: center;
+    width: 99%;
+    height: 30px;
+    border: 3px solid blue;
+    background-color: black;
+  }
+</style>
+<style>
+  #Java {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+  }
+</style>
+  </body>
+  <script>
+    function test() {
+      alert("Refreshing The Graf");
+    }
+  </script>
+</html>
+
+amogus

@@ -1,0 +1,54 @@
+section#svg-path {
+    margin: 100px;
+}
+
+svg {
+    border: 1px solid rgb(48, 46, 46);
+}
+
+path {
+    fill: rgba(8, 143, 188, 0.573);
+    stroke-width: 2.5;
+    stroke: rgb(0, 0, 0);
+}
+
+g#graph-points {
+    fill: rgba(33, 165, 175, 0);
+    stroke-width: 1;
+    stroke: none;
+}
+
+g#graph-lines {
+    fill: rgba(7, 101, 241, 0.5);
+    stroke: rgb(185, 171, 44);
+}
+
+g#graph-texts {
+    fill: black;
+    stroke-width: 1;
+    stroke: none;
+    text-anchor: middle;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+line {
+    stroke: rgb(188, 197, 219);
+}
+
+#card {
+    position: relative;
+    width: 150px;
+    height: 50px;
+    padding: 3px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.932);
+    box-shadow: 1px 5px 5px gray;
+    color: rgba(255, 102, 102, 0.767);
+    display: none;
+}
+
+
