@@ -435,6 +435,9 @@ line {
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    background-color: white;
+    border:2px solid;
+    scale: 100%;
   }
   .undergrafbox {
     display: flex;
@@ -628,4 +631,12 @@ line {
     width: 37px;
     height: 100%;
     background-color: lightblue;
+  }
+  #kaka {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    color: black;
+    background-color: white;
   }
