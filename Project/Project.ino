@@ -14,8 +14,10 @@
 String path = "/rum1test";
 String nodeID = "rum1testNode";
 String FIKA = "100";
+String FIKA3 = "1000";
 
-FirebaseData fbdo;
+
+
 
 
 Adafruit_SSD1306 display(128, 64, &Wire, -1, 400000UL, 100000UL);
@@ -119,6 +121,13 @@ void tempurat(void) {
   }
 }
 
+void Test1(void) {
+  if (sensor.measure()) {
+    temp = sensor.getTemperature();
+  }
+}
+
+
 void loop() {
 
   //   delay(100);
@@ -134,9 +143,6 @@ void loop() {
   //  delay(2000);
   //  display.clearDisplay();
 
-
-
-  // put your main code here, to run repeatedly:
 
   if (!Firebase.readStream(firebaseData))
   {
@@ -161,20 +167,23 @@ void loop() {
       FirebaseJson &json = firebaseData.jsonObject();
 
       json = "{\"värde\":" + FIKA + "}";
+      if (sensor.measure()) {
+        temp = sensor.getTemperature();
+        String Test34 = temp;
+        
+        json = "{\"värde\":" + FIKA + "}";
+        if (Firebase.setJSON(firebaseData, "/Term1/Temperatur", json)) {
+        }
+        if (Firebase.setJSON(firebaseData, "/Term1/Luftfuktighet", json)) {
+        }
 
+        {
 
+          else {
+            Serial.println("FUCKING HELL WTF I AM GOIN TO KILL PEOPLE");
+          }
 
-      if (Firebase.setJSON(fbdo, "/Term1/Temperatur", json)) {
-      }
-      if (Firebase.setJSON(fbdo, "/Term1/Luftfuktighet", json)) {
-      }
+        }
 
-
-
-      else {
-        Serial.println("FUCKING HELL WTF I AM GOIN TO KILL PEOPLE");
       }
     }
-
-  }
-}
