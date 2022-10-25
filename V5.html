@@ -22,29 +22,47 @@
     
     // document.getElementById("myH1").setAttribute("class", "democlass"); 
       </script>
-  <body style="background-color:rgba(11, 37, 121, 0.573);">
-    <!-- <div class="flex-container">
-    <div id="l1">1</div>
-    <div id="l2">2</div>
-    <div id="l3">3</div>
+  <body>
+    <style>
+      body {
+        background-image: url('https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/video/yRF5c-O/dynamic-lines-seamless-looping-background-red-4k-and-full-hd_41vhtaar_thumbnail-1080_01.png');
+      background-size:120%;
+      }
+      
+      </style>
+    <div class="flex-container">
+    <div id="l1"></div>
+    <div id="l2"></div>
+    <div id="l3"></div>
   </div><h1>Rubrik</h1>
-  <span></span> -->
   
+   
     <h1 id="Rubrik1">𝒫𝓇𝑜𝒿𝑒𝓀𝓉𝑒𝓉</h1>
     <div id="MainS">
-      <select name="hej" class="Options">
+      <select id="hej" class="Options">
+
         <option value="1">Simonsplats</option>
+
         <option value="2">Hallonrummet</option>
+
         <option value="3">Larsplats</option>
+
         <option value="4">Biboteket</option>
+
         <option value="5">Ingången</option>
-        <option value="6">Medeltempratur</option>
-        <option value="7">MedelHumidity</option>
+
+        <option value="6">Medel</option>
+
       </select>
 
-      <select name="hej" class="Options">
+
+
+      <select id="hejj" class="Options">
+
         <option value="1">Temperatur</option>
+
         <option value="2">Fuktighet</option>
+
       </select>
 
       <input class="OB" type="date" />
@@ -129,15 +147,36 @@
       </section>
     </div>
 
+     <!-- Behöver förbättrats  -->
     <div class="LiveChangeTemp">
-      <div id="Station"></div>
-      <div id="LTemp"></div>
-      <div id="LHum"></div>
-
-
-
-
+      <div id="Station">
+        <div id="St1"><p>Simonsplats</p></div>
+        <div id="st2"><p>Hallonrumet</p></div>
+        <div id="St3"><p>Larsplats</p></div>
+        <div id="St4"><p>Bibloteket</p></div>
+        <div id="St5"><p>ingången</p></div>
     </div>
+        <div id="LTemp">
+          <div id="St1"></div>
+          <div id="St2"></div>
+          <div id="St3"></div>
+          <div id="St4"></div>
+          <div id="St5"></div>
+        </div>
+            <div id="LHum">
+              <div id="St1"></div>
+              <div id="St2"></div>
+              <div id="St3"></div>
+              <div id="St4"></div>
+              <div id="St5"></div>
+            </div>
+      </div>
+      
+
+
+
+    
+ 
 
 
 <script>
@@ -335,6 +374,7 @@ svgPathParent.appendChild(svgElment);
 dataVisualization(dataPath2, 50, 3);
 
 </script> -->
+
 </body>
-<!-- !!!!!!!!!!!!!!! -->
+
 </html>
