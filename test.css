@@ -3,13 +3,13 @@ section#svg-path {
 }
 
 svg {
-    border: 1px solid rgb(48, 46, 46);
+    border: 2px solid rgb(11, 0, 112);
 }
 
 path {
-    fill: rgba(8, 143, 188, 0.573);
+    fill: rgba(3, 180, 239, 0.573);
     stroke-width: 2.5;
-    stroke: rgb(0, 0, 0);
+    stroke: rgb(0, 31, 157);
 }
 
 g#graph-points {
@@ -19,7 +19,7 @@ g#graph-points {
 }
 
 g#graph-lines {
-    fill: rgba(7, 101, 241, 0.5);
+    fill: rgba(61, 2, 255, 0.5);
     stroke: rgb(185, 171, 44);
 }
 
@@ -29,8 +29,7 @@ g#graph-texts {
     stroke: none;
     text-anchor: middle;
     font-size: 20px;
-    font-family: 'Times New Roman', Times, serif;
-
+    
 }
 
 line {

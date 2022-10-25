@@ -143,9 +143,11 @@ Datalista[1] = 12212010
   
 function Refreshgraph() {
     
-Valdstation = prompt("Välj station(1-5)")
-Valtdatum = prompt("Välj datum(1-99)")
-Valtmode = prompt("Välj mode(1-2)")
+      Valdstation = document.getElementById("hej").value
+
+      Valtmode = document.getElementById("hejj").value
+      
+      Valtdatum = prompt("Välj datum(1-99)")
 // Ovan ska ersättas med input av CSS
 LängdDatalista = (Datalista.length)
 
@@ -569,4 +571,20 @@ console.log("Längddatalista")
 console.log(LängdDatalista)
 
 console.log("Endvaluediagnostic")
+
+document.getElementById("boxtarget1").innerText = Kolumn1order
+
+document.getElementById("boxtarget2").innerText = Kolumn2order
+
+document.getElementById("boxtarget3").innerText = Kolumn3order
+
+document.getElementById("boxtarget4").innerText = Kolumn4order
+
+document.getElementById("boxtarget5").innerText = Kolumn5order
+
+document.getElementById("boxtarget6").innerText = Kolumn6order
+
+document.getElementById("boxtarget7").innerText = Kolumn7order
+
+document.getElementById("boxtarget8").innerText = Kolumn8order
 }
