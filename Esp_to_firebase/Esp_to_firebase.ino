@@ -14,7 +14,7 @@
 
 String path = "/rum1test";
 String nodeID = "rum1testNode";
-
+String tiden;
 
 Adafruit_SSD1306 display(128, 64, &Wire, -1, 400000UL, 100000UL);
 
@@ -31,6 +31,7 @@ float temp;
 
 int timmar;
 int minuter;
+
 
 int tid = 0;
 int temp78;
@@ -91,7 +92,7 @@ void Temperature(void) {
 
 
   display.setTextSize(1);
-  display.setCursor(10, 10);
+  display.setCursor(10, 0);
   display.cp437(true);
   if (sensor.measure()) {
     SensorTemp = sensor.getTemperature();
@@ -106,7 +107,7 @@ void Humidity(void) {
 
 
   display.setTextSize(1);
-  display.setCursor(10, 40);
+  display.setCursor(10, 20);
   display.cp437(true);
   if (sensor.measure()) {
     SensorHum = sensor.getHumidity();
@@ -114,12 +115,21 @@ void Humidity(void) {
     display.println("humidity");
   }
   display.display();
-
-
-
-
-
 }
+void TimeDisplay(void) {
+  display.setTextSize(1);
+  display.setCursor(10, 40);
+  display.cp437(true);
+  
+  tiden = timeClient.getFormattedTime();
+  display.println(tiden);
+  display.println("Time");
+  display.display();
+}
+
+
+
+
 void humid(void) {
   if (sensor.measure()) {
     hum = sensor.getHumidity();
@@ -151,12 +161,20 @@ void loop() {
 
 
   if (0 == timeClient.getSeconds()) {
+    display.clearDisplay();
     timmar = timeClient.getHours();
     minuter = timeClient.getMinutes();
     
     Firebase.setInt(firebaseData, "/SimonsPlats/Hour-" + String(timmar) + "/Minute-" + String(minuter) + "/Temperature", temp);
     Firebase.setInt(firebaseData, "/SimonsPlats/Hour-" + String(timmar) + "/Minute-" + String(minuter) + "/Humidity", humi);
-    Serial.println(timeClient.getFormattedTime());
+    
+    
+    Humidity();
+    delay(100);
+    Temperature();
+    delay(100);
+    TimeDisplay();
+    
   }
   else{
     delay(1);
