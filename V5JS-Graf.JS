@@ -107,7 +107,7 @@ var Grafbotten
 var Graftopp
 
 var LängdDatalista
-  
+// Artificiell data
 Datalista[1] = 12212010
   Datalista[2] = 12222321
   Datalista[3] = 12235323
@@ -141,6 +141,7 @@ Datalista[1] = 12212010
   Datalista[31] = 12576012
   Datalista[32] = 12583525
   
+  // Start av primär funktion
 function Refreshgraph() {
     
       Valdstation = document.getElementById("hej").value
@@ -151,6 +152,7 @@ function Refreshgraph() {
 // Ovan ska ersättas med input av CSS
 LängdDatalista = (Datalista.length)
 
+// Nollställer datavärden inför beräkningar
 Kolumn1order = 0
 Kolumn2order = 0
 Kolumn3order = 0
@@ -194,32 +196,27 @@ Mellan3Kolumn78 = 0
 Grafbotten = 100
 Graftopp = 0
 
-// Grafbotten/Top:
+// Gå igenom varje datarad och filtrera bort alla som inte är relevanta för grafen(matchar EJ Valdstation, Valtmode eller Tidsram)
 for (let i = Datalista.length; i > 0; i--) {
 if(((((Datalista[i]) % 1000000000) - (Datalista[i] % 10000000))/10000000) == Valdstation && (((((Datalista[i]) % 10000000) - (Datalista[i] % 100000))/100000) == Valtdatum)){
-// restoperator 1000000000 onödig
-// Station rätt?, Datum rätt? (hos Datalista[i])
 
-//temp
 if(Valtmode == 1) {
 
    
-//botten:
+// Beräkna Grafbotten
 if((((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100 < Grafbotten){
 
 Grafbotten = (((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100
 
 }
-// topp:
+// Beräkna Graftopp
 if((((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100 > Graftopp){
 
 Graftopp = (((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100
 
 }
-console.log((((Datalista[i]) % 100000) - (Datalista[i] % 10000))/10000 + "hi")
-
-
-    switch(((((Datalista[i]) % 100000) - (Datalista[i] % 10000))/10000)){
+// Tilldela datarad till rätt tidpunkt(1-8)
+switch(((((Datalista[i]) % 100000) - (Datalista[i] % 10000))/10000)){
         case 1:
 
         Kolumn1order = (((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100
@@ -254,20 +251,21 @@ console.log((((Datalista[i]) % 100000) - (Datalista[i] % 10000))/10000 + "hi")
         break
 
 default:
+    // Error - Devsyfte
     console.log("errortempswitchnocasefound")
+   
 }
 }
 
-      // Hum:
+// Samma fast för Valtmode = 1 (hum) SKIPPA TILL "HIT"
   if(Valtmode == 2){
 
-//botten:
 if((((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1 < Grafbotten){
 
 Grafbotten = (((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1
-// restoperator 1 onödig
+
 }
-// topp:
+
 if((((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1 > Graftopp){
 
 Graftopp = (((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1
@@ -300,16 +298,19 @@ Graftopp = (((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1
         Kolumn8order = (((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1
         break  
 default:
+      // Error - Devsyfte
     console.log("errortempswitchnocasefound")
 break
 }
 }
 }
 }
-// COLUMNDATADISTRIBUTION COMPLETE
-console.log("Columndatadistributioncomplete")
-// console.log(Kolumn1order, Kolumn12order, Kolumn3order, Kolumn4order, Kolumn5order, Kolumn6order, Kolumn7order, Kolumn8order)
+// HIT
 
+// Log - Devsyfte
+console.log("Columndatadistributioncomplete")
+
+// Repeterad operator för att omvandla Temp/hum till grafposition. (Ex: 30celcius - Plats X i grafkolumn)
 Kolumn1output = Math.floor(((Kolumn1order - Grafbotten) / (Graftopp - Grafbotten)) * 9.99)
 Kolumn2output = Math.floor(((Kolumn2order - Grafbotten) / (Graftopp - Grafbotten)) * 9.99)
 Kolumn3output = Math.floor(((Kolumn3order - Grafbotten) / (Graftopp - Grafbotten)) * 9.99)
@@ -319,6 +320,7 @@ Kolumn6output = Math.floor(((Kolumn6order - Grafbotten) / (Graftopp - Grafbotten
 Kolumn7output = Math.floor(((Kolumn7order - Grafbotten) / (Graftopp - Grafbotten)) * 9.99)
 Kolumn8output = Math.floor(((Kolumn8order - Grafbotten) / (Graftopp - Grafbotten)) * 9.99)
 
+// Positioner för "stödkolumner" som syns mellan mätvärden i grafen
 Mellan1Kolumn12 = Math.round(Kolumn1output - ((Kolumn1output - Kolumn2output) * 0.25))
 Mellan2Kolumn12 = Math.round(Kolumn1output - ((Kolumn1output - Kolumn2output) * 0.5))
 Mellan3Kolumn12 = Math.round(Kolumn1output - ((Kolumn1output - Kolumn2output) * 0.75))
@@ -349,7 +351,7 @@ Mellan3Kolumn78 = Math.round(Kolumn7output - ((Kolumn7output - Kolumn8output) * 
 console.log("Graphfunctioncomplete")
 
 alert("hi")
-// HHHHHHHHHHHHHHHHHHHÄRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+// Överför data till CSS(i form av strings). (Ex Class(boxP + X) = Class boxp(X))
   document.getElementById("boxtarget1").setAttribute("class", "boxP" + (Kolumn1output + 1).toString())
   document.getElementById("boxtarget2").setAttribute("class", "boxP" + (Kolumn2output+ 1).toString())
   document.getElementById("boxtarget3").setAttribute("class", "boxP" + (Kolumn3output+ 1).toString())
@@ -371,16 +373,37 @@ alert("hi")
   document.getElementById("boxtarget45-M2").setAttribute("class", "boxP" + (Mellan2Kolumn45+ 1).toString())
   document.getElementById("boxtarget45-M3").setAttribute("class", "boxP" + (Mellan3Kolumn45+ 1).toString())
   document.getElementById("boxtarget56-M1").setAttribute("class", "boxP" + (Mellan1Kolumn56+ 1).toString())
-  document.getElementById("boxtarget56-M2").setAttribute("class", "boxP" +(Mellan2Kolumn56+ 1).toString())
+  document.getElementById("boxtarget56-M2").setAttribute("class", "boxP" + (Mellan2Kolumn56+ 1).toString())
   document.getElementById("boxtarget56-M3").setAttribute("class", "boxP" + (Mellan3Kolumn56+ 1).toString())
-  document.getElementById("boxtarget67-M1").setAttribute("class", "boxP" +( Mellan1Kolumn67+ 1).toString())
-  document.getElementById("boxtarget67-M2").setAttribute("class", "boxP" +( Mellan2Kolumn67+ 1).toString())
-  document.getElementById("boxtarget67-M3").setAttribute("class", "boxP" +( Mellan3Kolumn67+ 1).toString())
-  document.getElementById("boxtarget78-M1").setAttribute("class", "boxP" +( Mellan1Kolumn78+ 1).toString())
-  document.getElementById("boxtarget78-M2").setAttribute("class", "boxP" +( Mellan2Kolumn78+ 1).toString())
-  document.getElementById("boxtarget78-M3").setAttribute("class", "boxP" +( Mellan3Kolumn78+ 1).toString())
+  document.getElementById("boxtarget67-M1").setAttribute("class", "boxP" + (Mellan1Kolumn67+ 1).toString())
+  document.getElementById("boxtarget67-M2").setAttribute("class", "boxP" + (Mellan2Kolumn67+ 1).toString())
+  document.getElementById("boxtarget67-M3").setAttribute("class", "boxP" + (Mellan3Kolumn67+ 1).toString())
+  document.getElementById("boxtarget78-M1").setAttribute("class", "boxP" + (Mellan1Kolumn78+ 1).toString())
+  document.getElementById("boxtarget78-M2").setAttribute("class", "boxP" + (Mellan2Kolumn78+ 1).toString())
+  document.getElementById("boxtarget78-M3").setAttribute("class", "boxP" + (Mellan3Kolumn78+ 1).toString())
   console.log("Startvaluediagnostic")
 
+  // Tilldela värde(temp/hum) i textform till respektiva mätvärde i grafen
+  document.getElementById("boxtarget1").innerText = Kolumn1order
+
+  document.getElementById("boxtarget2").innerText = Kolumn2order
+  
+  document.getElementById("boxtarget3").innerText = Kolumn3order
+  
+  document.getElementById("boxtarget4").innerText = Kolumn4order
+  
+  document.getElementById("boxtarget5").innerText = Kolumn5order
+  
+  document.getElementById("boxtarget6").innerText = Kolumn6order
+  
+  document.getElementById("boxtarget7").innerText = Kolumn7order
+  
+  document.getElementById("boxtarget8").innerText = Kolumn8order
+  }
+// !!! Slutet av primär funktion. Allt nedan behöver bara beräknas vid öppning av websida. Detta för anledningen att behöva utföra mindre kod.
+
+
+  // Går igenom hela listan av datarader för att beräkna rekordmätningar för temp/hum(Kolla variabelnamn för vidare beskrivning)
   for (let i = Datalista.length; i > 0; i--) {
 //temp:
   if((((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100 < Temprekordlågoutput) {
@@ -402,10 +425,10 @@ alert("hi")
 }
 }
 }
-// HELA HÖGSTA/LÄGSTA TEMP/HUM KLAR
 console.log("temphumrecordvaluedefinitioncomplete")
+// Log - Devsyfte
 
-// Start medel för kolumner
+// Gå igenom hela listan av datarader för att beräkna medelvärden över alla (mättillfällen / tidperspektiv), för både Valtmode = 1(temp) och Valtmode = 2(hum)
 for (let i = Datalista.length; i > 0; i--) {
   switch((((Datalista[i]) % 100000) - (Datalista[i] % 10000))/10000){
 
@@ -470,6 +493,7 @@ Kolumn8genomsnittcounterHum++
           break
 }
 }
+// Slutgiltig beräkning(tillhör stycke kod)
 Kolumn1genomsnittTempoutput = Math.round(Kolumn1genomsnittTemp / Kolumn1genomsnittcounterTemp)
 Kolumn2genomsnittTempoutput = Math.round(Kolumn2genomsnittTemp / Kolumn2genomsnittcounterTemp)
 Kolumn3genomsnittTempoutput = Math.round(Kolumn3genomsnittTemp / Kolumn3genomsnittcounterTemp)
@@ -488,6 +512,8 @@ Kolumn6genomsnittHumoutput = Math.round(Kolumn6genomsnittHum / Kolumn6genomsnitt
 Kolumn7genomsnittHumoutput = Math.round(Kolumn7genomsnittHum / Kolumn7genomsnittcounterHum)
 Kolumn8genomsnittHumoutput = Math.round(Kolumn8genomsnittHum / Kolumn8genomsnittcounterHum)
 
+
+// Log för alla frekventr använda variabler, inputs och outputs från funktionen - Devsyfte
 console.log("värdemängd")
 
 console.log(Graftopp)
@@ -572,19 +598,3 @@ console.log(LängdDatalista)
 
 console.log("Endvaluediagnostic")
 
-document.getElementById("boxtarget1").innerText = Kolumn1order
-
-document.getElementById("boxtarget2").innerText = Kolumn2order
-
-document.getElementById("boxtarget3").innerText = Kolumn3order
-
-document.getElementById("boxtarget4").innerText = Kolumn4order
-
-document.getElementById("boxtarget5").innerText = Kolumn5order
-
-document.getElementById("boxtarget6").innerText = Kolumn6order
-
-document.getElementById("boxtarget7").innerText = Kolumn7order
-
-document.getElementById("boxtarget8").innerText = Kolumn8order
-}
