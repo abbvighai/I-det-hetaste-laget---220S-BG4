@@ -107,6 +107,9 @@ var Grafbotten
 var Graftopp
 
 var LängdDatalista
+
+var Övermedel
+
 // Artificiell data
 Datalista[1] = 12212010
   Datalista[2] = 12222321
@@ -254,8 +257,7 @@ default:
     // Error - Devsyfte
     console.log("errortempswitchnocasefound")
    
-}
-}
+}}
 
 // Samma fast för Valtmode = 1 (hum) SKIPPA TILL "HIT"
   if(Valtmode == 2){
@@ -301,10 +303,7 @@ default:
       // Error - Devsyfte
     console.log("errortempswitchnocasefound")
 break
-}
-}
-}
-}
+}}}}
 // HIT
 
 // Log - Devsyfte
@@ -422,9 +421,7 @@ alert("hi")
   else {
   if((((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1 > Humrekordhögoutput){
       Humrekordhögoutput = (((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1
-}
-}
-}
+}}}
 console.log("temphumrecordvaluedefinitioncomplete")
 // Log - Devsyfte
 
@@ -491,8 +488,7 @@ Kolumn8genomsnittcounterHum++
       default:
         console.log("erroravgvaluecalcnocasefound")
           break
-}
-}
+}}
 // Slutgiltig beräkning(tillhör stycke kod)
 Kolumn1genomsnittTempoutput = Math.round(Kolumn1genomsnittTemp / Kolumn1genomsnittcounterTemp)
 Kolumn2genomsnittTempoutput = Math.round(Kolumn2genomsnittTemp / Kolumn2genomsnittcounterTemp)
@@ -511,7 +507,6 @@ Kolumn5genomsnittHumoutput = Math.round(Kolumn5genomsnittHum / Kolumn5genomsnitt
 Kolumn6genomsnittHumoutput = Math.round(Kolumn6genomsnittHum / Kolumn6genomsnittcounterHum)
 Kolumn7genomsnittHumoutput = Math.round(Kolumn7genomsnittHum / Kolumn7genomsnittcounterHum)
 Kolumn8genomsnittHumoutput = Math.round(Kolumn8genomsnittHum / Kolumn8genomsnittcounterHum)
-
 
 // Log för alla frekventr använda variabler, inputs och outputs från funktionen - Devsyfte
 console.log("värdemängd")
@@ -598,3 +593,185 @@ console.log(LängdDatalista)
 
 console.log("Endvaluediagnostic")
 
+function b1(){
+      if(Valtmode == 1){
+            if(Kolumn1order > 1.15 * Kolumn1genomsnittTempoutput){
+            Övermedel = 4
+      }else{if(Kolumn1order > Kolumn1genomsnittTempoutput){
+            Övermedel = 3
+      }else{if(Kolumn1order < 0.85 * Kolumn1genomsnittTempoutput){
+            Övermedel = 1
+      }else{
+            Övermedel = 2
+      }}}}
+      if(Valtmode == 2){
+            if(Kolumn1order > 1.15 * Kolumn1genomsnittHumoutput){
+            Övermedel = 4
+      }else{if(Kolumn1order > Kolumn1genomsnittHumoutput){
+            Övermedel = 3
+      }else{if(Kolumn1order < 0.85 * Kolumn1genomsnittHumoutput){
+            Övermedel = 1
+      }else{
+            Övermedel = 2
+      }}}}
+alert(Övermedel)}
+function b2(){
+      if(Valtmode == 1){
+            if(Kolumn2order > 1.15 * Kolumn2genomsnittTempoutput){
+            Övermedel = 4
+      }else{if(Kolumn2order > Kolumn2genomsnittTempoutput){
+            Övermedel = 3
+      }else{if(Kolumn2order < 0.85 * Kolumn2genomsnittTempoutput){
+            Övermedel = 1
+      }else{
+            Övermedel = 2
+      }}}}
+      if(Valtmode == 2){
+            if(Kolumn2order > 1.15 * Kolumn2genomsnittHumoutput){
+            Övermedel = 4
+      }else{if(Kolumn2order > Kolumn2genomsnittHumoutput){
+            Övermedel = 3
+      }else{if(Kolumn2order < 0.85 * Kolumn2genomsnittHumoutput){
+            Övermedel = 1
+      }else{
+            Övermedel = 2
+      }}}}
+alert(Övermedel)}
+      
+function b3(){
+      if(Valtmode == 1){
+            if(Kolumn3order > 1.15 * Kolumn3genomsnittTempoutput){
+            Övermedel = 4
+      }else{if(Kolumn3order > Kolumn3genomsnittTempoutput){
+            Övermedel = 3
+      }else{if(Kolumn3order < 0.85 * Kolumn3genomsnittTempoutput){
+            Övermedel = 1
+      }else{
+            Övermedel = 2
+      }}}}
+      if(Valtmode == 2){
+            if(Kolumn3order > 1.15 * Kolumn3genomsnittHumoutput){
+            Övermedel = 4
+      }else{if(Kolumn3order > Kolumn3genomsnittHumoutput){
+            Övermedel = 3
+      }else{if(Kolumn3order < 0.85 * Kolumn3genomsnittHumoutput){
+            Övermedel = 1
+      }else{
+            Övermedel = 2
+      }}}}
+alert(Övermedel)}
+      
+function b4(){
+      if(Valtmode == 1){
+            if(Kolumn4order > 1.15 * Kolumn4genomsnittTempoutput){
+            Övermedel = 4
+      }else{if(Kolumn4order > Kolumn4genomsnittTempoutput){
+            Övermedel = 3
+      }else{if(Kolumn4order < 0.85 * Kolumn4genomsnittTempoutput){
+            Övermedel = 1
+      }else{
+            Övermedel = 2
+      }}}}
+      if(Valtmode == 2){
+            if(Kolumn4order > 1.15 * Kolumn4genomsnittHumoutput){
+            Övermedel = 4
+      }else{if(Kolumn4order > Kolumn4genomsnittHumoutput){
+            Övermedel = 3
+      }else{if(Kolumn4order < 0.85 * Kolumn4genomsnittHumoutput){
+            Övermedel = 1
+      }else{
+            Övermedel = 2
+      }}}}
+alert(Övermedel)}
+      
+function b5(){
+      if(Valtmode == 1){
+            if(Kolumn5order > 1.15 * Kolumn5genomsnittTempoutput){
+            Övermedel = 4
+      }else{if(Kolumn5order > Kolumn5genomsnittTempoutput){
+            Övermedel = 3
+      }else{if(Kolumn5order < 0.85 * Kolumn5genomsnittTempoutput){
+            Övermedel = 1
+      }else{
+            Övermedel = 2
+      }}}}
+      if(Valtmode == 2){
+            if(Kolumn5order > 1.15 * Kolumn5genomsnittHumoutput){
+            Övermedel = 4
+      }else{if(Kolumn5order > Kolumn5genomsnittHumoutput){
+            Övermedel = 3
+      }else{if(Kolumn5order < 0.85 * Kolumn5genomsnittHumoutput){
+            Övermedel = 1
+      }else{
+            Övermedel = 2
+      }}}}
+alert(Övermedel)}
+      
+function b6(){
+      if(Valtmode == 1){
+            if(Kolumn6order > 1.15 * Kolumn6genomsnittTempoutput){
+            Övermedel = 4
+      }else{if(Kolumn6order > Kolumn6genomsnittTempoutput){
+            Övermedel = 3
+      }else{if(Kolumn6order < 0.85 * Kolumn6genomsnittTempoutput){
+            Övermedel = 1
+      }else{
+            Övermedel = 2
+      }}}}
+      if(Valtmode == 2){
+            if(Kolumn6order > 1.15 * Kolumn6genomsnittHumoutput){
+            Övermedel = 4
+      }else{if(Kolumn6order > Kolumn6genomsnittHumoutput){
+            Övermedel = 3
+      }else{if(Kolumn6order < 0.85 * Kolumn6genomsnittHumoutput){
+            Övermedel = 1
+      }else{
+            Övermedel = 2
+      }}}}
+alert(Övermedel)}
+      
+function b7(){
+      if(Valtmode == 1){
+            if(Kolumn7order > 1.15 * Kolumn7genomsnittTempoutput){
+            Övermedel = 4
+      }else{if(Kolumn7order > Kolumn7genomsnittTempoutput){
+            Övermedel = 3
+      }else{if(Kolumn7order < 0.85 * Kolumn7genomsnittTempoutput){
+            Övermedel = 1
+      }else{
+            Övermedel = 2
+      }}}}
+      if(Valtmode == 2){
+            if(Kolumn7order > 1.15 * Kolumn7genomsnittHumoutput){
+            Övermedel = 4
+      }else{if(Kolumn7order > Kolumn7genomsnittHumoutput){
+            Övermedel = 3
+      }else{if(Kolumn7order < 0.85 * Kolumn7genomsnittHumoutput){
+            Övermedel = 1
+      }else{
+            Övermedel = 2
+      }}}}
+alert(Övermedel)}
+      
+function b8(){
+      if(Valtmode == 1){
+            if(Kolumn8order > 1.15 * Kolumn8genomsnittTempoutput){
+            Övermedel = 4
+      }else{if(Kolumn8order > Kolumn8genomsnittTempoutput){
+            Övermedel = 3
+      }else{if(Kolumn8order < 0.85 * Kolumn8genomsnittTempoutput){
+            Övermedel = 1
+      }else{
+            Övermedel = 2
+      }}}}
+      if(Valtmode == 2){
+            if(Kolumn8order > 1.15 * Kolumn8genomsnittHumoutput){
+            Övermedel = 4
+      }else{if(Kolumn8order > Kolumn8genomsnittHumoutput){
+            Övermedel = 3
+      }else{if(Kolumn8order < 0.85 * Kolumn8genomsnittHumoutput){
+            Övermedel = 1
+      }else{
+            Övermedel = 2
+      }}}}
+alert(Övermedel)}
