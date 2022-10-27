@@ -259,7 +259,7 @@ default:
    
 }}
 
-// Samma fast för Valtmode = 1 (hum) SKIPPA TILL "HIT"
+// Samma fast för Valtmode = 2 (hum) SKIPPA TILL "HIT"
   if(Valtmode == 2){
 
 if((((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1 < Grafbotten){
@@ -399,7 +399,7 @@ alert("hi")
   
   document.getElementById("boxtarget8").innerText = Kolumn8order
   }
-// !!! Slutet av primär funktion. Allt nedan behöver bara beräknas vid öppning av websida. Detta för anledningen att behöva utföra mindre kod.
+// !!! Slutet av primär funktion. Allt nedan behöver bara beräknas vid öppning av websida. Detta för anledningen att utföra mindre mängder kod.
 
 
   // Går igenom hela listan av datarader för att beräkna rekordmätningar för temp/hum(Kolla variabelnamn för vidare beskrivning)
@@ -489,7 +489,7 @@ Kolumn8genomsnittcounterHum++
         console.log("erroravgvaluecalcnocasefound")
           break
 }}
-// Slutgiltig beräkning(tillhör stycke kod)
+// Slutgiltig beräkning(tillhör övre stycke kod)
 Kolumn1genomsnittTempoutput = Math.round(Kolumn1genomsnittTemp / Kolumn1genomsnittcounterTemp)
 Kolumn2genomsnittTempoutput = Math.round(Kolumn2genomsnittTemp / Kolumn2genomsnittcounterTemp)
 Kolumn3genomsnittTempoutput = Math.round(Kolumn3genomsnittTemp / Kolumn3genomsnittcounterTemp)
@@ -508,7 +508,7 @@ Kolumn6genomsnittHumoutput = Math.round(Kolumn6genomsnittHum / Kolumn6genomsnitt
 Kolumn7genomsnittHumoutput = Math.round(Kolumn7genomsnittHum / Kolumn7genomsnittcounterHum)
 Kolumn8genomsnittHumoutput = Math.round(Kolumn8genomsnittHum / Kolumn8genomsnittcounterHum)
 
-// Log för alla frekventr använda variabler, inputs och outputs från funktionen - Devsyfte
+// Log för alla frekvent använda variabler, inputs och outputs från funktionen - Devsyfte
 console.log("värdemängd")
 
 console.log(Graftopp)
@@ -593,6 +593,7 @@ console.log(LängdDatalista)
 
 console.log("Endvaluediagnostic")
 
+// Större/mindre än genomsnitt för vald tidpunkt / tidsperspektiv
 function b1(){
       if(Valtmode == 1){
             if(Kolumn1order > 1.15 * Kolumn1genomsnittTempoutput){
