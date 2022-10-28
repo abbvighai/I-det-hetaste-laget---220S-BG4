@@ -152,7 +152,7 @@ function Refreshgraph() {
       Valtmode = document.getElementById("hejj").value
       
       Valtdatum = prompt("Välj datum(1-99)")
-// Ovan ska ersättas med input av CSS
+// Ovan ska ersättas med input av Firebase
 LängdDatalista = (Datalista.length)
 
 // Nollställer datavärden inför beräkningar
@@ -199,7 +199,7 @@ Mellan3Kolumn78 = 0
 Grafbotten = 100
 Graftopp = 0
 
-// Gå igenom varje datarad och filtrera bort alla som inte är relevanta för grafen(matchar EJ Valdstation, Valtmode eller Tidsram)
+// Går igenom varje datarad och filtrera bort alla som inte är relevanta för grafen(matchar EJ Valdstation, Valtmode eller Tidsram)
 for (let i = Datalista.length; i > 0; i--) {
 if(((((Datalista[i]) % 1000000000) - (Datalista[i] % 10000000))/10000000) == Valdstation && (((((Datalista[i]) % 10000000) - (Datalista[i] % 100000))/100000) == Valtdatum)){
 
@@ -309,7 +309,7 @@ break
 // Log - Devsyfte
 console.log("Columndatadistributioncomplete")
 
-// Repeterad operator för att omvandla Temp/hum till grafposition. (Ex: 30celcius - Plats X i grafkolumn)
+// Repeterad operator för att omvandla Temp/hum till grafposition. (Ex: 30celcius - Y-posotion 4 i grafkolumn)
 Kolumn1output = Math.floor(((Kolumn1order - Grafbotten) / (Graftopp - Grafbotten)) * 9.99)
 Kolumn2output = Math.floor(((Kolumn2order - Grafbotten) / (Graftopp - Grafbotten)) * 9.99)
 Kolumn3output = Math.floor(((Kolumn3order - Grafbotten) / (Graftopp - Grafbotten)) * 9.99)
@@ -350,7 +350,7 @@ Mellan3Kolumn78 = Math.round(Kolumn7output - ((Kolumn7output - Kolumn8output) * 
 console.log("Graphfunctioncomplete")
 
 alert("hi")
-// Överför data till CSS(i form av strings). (Ex Class(boxP + X) = Class boxp(X))
+// Överför data till CSS(i form av strings). (Ex Class(boxP + (5)) = Class boxp5)
   document.getElementById("boxtarget1").setAttribute("class", "boxP" + (Kolumn1output + 1).toString())
   document.getElementById("boxtarget2").setAttribute("class", "boxP" + (Kolumn2output+ 1).toString())
   document.getElementById("boxtarget3").setAttribute("class", "boxP" + (Kolumn3output+ 1).toString())
@@ -380,7 +380,6 @@ alert("hi")
   document.getElementById("boxtarget78-M1").setAttribute("class", "boxP" + (Mellan1Kolumn78+ 1).toString())
   document.getElementById("boxtarget78-M2").setAttribute("class", "boxP" + (Mellan2Kolumn78+ 1).toString())
   document.getElementById("boxtarget78-M3").setAttribute("class", "boxP" + (Mellan3Kolumn78+ 1).toString())
-  console.log("Startvaluediagnostic")
 
   // Tilldela värde(temp/hum) i textform till respektiva mätvärde i grafen
   document.getElementById("boxtarget1").innerText = Kolumn1order
@@ -425,7 +424,7 @@ alert("hi")
 console.log("temphumrecordvaluedefinitioncomplete")
 // Log - Devsyfte
 
-// Gå igenom hela listan av datarader för att beräkna medelvärden över alla (mättillfällen / tidperspektiv), för både Valtmode = 1(temp) och Valtmode = 2(hum)
+// Gå igenom hela listan av datarader för att beräkna medelvärden över alla (mättillfällen / tidperspektiv), för både Valtmode = 1(temp) och Valtmode = 2(hum). Alltså t.ex snitttemperaturen klockan 09:00 mellan alla dagar.
 for (let i = Datalista.length; i > 0; i--) {
   switch((((Datalista[i]) % 100000) - (Datalista[i] % 10000))/10000){
 
@@ -509,6 +508,9 @@ Kolumn7genomsnittHumoutput = Math.round(Kolumn7genomsnittHum / Kolumn7genomsnitt
 Kolumn8genomsnittHumoutput = Math.round(Kolumn8genomsnittHum / Kolumn8genomsnittcounterHum)
 
 // Log för alla frekvent använda variabler, inputs och outputs från funktionen - Devsyfte
+console.log("Startvaluediagnostic")
+
+
 console.log("värdemängd")
 
 console.log(Graftopp)
