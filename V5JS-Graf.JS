@@ -1,3 +1,5 @@
+
+// Deklarering av ALLA globala variabler
 var Valtdatum // 1 - 99
 var Valtmode // 1, 2
 var Valdstation // 1, 2, 3, 4, 5
@@ -148,12 +150,12 @@ Datalista[1] = 12212010
   
 // INPUTSYSTEM FRÅN FIREBASE                      (INTE KLAR)
 
-//ANTECKNINGAR: Detta system kommer behandla datan från en dataform enligt(Dag, timme, minut) TILL endast (timme). 
+// ANTECKNINGAR: Detta system kommer behandla datan från en dataform enligt(Dag, timme, minut) TILL endast (timme). 
 // Systemet kommer stödja ett timme-värde upp till 999, alltså kommer systemet krasha efter dag 41(gränsen kan höjas i framtiden med lite arbete)
 // Inget behöver ändras för koden i C++. Omvandlingen behövs för att göra dataformen kompatibel med Graf1 eftersom den blev kodad innan firebase och inte är anpassad.
 // Ytterliggare data från firebase(dagar, minuter) kommer istället användas för andra grafer.
 
-
+// db.Mätstation X.Dag Y. Timme Z
 
 
 
