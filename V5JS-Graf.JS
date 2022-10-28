@@ -3,6 +3,8 @@ var Valtmode // 1, 2
 var Valdstation // 1, 2, 3, 4, 5
 
 var Datalista = new Array()
+var Listavgtemps = new Array()
+var Listavghums = new Array()
 
 var Kolumn1genomsnittTemp = 0
 var Kolumn2genomsnittTemp = 0
@@ -308,6 +310,56 @@ break
 
 // Log - Devsyfte
 console.log("Columndatadistributioncomplete")
+
+
+if(Valdstation == 6){
+    
+      if(Valtmode == 1){
+      
+      Kolumn1order = Kolumn1genomsnittTempoutput
+      Kolumn2order = Kolumn2genomsnittTempoutput
+      Kolumn3order = Kolumn3genomsnittTempoutput
+      Kolumn4order = Kolumn4genomsnittTempoutput
+      Kolumn5order = Kolumn5genomsnittTempoutput
+      Kolumn6order = Kolumn6genomsnittTempoutput
+      Kolumn7order = Kolumn7genomsnittTempoutput
+      Kolumn8order = Kolumn8genomsnittTempoutput
+      
+      Listavgtemps = [Kolumn1genomsnittTempoutput, Kolumn2genomsnittTempoutput, Kolumn3genomsnittTempoutput, Kolumn4genomsnittTempoutput, Kolumn5genomsnittTempoutput, Kolumn6genomsnittTempoutput, Kolumn7genomsnittTempoutput, Kolumn8genomsnittTempoutput]
+      
+      for (let i = Listavgtemps.length; i > 0; i--){
+      
+      if(Listavgtemps[i] < Grafbotten){
+         Grafbotten = Listavgtemps[i]
+      }
+      if(Listavgtemps[i] > Graftopp){
+         Graftopp = Listavgtemps[i]
+      }
+      }
+      }
+      if(Valtmode == 2){
+      
+      Kolumn1order = Kolumn1genomsnittHumoutput
+      Kolumn2order = Kolumn2genomsnittHumoutput
+      Kolumn3order = Kolumn3genomsnittHumoutput
+      Kolumn4order = Kolumn4genomsnittHumoutput
+      Kolumn5order = Kolumn5genomsnittHumoutput
+      Kolumn6order = Kolumn6genomsnittHumoutput
+      Kolumn7order = Kolumn7genomsnittHumoutput
+      Kolumn8order = Kolumn8genomsnittHumoutput
+      
+      Listavghums = [Kolumn1genomsnittHumoutput, Kolumn2genomsnittHumoutput, Kolumn3genomsnittHumoutput, Kolumn4genomsnittHumoutput, Kolumn5genomsnittHumoutput, Kolumn6genomsnittHumoutput, Kolumn7genomsnittHumoutput, Kolumn8genomsnittHumoutput]
+      
+      for (let i = Listavghums.length; i > 0; i--){
+      if(Listavghums[i] < Grafbotten){
+         Grafbotten = Listavghums[i]
+      }
+      if(Listavghums[i] > Graftopp){
+         Graftopp = Listavghums[i]
+      }
+      }
+      }
+      }
 
 // Repeterad operator för att omvandla Temp/hum till grafposition. (Ex: 30celcius - Y-posotion 4 i grafkolumn)
 Kolumn1output = Math.floor(((Kolumn1order - Grafbotten) / (Graftopp - Grafbotten)) * 9.99)
