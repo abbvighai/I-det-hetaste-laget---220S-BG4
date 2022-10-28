@@ -146,6 +146,37 @@ Datalista[1] = 12212010
   Datalista[31] = 12576012
   Datalista[32] = 12583525
   
+// INPUTSYSTEM FRÅN FIREBASE                      (INTE KLAR)
+
+//ANTECKNINGAR: Detta system kommer behandla datan från en dataform enligt(Dag, timme, minut) TILL endast (timme). 
+// Systemet kommer stödja ett timme-värde upp till 999, alltså kommer systemet krasha efter dag 41(gränsen kan höjas i framtiden med lite arbete)
+// Inget behöver ändras för koden i C++. Omvandlingen behövs för att göra dataformen kompatibel med Graf1 eftersom den blev kodad innan firebase och inte är anpassad.
+// Ytterliggare data från firebase(dagar, minuter) kommer istället användas för andra grafer.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// INPUTSYSTEM FRÅN FIREBASE
+
+
   // Start av primär funktion
 function Refreshgraph() {
     
@@ -311,11 +342,11 @@ break
 // Log - Devsyfte
 console.log("Columndatadistributioncomplete")
 
-
+// "Medel" står på plats 6 i listan över mätplatser. Om "Medel"-alternativet är valt görs den nedre koden ISTÄLLET för ALLT ovan som tillhör funktionen "Refreshgraph"
 if(Valdstation == 6){
-    
+    // (temp)
       if(Valtmode == 1){
-      
+      // Ge medelvärden till grafen
       Kolumn1order = Kolumn1genomsnittTempoutput
       Kolumn2order = Kolumn2genomsnittTempoutput
       Kolumn3order = Kolumn3genomsnittTempoutput
@@ -324,7 +355,7 @@ if(Valdstation == 6){
       Kolumn6order = Kolumn6genomsnittTempoutput
       Kolumn7order = Kolumn7genomsnittTempoutput
       Kolumn8order = Kolumn8genomsnittTempoutput
-      
+      // Bestäm graftopp & grafbotten
       Listavgtemps = [Kolumn1genomsnittTempoutput, Kolumn2genomsnittTempoutput, Kolumn3genomsnittTempoutput, Kolumn4genomsnittTempoutput, Kolumn5genomsnittTempoutput, Kolumn6genomsnittTempoutput, Kolumn7genomsnittTempoutput, Kolumn8genomsnittTempoutput]
       
       for (let i = Listavgtemps.length; i > 0; i--){
@@ -337,6 +368,7 @@ if(Valdstation == 6){
       }
       }
       }
+      // Samma fast för Valtmode == 2(hum) SKIPPA TILL "HIT"
       if(Valtmode == 2){
       
       Kolumn1order = Kolumn1genomsnittHumoutput
@@ -360,6 +392,7 @@ if(Valdstation == 6){
       }
       }
       }
+      // HIT
 
 // Repeterad operator för att omvandla Temp/hum till grafposition. (Ex: 30celcius - Y-posotion 4 i grafkolumn)
 Kolumn1output = Math.floor(((Kolumn1order - Grafbotten) / (Graftopp - Grafbotten)) * 9.99)
