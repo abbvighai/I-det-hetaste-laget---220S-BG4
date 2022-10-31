@@ -13,40 +13,68 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-let FirstValue = 0;
-let SecondValue = 0;
-let ThirdValue = 0;
-const d = new Date();
-let hour = d.getHours();
-let hour2 = hour - 1
-let hour3 = hour2 - 1
+let TheValue = 0;
 
-console.log(hour)
-console.log(hour3)
+const d = new Date();
+//let hourT = d.getHours();
+//let hourH = d.getHours();
+
+let hourT = 0
+let hourH = 0
+
+let dagT = 2
+let dagH = 2
+
+let dat
+let tim
+
+let TempList = [];
+let HumList = [];
 
 const db = firebase.database();
 
-var TemperatureRef = db.ref("SimonsPlats/Dagar-0/Hour-" + hour + "/Minute-0/Temperature");
+function otherDayCheck(tim){
+    if (tim == -1) {
+        let tim = 23;
+        return tim;
+    }
+    else {
+        return tim;
+    }
+}
+function otherDayChange(tim,dat) {
+    if (tim == -1) {
+        return dat - 1;
+    }
+    else {
+        return dat;
+    }
+}
 
-var TemperatureRef2 = db.ref("SimonsPlats/Dagar-0/Hour-" + hour2 + "/Minute-0/Temperature");
+for(let i=0; i<24;i++){
+    var TemperatureRef1 = db.ref("SimonsPlats/Dagar-" + dagT + "/Hour-" + hourT + "/Minute-0/Temperature");
+    TemperatureRef1.on("value", (temp) => {
+        let TheValue = temp.val();
+        TempList.push(TheValue)
+        console.log(TempList)
+    });
 
-var TemperatureRef3 = db.ref("SimonsPlats/Dagar-0/Hour-" + hour3 + "/Minute-0/Temperature");
+    hourT = hourT-1;
+    dagT = otherDayChange(hourT,dagT);
+    hourT = otherDayCheck(hourT);
 
-TemperatureRef.on("value", (temp) => {
-    let FirstValue = temp.val();
-    console.log(FirstValue);
-});
+}
 
-TemperatureRef2.on("value", (temp) => {
-    let SecondValue = temp.val();
-    console.log(SecondValue);
-});
+for(let i=0; i<24;i++){
+    var HumidityRef1 = db.ref("SimonsPlats/Dagar-" + dagH + "/Hour-" + hourH + "/Minute-0/Humidity");
+    HumidityRef1.on("value", (hum) => {
+        let TheValue = hum.val();
+        HumList.push(TheValue)
+        console.log(HumList)
+    });
 
-TemperatureRef3.on("value", (temp) => {
-    let ThirdValue = temp.val();
-    console.log(ThirdValue);
-});
+    hourH = hourH-1;
+    dagH = otherDayChange(hourH,dagH);
+    hourH = otherDayCheck(hourH);
 
-console.log(FirstValue);
-console.log(SecondValue);
-console.log(ThirdValue);
+}
