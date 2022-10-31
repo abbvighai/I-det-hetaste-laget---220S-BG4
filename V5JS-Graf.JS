@@ -1,8 +1,12 @@
+
+// Deklarering av ALLA globala variabler
 var Valtdatum // 1 - 99
 var Valtmode // 1, 2
 var Valdstation // 1, 2, 3, 4, 5
 
 var Datalista = new Array()
+var Listavgtemps = new Array()
+var Listavghums = new Array()
 
 var Kolumn1genomsnittTemp = 0
 var Kolumn2genomsnittTemp = 0
@@ -107,7 +111,10 @@ var Grafbotten
 var Graftopp
 
 var LängdDatalista
-  
+
+var Övermedel
+
+// Artificiell data
 Datalista[1] = 12212010
   Datalista[2] = 12222321
   Datalista[3] = 12235323
@@ -141,6 +148,38 @@ Datalista[1] = 12212010
   Datalista[31] = 12576012
   Datalista[32] = 12583525
   
+// INPUTSYSTEM FRÅN FIREBASE                      (INTE KLAR)
+
+// ANTECKNINGAR: Detta system kommer behandla datan från en dataform enligt(Dag, timme, minut) TILL endast (timme). 
+// Systemet kommer stödja ett timme-värde upp till 999, alltså kommer systemet krasha efter dag 41(gränsen kan höjas i framtiden med lite arbete)
+// Inget behöver ändras för koden i C++. Omvandlingen behövs för att göra dataformen kompatibel med Graf1 eftersom den blev kodad innan firebase och inte är anpassad.
+// Ytterliggare data från firebase(dagar, minuter) kommer istället användas för andra grafer.
+
+// db.Mätstation X.Dag Y. Timme Z
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// INPUTSYSTEM FRÅN FIREBASE
+
+
+  // Start av primär funktion
 function Refreshgraph() {
     
       Valdstation = document.getElementById("hej").value
@@ -148,9 +187,10 @@ function Refreshgraph() {
       Valtmode = document.getElementById("hejj").value
       
       Valtdatum = prompt("Välj datum(1-99)")
-// Ovan ska ersättas med input av CSS
+// Ovan ska ersättas med input av Firebase
 LängdDatalista = (Datalista.length)
 
+// Nollställer datavärden inför beräkningar
 Kolumn1order = 0
 Kolumn2order = 0
 Kolumn3order = 0
@@ -194,32 +234,27 @@ Mellan3Kolumn78 = 0
 Grafbotten = 100
 Graftopp = 0
 
-// Grafbotten/Top:
+// Går igenom varje datarad och filtrera bort alla som inte är relevanta för grafen(matchar EJ Valdstation, Valtmode eller Tidsram)
 for (let i = Datalista.length; i > 0; i--) {
 if(((((Datalista[i]) % 1000000000) - (Datalista[i] % 10000000))/10000000) == Valdstation && (((((Datalista[i]) % 10000000) - (Datalista[i] % 100000))/100000) == Valtdatum)){
-// restoperator 1000000000 onödig
-// Station rätt?, Datum rätt? (hos Datalista[i])
 
-//temp
 if(Valtmode == 1) {
 
    
-//botten:
+// Beräkna Grafbotten
 if((((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100 < Grafbotten){
 
 Grafbotten = (((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100
 
 }
-// topp:
+// Beräkna Graftopp
 if((((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100 > Graftopp){
 
 Graftopp = (((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100
 
 }
-console.log((((Datalista[i]) % 100000) - (Datalista[i] % 10000))/10000 + "hi")
-
-
-    switch(((((Datalista[i]) % 100000) - (Datalista[i] % 10000))/10000)){
+// Tilldela datarad till rätt tidpunkt(1-8)
+switch(((((Datalista[i]) % 100000) - (Datalista[i] % 10000))/10000)){
         case 1:
 
         Kolumn1order = (((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100
@@ -254,20 +289,20 @@ console.log((((Datalista[i]) % 100000) - (Datalista[i] % 10000))/10000 + "hi")
         break
 
 default:
+    // Error - Devsyfte
     console.log("errortempswitchnocasefound")
-}
-}
+   
+}}
 
-      // Hum:
+// Samma fast för Valtmode = 2 (hum) SKIPPA TILL "HIT"
   if(Valtmode == 2){
 
-//botten:
 if((((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1 < Grafbotten){
 
 Grafbotten = (((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1
-// restoperator 1 onödig
+
 }
-// topp:
+
 if((((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1 > Graftopp){
 
 Graftopp = (((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1
@@ -300,16 +335,68 @@ Graftopp = (((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1
         Kolumn8order = (((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1
         break  
 default:
+      // Error - Devsyfte
     console.log("errortempswitchnocasefound")
 break
-}
-}
-}
-}
-// COLUMNDATADISTRIBUTION COMPLETE
-console.log("Columndatadistributioncomplete")
-// console.log(Kolumn1order, Kolumn12order, Kolumn3order, Kolumn4order, Kolumn5order, Kolumn6order, Kolumn7order, Kolumn8order)
+}}}}
+// HIT
 
+// Log - Devsyfte
+console.log("Columndatadistributioncomplete")
+
+// "Medel" står på plats 6 i listan över mätplatser. Om "Medel"-alternativet är valt görs den nedre koden ISTÄLLET för ALLT ovan som tillhör funktionen "Refreshgraph"
+if(Valdstation == 6){
+    // (temp)
+      if(Valtmode == 1){
+      // Ge medelvärden till grafen
+      Kolumn1order = Kolumn1genomsnittTempoutput
+      Kolumn2order = Kolumn2genomsnittTempoutput
+      Kolumn3order = Kolumn3genomsnittTempoutput
+      Kolumn4order = Kolumn4genomsnittTempoutput
+      Kolumn5order = Kolumn5genomsnittTempoutput
+      Kolumn6order = Kolumn6genomsnittTempoutput
+      Kolumn7order = Kolumn7genomsnittTempoutput
+      Kolumn8order = Kolumn8genomsnittTempoutput
+      // Bestäm graftopp & grafbotten
+      Listavgtemps = [Kolumn1genomsnittTempoutput, Kolumn2genomsnittTempoutput, Kolumn3genomsnittTempoutput, Kolumn4genomsnittTempoutput, Kolumn5genomsnittTempoutput, Kolumn6genomsnittTempoutput, Kolumn7genomsnittTempoutput, Kolumn8genomsnittTempoutput]
+      
+      for (let i = Listavgtemps.length; i > 0; i--){
+      
+      if(Listavgtemps[i] < Grafbotten){
+         Grafbotten = Listavgtemps[i]
+      }
+      if(Listavgtemps[i] > Graftopp){
+         Graftopp = Listavgtemps[i]
+      }
+      }
+      }
+      // Samma fast för Valtmode == 2(hum) SKIPPA TILL "HIT"
+      if(Valtmode == 2){
+      
+      Kolumn1order = Kolumn1genomsnittHumoutput
+      Kolumn2order = Kolumn2genomsnittHumoutput
+      Kolumn3order = Kolumn3genomsnittHumoutput
+      Kolumn4order = Kolumn4genomsnittHumoutput
+      Kolumn5order = Kolumn5genomsnittHumoutput
+      Kolumn6order = Kolumn6genomsnittHumoutput
+      Kolumn7order = Kolumn7genomsnittHumoutput
+      Kolumn8order = Kolumn8genomsnittHumoutput
+      
+      Listavghums = [Kolumn1genomsnittHumoutput, Kolumn2genomsnittHumoutput, Kolumn3genomsnittHumoutput, Kolumn4genomsnittHumoutput, Kolumn5genomsnittHumoutput, Kolumn6genomsnittHumoutput, Kolumn7genomsnittHumoutput, Kolumn8genomsnittHumoutput]
+      
+      for (let i = Listavghums.length; i > 0; i--){
+      if(Listavghums[i] < Grafbotten){
+         Grafbotten = Listavghums[i]
+      }
+      if(Listavghums[i] > Graftopp){
+         Graftopp = Listavghums[i]
+      }
+      }
+      }
+      }
+      // HIT
+
+// Repeterad operator för att omvandla Temp/hum till grafposition. (Ex: 30celcius - Y-posotion 4 i grafkolumn)
 Kolumn1output = Math.floor(((Kolumn1order - Grafbotten) / (Graftopp - Grafbotten)) * 9.99)
 Kolumn2output = Math.floor(((Kolumn2order - Grafbotten) / (Graftopp - Grafbotten)) * 9.99)
 Kolumn3output = Math.floor(((Kolumn3order - Grafbotten) / (Graftopp - Grafbotten)) * 9.99)
@@ -319,6 +406,7 @@ Kolumn6output = Math.floor(((Kolumn6order - Grafbotten) / (Graftopp - Grafbotten
 Kolumn7output = Math.floor(((Kolumn7order - Grafbotten) / (Graftopp - Grafbotten)) * 9.99)
 Kolumn8output = Math.floor(((Kolumn8order - Grafbotten) / (Graftopp - Grafbotten)) * 9.99)
 
+// Positioner för "stödkolumner" som syns mellan mätvärden i grafen
 Mellan1Kolumn12 = Math.round(Kolumn1output - ((Kolumn1output - Kolumn2output) * 0.25))
 Mellan2Kolumn12 = Math.round(Kolumn1output - ((Kolumn1output - Kolumn2output) * 0.5))
 Mellan3Kolumn12 = Math.round(Kolumn1output - ((Kolumn1output - Kolumn2output) * 0.75))
@@ -349,7 +437,7 @@ Mellan3Kolumn78 = Math.round(Kolumn7output - ((Kolumn7output - Kolumn8output) * 
 console.log("Graphfunctioncomplete")
 
 alert("hi")
-// HHHHHHHHHHHHHHHHHHHÄRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+// Överför data till CSS(i form av strings). (Ex Class(boxP + (5)) = Class boxp5)
   document.getElementById("boxtarget1").setAttribute("class", "boxP" + (Kolumn1output + 1).toString())
   document.getElementById("boxtarget2").setAttribute("class", "boxP" + (Kolumn2output+ 1).toString())
   document.getElementById("boxtarget3").setAttribute("class", "boxP" + (Kolumn3output+ 1).toString())
@@ -371,16 +459,36 @@ alert("hi")
   document.getElementById("boxtarget45-M2").setAttribute("class", "boxP" + (Mellan2Kolumn45+ 1).toString())
   document.getElementById("boxtarget45-M3").setAttribute("class", "boxP" + (Mellan3Kolumn45+ 1).toString())
   document.getElementById("boxtarget56-M1").setAttribute("class", "boxP" + (Mellan1Kolumn56+ 1).toString())
-  document.getElementById("boxtarget56-M2").setAttribute("class", "boxP" +(Mellan2Kolumn56+ 1).toString())
+  document.getElementById("boxtarget56-M2").setAttribute("class", "boxP" + (Mellan2Kolumn56+ 1).toString())
   document.getElementById("boxtarget56-M3").setAttribute("class", "boxP" + (Mellan3Kolumn56+ 1).toString())
-  document.getElementById("boxtarget67-M1").setAttribute("class", "boxP" +( Mellan1Kolumn67+ 1).toString())
-  document.getElementById("boxtarget67-M2").setAttribute("class", "boxP" +( Mellan2Kolumn67+ 1).toString())
-  document.getElementById("boxtarget67-M3").setAttribute("class", "boxP" +( Mellan3Kolumn67+ 1).toString())
-  document.getElementById("boxtarget78-M1").setAttribute("class", "boxP" +( Mellan1Kolumn78+ 1).toString())
-  document.getElementById("boxtarget78-M2").setAttribute("class", "boxP" +( Mellan2Kolumn78+ 1).toString())
-  document.getElementById("boxtarget78-M3").setAttribute("class", "boxP" +( Mellan3Kolumn78+ 1).toString())
-  console.log("Startvaluediagnostic")
+  document.getElementById("boxtarget67-M1").setAttribute("class", "boxP" + (Mellan1Kolumn67+ 1).toString())
+  document.getElementById("boxtarget67-M2").setAttribute("class", "boxP" + (Mellan2Kolumn67+ 1).toString())
+  document.getElementById("boxtarget67-M3").setAttribute("class", "boxP" + (Mellan3Kolumn67+ 1).toString())
+  document.getElementById("boxtarget78-M1").setAttribute("class", "boxP" + (Mellan1Kolumn78+ 1).toString())
+  document.getElementById("boxtarget78-M2").setAttribute("class", "boxP" + (Mellan2Kolumn78+ 1).toString())
+  document.getElementById("boxtarget78-M3").setAttribute("class", "boxP" + (Mellan3Kolumn78+ 1).toString())
 
+  // Tilldela värde(temp/hum) i textform till respektiva mätvärde i grafen
+  document.getElementById("boxtarget1").innerText = Kolumn1order
+
+  document.getElementById("boxtarget2").innerText = Kolumn2order
+  
+  document.getElementById("boxtarget3").innerText = Kolumn3order
+  
+  document.getElementById("boxtarget4").innerText = Kolumn4order
+  
+  document.getElementById("boxtarget5").innerText = Kolumn5order
+  
+  document.getElementById("boxtarget6").innerText = Kolumn6order
+  
+  document.getElementById("boxtarget7").innerText = Kolumn7order
+  
+  document.getElementById("boxtarget8").innerText = Kolumn8order
+  }
+// !!! Slutet av primär funktion. Allt nedan behöver bara beräknas vid öppning av websida. Detta för anledningen att utföra mindre mängder kod.
+
+
+  // Går igenom hela listan av datarader för att beräkna rekordmätningar för temp/hum(Kolla variabelnamn för vidare beskrivning)
   for (let i = Datalista.length; i > 0; i--) {
 //temp:
   if((((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100 < Temprekordlågoutput) {
@@ -399,13 +507,11 @@ alert("hi")
   else {
   if((((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1 > Humrekordhögoutput){
       Humrekordhögoutput = (((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1
-}
-}
-}
-// HELA HÖGSTA/LÄGSTA TEMP/HUM KLAR
+}}}
 console.log("temphumrecordvaluedefinitioncomplete")
+// Log - Devsyfte
 
-// Start medel för kolumner
+// Gå igenom hela listan av datarader för att beräkna medelvärden över alla (mättillfällen / tidperspektiv), för både Valtmode = 1(temp) och Valtmode = 2(hum). Alltså t.ex snitttemperaturen klockan 09:00 mellan alla dagar.
 for (let i = Datalista.length; i > 0; i--) {
   switch((((Datalista[i]) % 100000) - (Datalista[i] % 10000))/10000){
 
@@ -468,8 +574,8 @@ Kolumn8genomsnittcounterHum++
       default:
         console.log("erroravgvaluecalcnocasefound")
           break
-}
-}
+}}
+// Slutgiltig beräkning(tillhör övre stycke kod)
 Kolumn1genomsnittTempoutput = Math.round(Kolumn1genomsnittTemp / Kolumn1genomsnittcounterTemp)
 Kolumn2genomsnittTempoutput = Math.round(Kolumn2genomsnittTemp / Kolumn2genomsnittcounterTemp)
 Kolumn3genomsnittTempoutput = Math.round(Kolumn3genomsnittTemp / Kolumn3genomsnittcounterTemp)
@@ -487,6 +593,10 @@ Kolumn5genomsnittHumoutput = Math.round(Kolumn5genomsnittHum / Kolumn5genomsnitt
 Kolumn6genomsnittHumoutput = Math.round(Kolumn6genomsnittHum / Kolumn6genomsnittcounterHum)
 Kolumn7genomsnittHumoutput = Math.round(Kolumn7genomsnittHum / Kolumn7genomsnittcounterHum)
 Kolumn8genomsnittHumoutput = Math.round(Kolumn8genomsnittHum / Kolumn8genomsnittcounterHum)
+
+// Log för alla frekvent använda variabler, inputs och outputs från funktionen - Devsyfte
+console.log("Startvaluediagnostic")
+
 
 console.log("värdemängd")
 
@@ -572,19 +682,186 @@ console.log(LängdDatalista)
 
 console.log("Endvaluediagnostic")
 
-document.getElementById("boxtarget1").innerText = Kolumn1order
-
-document.getElementById("boxtarget2").innerText = Kolumn2order
-
-document.getElementById("boxtarget3").innerText = Kolumn3order
-
-document.getElementById("boxtarget4").innerText = Kolumn4order
-
-document.getElementById("boxtarget5").innerText = Kolumn5order
-
-document.getElementById("boxtarget6").innerText = Kolumn6order
-
-document.getElementById("boxtarget7").innerText = Kolumn7order
-
-document.getElementById("boxtarget8").innerText = Kolumn8order
-}
+// Större/mindre än genomsnitt för vald tidpunkt / tidsperspektiv
+function b1(){
+      if(Valtmode == 1){
+            if(Kolumn1order > 1.15 * Kolumn1genomsnittTempoutput){
+            Övermedel = 4
+      }else{if(Kolumn1order > Kolumn1genomsnittTempoutput){
+            Övermedel = 3
+      }else{if(Kolumn1order < 0.85 * Kolumn1genomsnittTempoutput){
+            Övermedel = 1
+      }else{
+            Övermedel = 2
+      }}}}
+      if(Valtmode == 2){
+            if(Kolumn1order > 1.15 * Kolumn1genomsnittHumoutput){
+            Övermedel = 4
+      }else{if(Kolumn1order > Kolumn1genomsnittHumoutput){
+            Övermedel = 3
+      }else{if(Kolumn1order < 0.85 * Kolumn1genomsnittHumoutput){
+            Övermedel = 1
+      }else{
+            Övermedel = 2
+      }}}}
+alert(Övermedel)}
+function b2(){
+      if(Valtmode == 1){
+            if(Kolumn2order > 1.15 * Kolumn2genomsnittTempoutput){
+            Övermedel = 4
+      }else{if(Kolumn2order > Kolumn2genomsnittTempoutput){
+            Övermedel = 3
+      }else{if(Kolumn2order < 0.85 * Kolumn2genomsnittTempoutput){
+            Övermedel = 1
+      }else{
+            Övermedel = 2
+      }}}}
+      if(Valtmode == 2){
+            if(Kolumn2order > 1.15 * Kolumn2genomsnittHumoutput){
+            Övermedel = 4
+      }else{if(Kolumn2order > Kolumn2genomsnittHumoutput){
+            Övermedel = 3
+      }else{if(Kolumn2order < 0.85 * Kolumn2genomsnittHumoutput){
+            Övermedel = 1
+      }else{
+            Övermedel = 2
+      }}}}
+alert(Övermedel)}
+      
+function b3(){
+      if(Valtmode == 1){
+            if(Kolumn3order > 1.15 * Kolumn3genomsnittTempoutput){
+            Övermedel = 4
+      }else{if(Kolumn3order > Kolumn3genomsnittTempoutput){
+            Övermedel = 3
+      }else{if(Kolumn3order < 0.85 * Kolumn3genomsnittTempoutput){
+            Övermedel = 1
+      }else{
+            Övermedel = 2
+      }}}}
+      if(Valtmode == 2){
+            if(Kolumn3order > 1.15 * Kolumn3genomsnittHumoutput){
+            Övermedel = 4
+      }else{if(Kolumn3order > Kolumn3genomsnittHumoutput){
+            Övermedel = 3
+      }else{if(Kolumn3order < 0.85 * Kolumn3genomsnittHumoutput){
+            Övermedel = 1
+      }else{
+            Övermedel = 2
+      }}}}
+alert(Övermedel)}
+      
+function b4(){
+      if(Valtmode == 1){
+            if(Kolumn4order > 1.15 * Kolumn4genomsnittTempoutput){
+            Övermedel = 4
+      }else{if(Kolumn4order > Kolumn4genomsnittTempoutput){
+            Övermedel = 3
+      }else{if(Kolumn4order < 0.85 * Kolumn4genomsnittTempoutput){
+            Övermedel = 1
+      }else{
+            Övermedel = 2
+      }}}}
+      if(Valtmode == 2){
+            if(Kolumn4order > 1.15 * Kolumn4genomsnittHumoutput){
+            Övermedel = 4
+      }else{if(Kolumn4order > Kolumn4genomsnittHumoutput){
+            Övermedel = 3
+      }else{if(Kolumn4order < 0.85 * Kolumn4genomsnittHumoutput){
+            Övermedel = 1
+      }else{
+            Övermedel = 2
+      }}}}
+alert(Övermedel)}
+      
+function b5(){
+      if(Valtmode == 1){
+            if(Kolumn5order > 1.15 * Kolumn5genomsnittTempoutput){
+            Övermedel = 4
+      }else{if(Kolumn5order > Kolumn5genomsnittTempoutput){
+            Övermedel = 3
+      }else{if(Kolumn5order < 0.85 * Kolumn5genomsnittTempoutput){
+            Övermedel = 1
+      }else{
+            Övermedel = 2
+      }}}}
+      if(Valtmode == 2){
+            if(Kolumn5order > 1.15 * Kolumn5genomsnittHumoutput){
+            Övermedel = 4
+      }else{if(Kolumn5order > Kolumn5genomsnittHumoutput){
+            Övermedel = 3
+      }else{if(Kolumn5order < 0.85 * Kolumn5genomsnittHumoutput){
+            Övermedel = 1
+      }else{
+            Övermedel = 2
+      }}}}
+alert(Övermedel)}
+      
+function b6(){
+      if(Valtmode == 1){
+            if(Kolumn6order > 1.15 * Kolumn6genomsnittTempoutput){
+            Övermedel = 4
+      }else{if(Kolumn6order > Kolumn6genomsnittTempoutput){
+            Övermedel = 3
+      }else{if(Kolumn6order < 0.85 * Kolumn6genomsnittTempoutput){
+            Övermedel = 1
+      }else{
+            Övermedel = 2
+      }}}}
+      if(Valtmode == 2){
+            if(Kolumn6order > 1.15 * Kolumn6genomsnittHumoutput){
+            Övermedel = 4
+      }else{if(Kolumn6order > Kolumn6genomsnittHumoutput){
+            Övermedel = 3
+      }else{if(Kolumn6order < 0.85 * Kolumn6genomsnittHumoutput){
+            Övermedel = 1
+      }else{
+            Övermedel = 2
+      }}}}
+alert(Övermedel)}
+      
+function b7(){
+      if(Valtmode == 1){
+            if(Kolumn7order > 1.15 * Kolumn7genomsnittTempoutput){
+            Övermedel = 4
+      }else{if(Kolumn7order > Kolumn7genomsnittTempoutput){
+            Övermedel = 3
+      }else{if(Kolumn7order < 0.85 * Kolumn7genomsnittTempoutput){
+            Övermedel = 1
+      }else{
+            Övermedel = 2
+      }}}}
+      if(Valtmode == 2){
+            if(Kolumn7order > 1.15 * Kolumn7genomsnittHumoutput){
+            Övermedel = 4
+      }else{if(Kolumn7order > Kolumn7genomsnittHumoutput){
+            Övermedel = 3
+      }else{if(Kolumn7order < 0.85 * Kolumn7genomsnittHumoutput){
+            Övermedel = 1
+      }else{
+            Övermedel = 2
+      }}}}
+alert(Övermedel)}
+      
+function b8(){
+      if(Valtmode == 1){
+            if(Kolumn8order > 1.15 * Kolumn8genomsnittTempoutput){
+            Övermedel = 4
+      }else{if(Kolumn8order > Kolumn8genomsnittTempoutput){
+            Övermedel = 3
+      }else{if(Kolumn8order < 0.85 * Kolumn8genomsnittTempoutput){
+            Övermedel = 1
+      }else{
+            Övermedel = 2
+      }}}}
+      if(Valtmode == 2){
+            if(Kolumn8order > 1.15 * Kolumn8genomsnittHumoutput){
+            Övermedel = 4
+      }else{if(Kolumn8order > Kolumn8genomsnittHumoutput){
+            Övermedel = 3
+      }else{if(Kolumn8order < 0.85 * Kolumn8genomsnittHumoutput){
+            Övermedel = 1
+      }else{
+            Övermedel = 2
+      }}}}
+alert(Övermedel)}
