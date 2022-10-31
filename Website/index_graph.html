@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type ="text/javascript" src="C:\Users\22danlin\Documents\GitHub\I-det-hetaste-laget---220S-BG4\V5JS-Graf.JS"></script>
+        <script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-base.min.js"></script>
+
+        <link rel="stylesheet" href="index_graph.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital@0;1&family=Inter&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap" rel="stylesheet">
+</head>
+<body>
+        <div class="f-col-start-center w-100 pa-b-100">
+            <div class="top-design">
+                <div id="orange-rect">
+                    
+                </div>
+            </div>
+            <div class="text">
+                
+                <p class="pre-title">The</p>
+                <p class="title">Weather Gazette</p>
+            
+            </div>
+            <div class="bottom-decoration">
+                <div id="green-rect">
+
+                </div>
+            </div>
+        </div>
+       
+
+
+        <div class="Menu">
+            <a href="index_home.html">Home</a>
+            <a href="index_graph.html">Graphs & Data</a>
+            <a href="index_team.html">Meet The Team</a>
+            <a href="index_contact.html">Contact us</a>
+        </div>
+        <div class="divider">
+        </div>
+        <div class="divider">
+        </div>
+        <div class="info_box">
+            <div class="normal">Welcome to graphs & data. Here you can find submitted graphs & useful info for the project, the graphs show the latest temperature & humidity submitted from our high end weather measuring device ESP 8266 with AM2320 sensor attachment.
+                <br></br>Välkommen till grafer och data. Här kan du hitta inskickade grafer och användbar information för projektet, graferna visar den senaste temperaturen och luftfuktigheten som skickats in från vår avancerade vädermätare ESP 8266 med AM2320-sensor.
+                <br></br>그래프 및 데이터에 오신 것을 환영합니다. 여기에서 제출된 그래프 및 프로젝트에 대한 유용한 정보를 찾을 수 있습니다. 그래프는 AM2320 센서가 부착된 고급 기상 측정 장치 ESP 8266에서 제출된 최신 온도 및 습도를 보여줍니다.</div>
+                </div>
+            </div>
+    </div>
+    <div class ="n_box">
+        <div class="graph1_menu">
+                <select name="roomSelect" id="room">
+                <option value = "Simons plats">Simons plats</option>
+                <option value = "Lars plats">Lars plats</option>
+                <option value = "Hallonrummet">Hallonrummet</option>
+                <option value = "Terrariet">Terrariet</option>
+                <option value = "Badrummet">Badrummet</option>
+                </select>
+                <select name="temp_humSelect" id="temp_hum">
+                    <option value = "humidity">Luftfuktighet</option>
+                    <option value = "temperature">Temperatur</option>
+                </select>
+                <button id="refresh" onclick="refresh()">Refresh</button>
+        </div>
+        <div id ="container"></div>
+    </div>
+    </div>
+
+    <script>
+    function refresh(){
+        let temporhum = document.getElementById("temp_hum").value;
+        let roomval = document.getElementById("room").value;
+        alert("Graph updated, active graph: " + roomval + " & " + temporhum);
+    }
+
+    //Graph
+
+    anychart.onDocumentReady(function () {
+    let testPrompt = prompt("Test value")
+if (testPrompt == 1){
+    let simonsPlatsTemp = anychart.data.set(getTempData1());
+
+  let thermometerData1 = simonsPlatsTemp.mapAs({ x: 0, value: 1 });
+
+  let chart = anychart.line();
+
+  chart.title('Temperature of places');
+
+  chart.yAxis().title('Temperature');
+
+  chart.xAxis().title('Hour')
+
+  let lineChart = chart.line(thermometerData1);
+
+  chart.container('container');
+  
+  chart.draw();
+} 
+else if(testPrompt == 2){
+    let annanPlatsTemp = anychart.data.set(getTempData2());
+
+  let thermometerData2 = annanPlatsTemp.mapAs({ x: 0, value: 1 });
+
+  let chart = anychart.line();
+
+  chart.title('Temperature of places');
+
+  chart.yAxis().title('Temperature');
+
+  chart.xAxis().title('Hour')
+
+  let lineChart = chart.line(thermometerData2);
+
+  chart.container('container');
+  
+  chart.draw();
+}
+});
+    function getTempData1(){
+        return[
+        ['01',12],
+        ['02',14],
+        ['03',14],
+        ['04',14],
+        ['05',15],
+        ['06',14], 
+        ['07',16],
+        ['08',19],
+        ['09',20],
+        ['10',23],
+        ['11',22],
+        ['12',25],
+        ['13',24],
+        ['14',23],
+        ['15',25],
+        ['16',24],
+        ['17',23],
+        ['18',22],
+        ['19',20],
+        ['20',18],
+        ['21',16],
+        ['22',15], 
+        ['23',14],
+        ['24',12],
+        ];
+    }
+
+    function getTempData2(){
+        return[
+        ['01',15],
+        ['02',32],
+        ['03',12],
+        ['04',17],
+        ['05',20],
+        ['06',12], 
+        ['07',31],
+        ['08',9],
+        ['09',19],
+        ['10',14],
+        ['11',10],
+        ['12',16],
+        ['13',33],
+        ['14',35],
+        ['15',29],
+        ['16',28],
+        ['17',23],
+        ['18',22],
+        ['19',20],
+        ['20',23],
+        ['21',5],
+        ['22',12], 
+        ['23',9],
+        ['24',18],
+        ];
+    }
+    </script>
+</body>
+</html>
