@@ -7,7 +7,7 @@
         <script type ="text/javascript" src="C:\Users\22danlin\Documents\GitHub\I-det-hetaste-laget---220S-BG4\V5JS-Graf.JS"></script>
         <script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-base.min.js"></script>
 
-        <link rel="stylesheet" href="hemsidao.css">
+        <link rel="stylesheet" href="index_home.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital@0;1&family=Inter&display=swap" rel="stylesheet">
@@ -33,14 +33,11 @@
                 </div>
             </div>
         </div>
-       
-
-
         <div class="Menu">
-            <a href="#">Home</a>
-            <a href="#">Graphs & Data</a>
-            <a href="#">Meet The Team</a>
-            <a href="https://www.youtube.com/c/SwinceBall">Contact us</a>
+            <a href="index_home.html" id="defaultOpen">Home</a>
+            <a href="index_graph.html">Graphs & Data</a>
+            <a href="index_team.html">Meet The Team</a>
+            <a href="index_contact.html">Contact us</a>
         </div>
         <div class="divider">
         </div>
@@ -55,116 +52,11 @@
         </p>
     </div>
     <div class="divider">
- <!-- f -->
 
     </div>
-    <div id ="container">
-</div>
-   
-   
-<script>
-  anychart.onDocumentReady(function () {
-    let testPrompt = prompt("Test value")
-if (testPrompt == 1){
-    let simonsPlatsTemp = anychart.data.set(getTempData1());
-
-  let thermometerData1 = simonsPlatsTemp.mapAs({ x: 0, value: 1 });
-
-  let chart = anychart.line();
-
-  chart.title('Temperature of places');
-
-  chart.yAxis().title('Temperature');
-
-  chart.xAxis().title('Hour')
-
-  let lineChart = chart.line(thermometerData1);
-
-  chart.container('container');
-  
-  chart.draw();
-} 
-else if(testPrompt == 2){
-    let annanPlatsTemp = anychart.data.set(getTempData2());
-
-  let thermometerData2 = annanPlatsTemp.mapAs({ x: 0, value: 1 });
-
-  let chart = anychart.line();
-
-  chart.title('Temperature of places');
-
-  chart.yAxis().title('Temperature');
-
-  chart.xAxis().title('Hour')
-
-  let lineChart = chart.line(thermometerData2);
-
-  chart.container('container');
-  
-  chart.draw();
-}
-});
-    function getTempData1(){
-        return[
-        ['01',12],
-        ['02',14],
-        ['03',14],
-        ['04',14],
-        ['05',15],
-        ['06',14], 
-        ['07',16],
-        ['08',19],
-        ['09',20],
-        ['10',23],
-        ['11',22],
-        ['12',25],
-        ['13',24],
-        ['14',23],
-        ['15',25],
-        ['16',24],
-        ['17',23],
-        ['18',22],
-        ['19',20],
-        ['20',18],
-        ['21',16],
-        ['22',15], 
-        ['23',14],
-        ['24',12],
-        ];
-    }
-
-    function getTempData2(){
-        return[
-        ['01',15],
-        ['02',32],
-        ['03',12],
-        ['04',17],
-        ['05',20],
-        ['06',12], 
-        ['07',31],
-        ['08',9],
-        ['09',19],
-        ['10',14],
-        ['11',10],
-        ['12',16],
-        ['13',33],
-        ['14',35],
-        ['15',29],
-        ['16',28],
-        ['17',23],
-        ['18',22],
-        ['19',20],
-        ['20',23],
-        ['21',5],
-        ['22',12], 
-        ['23',9],
-        ['24',18],
-        ];
-    }
-</script> 
-<div class="divider"></div>
-        
-
     
+<script>
+document.getElementsById("defaultOpen").click();
+</script>
 </body>
 </html>
