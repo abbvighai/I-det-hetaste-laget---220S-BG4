@@ -1,636 +1,634 @@
-
 #Rubrik1 {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 99%;
+  height: 100px;
+  border: 3px solid black;
+  background-color: white;
+}#MainS {
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+  border: 3px solid black;
+} 
+.Graf {
+  display: flex;
+  justify-content: center;
+  width: 99%;
+  height: 320px;
+  border: 3px solid rgb(209, 15, 15);
+  }
+  .Nummer {
     align-items: center;
-    width: 99%;
-    height: 100px;
-    border: 3px solid black;
-    background-color: white;
-  }#MainS {
-    display: flex;
-    justify-content: center;
-    justify-content: space-evenly;
-    border: 3px solid black;
-  } 
-  .Graf {
-    display: flex;
-    justify-content: center;
-    width: 99%;
-    height: 320px;
-    border: 3px solid rgb(209, 15, 15);
-    }
-    .Nummer {
-      align-items: center;
-      width:13%;
-      height: 100%;
-      border: 2px solid white;
-     }
-          #Nummer1 {
-          display:flex;
-          justify-content: center;
-          align-items: center;
-          width: 100%;
-          height: 10%;
-          background-color:gray;
-          color: white;
-          }#Nummer2 {
-          display:flex;
-          justify-content: center;
-          align-items: center;
-          width: 100%;
-          height: 10%;
-          background-color:black;
-          color: white;
-          }#Nummer3 {
-          display:flex;
-          justify-content: center;
-          align-items: center;
-          width: 100%;
-          height: 10%;
-          background-color:gray;
-          color: white;
-          }#Nummer4 {
-          display:flex;
-          justify-content: center;
-          align-items: center;
-          width: 100%;
-          height: 10%;
-          background-color:black;
-          color: white;
-          }#Nummer5 {
-          display:flex;
-          justify-content: center;
-          align-items: center;
-          width: 100%;
-          height: 10%;
-          background-color:gray;
-          color: white;
-          }#Nummer6 {
-          justify-content: center;
-          align-items: center;
-          display:flex;
-          width: 100%;
-          height: 10%;
-          background-color:black;
-          color: white;
-          }#Nummer7 {
-          justify-content: center;
-          align-items: center;
-          display:flex;
-          width: 100%;
-          height: 10%;
-          background-color:gray;
-          color: white;
-          }#Nummer8 {
-          display:flex;
-          justify-content: center;
-          align-items: center;
-          width: 100%;
-          height: 10%;
-          background-color:black;
-          color: white;
-          }#Nummer9 {
-          display:flex;
-          justify-content: center;
-          align-items: center;
-          width: 100%;
-          height: 10%;
-          background-color:gray;
-          color: white;
-          }#Nummer10 {
-          display:flex;
-          justify-content: center;
-          align-items: center;
-          width: 100%;
-          height: 10%;
-          background-color:black;
-          color: white;
-          }.MainGraf {
-          display: flex;
-          align-items: center;
-          width: 100%;
-          height: 100%;
-          border: 2px solid white;
-  
-          }       
-          #rad0 {
-          align-items: center;
-          width: 0.5%;
-          height: 100%;
-          background-color:white;                                      
-        } #rad1 {
-          align-items: center;
-          width: 3.4%;
-          height: 100%;
-          background-color:black;                                    
-          display: flex;
-          flex-direction: column-reverse;                                                      
-        } #rad2 {
-          align-items: center;
-          width: 3.4%;
-          height: 100%;
-          background-color:gray;
-          display: flex;
-          flex-direction: column-reverse;                
-          }
-        /* BOXAR: */
-        #boxtarget1 {
-          display: flex;
-          width: 100%;
-          height: 10%;
-          background-color:blue;
-          justify-content: center;
-          align-items: center; 
-        }   #boxtarget12-M1 {
-          display: flex;
-          width: 100%;
-          height: 10%;
-          background-color: navy;           
-        } #boxtarget12-M2 {
-          display: flex;
-          width: 100%;
-          height: 10%;
-          background-color: navy;              
-        } #boxtarget12-M3 {
-          display: flex;
-          width: 100%;
-          height: 10%;
-          background-color: navy;           
-        }  #boxtarget2 {
-          display: flex;
-          width: 100%;
-          height: 10%;
-          background-color:  blue;   
-          justify-content: center;
-          align-items: center;       
-        } #boxtarget23-M1 {
-          display: flex;
-          width: 100%;
-          height: 10%;
-          background-color: navy;        
-        } #boxtarget23-M2 {
-          display: flex;
-          width: 100%;
-          height: 10%;
-          background-color: navy;      
-        }  #boxtarget23-M3 {
-          display: flex;
-          width: 100%;
-          height: 10%;
-          background-color: navy;     
-        } #boxtarget3 {
-          display: flex;
-          width: 100%;
-          height: 10%;
-          background-color: blue;  
-          justify-content: center;
-          align-items: center;       
-        }  #boxtarget34-M1 {
-          display: flex;
-          width: 100%;
-          height: 10%;
-          background-color: navy;    
-        }  #boxtarget34-M2 {
-          display: flex;
-          width: 100%;
-          height: 10%;
-          background-color: navy;            
-        } #boxtarget34-M3 {
-          display: flex;
-          width: 100%;
-          height: 10%;
-          background-color: navy;   
-        } #boxtarget4 {
-          display: flex;
+    width:13%;
+    height: 100%;
+    border: 2px solid white;
+   }
+        #Nummer1 {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 10%;
+        background-color:gray;
+        color: white;
+        }#Nummer2 {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 10%;
+        background-color:black;
+        color: white;
+        }#Nummer3 {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 10%;
+        background-color:gray;
+        color: white;
+        }#Nummer4 {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 10%;
+        background-color:black;
+        color: white;
+        }#Nummer5 {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 40%;
+        background-color:gray;
+        color: white;
+        }#Nummer6 {
+        justify-content: center;
+        align-items: center;
+        display:flex;
+        width: 100%;
+        height: 10%;
+        background-color:black;
+        color: white;
+        }#Nummer7 {
+        justify-content: center;
+        align-items: center;
+        display:flex;
+        width: 100%;
+        height: 10%;
+        background-color:gray;
+        color: white;
+        }#Nummer8 {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 10%;
+        background-color:black;
+        color: white;
+        }#Nummer9 {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 10%;
+        background-color:gray;
+        color: white;
+        }#Nummer10 {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 10%;
+        background-color:black;
+        color: white;
+        }.MainGraf {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        border: 2px solid white;
 
-          width: 100%;
-          height: 10%;
-          background-color: blue;    
-          justify-content: center;
-          align-items: center;   
-        } #boxtarget45-M1 {
-          display: flex;
-          width: 100%;
-          height: 10%;
-          background-color: navy;  
-        } #boxtarget45-M2 {
-          display: flex;
-          width: 100%;
-          height: 10%;
-          background-color: navy;     
-        } #boxtarget45-M3 {
-          display: flex;
-          width: 100%;
-          height: 10%;
-          background-color: navy;         
-        }  #boxtarget5 {
-          display: flex;
-          width: 100%;
-          height: 10%;
-          background-color:  blue;        
-          justify-content: center;
-          align-items: center; 
-        }  #boxtarget56-M1 {
-          display: flex;
-          width: 100%;
-          height: 10%;
-          background-color: navy;     
-        }  #boxtarget56-M2 {
-          display: flex;
-          width: 100%;
-          height: 10%;
-          background-color: navy;       
-        }  #boxtarget56-M3 {
-          display: flex;
-          width: 100%;
-          height: 10%;
-          background-color: navy;   
-        } #boxtarget6 {
-          display: flex;
-          width: 100%;
-          height: 10%;
-          background-color:  blue;
-          justify-content: center;
-          align-items: center;   
-        } #boxtarget67-M1 {
-          display: flex;
-          width: 100%;
-          height: 10%;
-          background-color: navy;       
-        }  #boxtarget67-M2 {
-          display: flex;
-          width: 100%;
-          height: 10%;
-          background-color: navy;    
-        }  #boxtarget67-M3 {
-          display: flex;
-          width: 100%;
-          height: 10%;
-          background-color: navy;     
-        }  #boxtarget7 {
-          display: flex;
-          width: 100%;
-          height: 10%;
-          background-color:  blue;
-          justify-content: center;
-          align-items: center; 
-        } #boxtarget78-M1 {
-          display: flex;
-          width: 100%;
-          height: 10%;
-          background-color: navy;         
-        } #boxtarget78-M2 {
-          display: flex;
-          width: 100%;
-          height: 10%;
-          background-color: navy;       
-        }  #boxtarget78-M3 {
-          display: flex;
-          width: 100%;
-          height: 10%;
-          background-color: navy;       
-        } #boxtarget8 {
-          display: flex;
-          width: 100%;
-          height: 10%;
-          background-color:  blue;  
-          justify-content: center;
-          align-items: center;      
-        } #box1 {
-          display: flex;
-          width: 100%;
-          height: 10%;
-          background-color: black;
-          order: 1
-        }  #box2 {
-          display: flex;
-          width: 100%;
-          height: 10%;
-          background-color: black;
-          order:2
-        }     #box3 {
-          display: flex;
-          width: 100%;
-          height: 10%;
-          background-color: black;
-          order:3
-        }     #box4 {
-          display: flex;
-          width: 100%;
-          height: 10%;
-          background-color: black;
-          order:4
-        }     #box5 {
-          display: flex;
-          width: 100%;
-          height: 10%;
-          background-color:black;
-          order:5
-        }     #box6 {
-          display: flex;
-          width: 100%;
-          height: 10%;
-          background-color: black;
-          order:6
-        }     #box7 {
-          display: flex;
-          width: 100%;
-          height: 10%;
-          background-color: black;
-          order:7
-        }     #box8 {
-          display: flex;
-          width: 100%;
-          height: 10%;
-          background-color: black;
-          order:8
-        }     #box9 {
-          display: flex;
-          width: 100%;
-          height: 10%;
-          background-color: black;
-          order:9
+        }       
+        #rad0 {
+        align-items: center;
+        width: 0.5%;
+        height: 100%;
+        background-color:white;                                      
+      } #rad1 {
+        align-items: center;
+        width: 3.4%;
+        height: 100%;
+        background-color:black;                                    
+        display: flex;
+        flex-direction: column-reverse;                                                      
+      } #rad2 {
+        align-items: center;
+        width: 3.4%;
+        height: 100%;
+        background-color:gray;
+        display: flex;
+        flex-direction: column-reverse;                
         }
-        .boxP1 {
-         order:0
-        }
-        .boxP2 {
-          order:1
-        }     .boxP3 {
-          order:2
-        }     .boxP4 {
-          order:3
-        }     .boxP5 {
-          order:4
-        }     .boxP6 {
-          order:5
-        }     .boxP7 {
-          order:6
-        }     .boxP8 {
-          order:7
-        }     .boxP9 {
-          order:8
-        }   .boxP10 {
-          order:9
-        }
-        .boxtarget1 {
-          display: flex;
-          width: 100%;
-          height: 10%;
-          background-color: red;
-          order: 1                              
-        }   .Options {
-    align-items: center;
-    width: 100px;
-    height: 50px;
-    border: 2px solid;
-  }  .OB {
-    align-items: center;
-    width: 100px;
-    height: 46px;
-    border: 2px solid black;
-  } .undergraf {
-    display: flex;
-    justify-content: flex-start;
-    width: 99%;
-    height: 30px;
-    border: 3px solid rgb(194, 7, 7);
-    background-color: black;
-  } #Java {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    background-color: white;
-    border:2px solid;
-    scale: 100%;
-  }
-  .undergrafbox {
-    display: flex;
-    border: 3px solid white;
-    width: 100%;
-    height: 80%;
-  }
-  #MainS {
-    background-color: white;
+      /* BOXAR: */
+      #boxtarget1 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color:blue;
+        justify-content: center;
+        align-items: center; 
+      }   #boxtarget12-M1 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: navy;           
+      } #boxtarget12-M2 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: navy;              
+      } #boxtarget12-M3 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: navy;           
+      }  #boxtarget2 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color:  blue;   
+        justify-content: center;
+        align-items: center;       
+      } #boxtarget23-M1 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: navy;        
+      } #boxtarget23-M2 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: navy;      
+      }  #boxtarget23-M3 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: navy;     
+      } #boxtarget3 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: blue;  
+        justify-content: center;
+        align-items: center;       
+      }  #boxtarget34-M1 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: navy;    
+      }  #boxtarget34-M2 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: navy;            
+      } #boxtarget34-M3 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: navy;   
+      } #boxtarget4 {
+        display: flex;
 
-  }
-  #Tid1 {
-    display: flex;
-    justify-content:flex-start;
-    align-content: flex-start;
-    align-items: flex-start;
-    width:128px;
-    height: 100%;
-    background-color:black;
-    color: white;
+        width: 100%;
+        height: 10%;
+        background-color: blue;    
+        justify-content: center;
+        align-items: center;   
+      } #boxtarget45-M1 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: navy;  
+      } #boxtarget45-M2 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: navy;     
+      } #boxtarget45-M3 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: navy;         
+      }  #boxtarget5 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color:  blue;        
+        justify-content: center;
+        align-items: center; 
+      }  #boxtarget56-M1 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: navy;     
+      }  #boxtarget56-M2 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: navy;       
+      }  #boxtarget56-M3 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: navy;   
+      } #boxtarget6 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color:  blue;
+        justify-content: center;
+        align-items: center;   
+      } #boxtarget67-M1 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: navy;       
+      }  #boxtarget67-M2 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: navy;    
+      }  #boxtarget67-M3 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: navy;     
+      }  #boxtarget7 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color:  blue;
+        justify-content: center;
+        align-items: center; 
+      } #boxtarget78-M1 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: navy;         
+      } #boxtarget78-M2 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: navy;       
+      }  #boxtarget78-M3 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: navy;       
+      } #boxtarget8 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color:  blue;  
+        justify-content: center;
+        align-items: center;      
+      } #box1 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: black;
+        order: 1
+      }  #box2 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: black;
+        order:2
+      }     #box3 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: black;
+        order:3
+      }     #box4 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: black;
+        order:4
+      }     #box5 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color:black;
+        order:5
+      }     #box6 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: black;
+        order:6
+      }     #box7 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: black;
+        order:7
+      }     #box8 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: black;
+        order:8
+      }     #box9 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: black;
+        order:9
+      }
+      .boxP1 {
+       order:0
+      }
+      .boxP2 {
+        order:1
+      }     .boxP3 {
+        order:2
+      }     .boxP4 {
+        order:3
+      }     .boxP5 {
+        order:4
+      }     .boxP6 {
+        order:5
+      }     .boxP7 {
+        order:6
+      }     .boxP8 {
+        order:7
+      }     .boxP9 {
+        order:8
+      }   .boxP10 {
+        order:9
+      }
+      .boxtarget1 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: red;
+        order: 1                              
+      }   .Options {
+  align-items: center;
+  width: 100px;
+  height: 50px;
+  border: 2px solid;
+}  .OB {
+  align-items: center;
+  width: 100px;
+  height: 46px;
+  border: 2px solid black;
+} .undergraf {
+  display: flex;
+  justify-content: flex-start;
+  width: 99%;
+  height: 30px;
+  border: 3px solid rgb(194, 7, 7);
+  background-color: black;
+} #Java {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: white;
+  border:2px solid;
+  scale: 100%;
+}
+.undergrafbox {
+  display: flex;
+  border: 3px solid white;
+  width: 100%;
+  height: 80%;
+}
+#MainS {
+  background-color: white;
 
-  }
-  #L {
-    display: flex;
-    justify-content:center;
-    align-content: center;
-    align-items: center;
-    width: 200px;
-    height: 25px
-  }
-  #Tid2 {
-    display: flex;
-    justify-content:flex-start;
-    align-content: flex-start;
-    align-items: flex-start;
-    width: 10px;
-    height: 100%;
-    background-color: white;
-  }
-  #Tid3 {
-    display: flex;
-    justify-content:flex-start;
-    align-content: flex-start;
-    align-items: flex-start;
-    width: 37px;
-    height: 100%;
-    background-color:lightblue;
-  }
-  #Tid4 {
-    display: flex;
-    justify-content:flex-start;
-    align-content: flex-start;
-    align-items: flex-start;
-    width: 105px;
-    height: 100%;
-    background-color: blue;
-  }
-  #Tid5 {
-    display: flex;
-    justify-content:flex-start;
-    align-content: flex-start;
-    align-items: flex-start;
-    width: 37px;
-    height: 100%;
-    background-color: lightblue;
-  }
-  #Tid6 {
-    display: flex;
-    justify-content:flex-start;
-    align-content: flex-start;
-    align-items: flex-start;
-    width: 107px;
-    height: 100%;
-    background-color: blue;
-  }
-  #Tid7 {
-    display: flex;
-    justify-content:flex-start;
-    align-content: flex-start;
-    align-items: flex-start;
-    width: 38px;
-    height: 100%;
-    background-color: lightblue;
-  }
-  #Tid8 {
-    display: flex;
-    justify-content:flex-start;
-    align-content: flex-start;
-    align-items: flex-start;
-    width: 104px;
-    height: 100%;
-    background-color: blue;
-  }
-  #Tid9 {
-    display: flex;
-    justify-content:flex-start;
-    align-content: flex-start;
-    align-items: flex-start;
-    width: 37px;
-    height: 100%;
-    background-color:lightblue;
-  }
-  #Tid10 {
-    display: flex;
-    justify-content:flex-start;
-    align-content: flex-start;
-    align-items: flex-start;
-    width: 105px;
-    height: 100%;
-    background-color: blue;
-  }
-  #Tid11 {
-    display: flex;
-    justify-content:flex-start;
-    align-content: flex-start;
-    align-items: flex-start;
-    width: 37px;
-    height: 100%;
-    background-color: lightblue;
-  }
-  #Tid12 {
-    display: flex;
-    justify-content:flex-start;
-    align-content: flex-start;
-    align-items: flex-start;
-    width: 106px;
-    height: 100%;
-    background-color: blue;
-  }
-  #Tid13 {
-    display: flex;
-    justify-content:flex-start;
-    align-content: flex-start;
-    align-items: flex-start;
-    width: 0px;
-    height: 100%;
-    background-color: lightblue;
-  }
+}
+#Tid1 {
+  display: flex;
+  justify-content:flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+  width:128px;
+  height: 100%;
+  background-color:black;
+  color: white;
+
+}
+#L {
+  display: flex;
+  justify-content:center;
+  align-content: center;
+  align-items: center;
+  width: 200px;
+  height: 25px
+}
+#Tid2 {
+  display: flex;
+  justify-content:flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+  width: 10px;
+  height: 100%;
+  background-color: white;
+}
+#Tid3 {
+  display: flex;
+  justify-content:flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+  width: 37px;
+  height: 100%;
+  background-color:lightblue;
+}
+#Tid4 {
+  display: flex;
+  justify-content:flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+  width: 105px;
+  height: 100%;
+  background-color: blue;
+}
+#Tid5 {
+  display: flex;
+  justify-content:flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+  width: 37px;
+  height: 100%;
+  background-color: lightblue;
+}
+#Tid6 {
+  display: flex;
+  justify-content:flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+  width: 107px;
+  height: 100%;
+  background-color: blue;
+}
+#Tid7 {
+  display: flex;
+  justify-content:flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+  width: 38px;
+  height: 100%;
+  background-color: lightblue;
+}
+#Tid8 {
+  display: flex;
+  justify-content:flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+  width: 104px;
+  height: 100%;
+  background-color: blue;
+}
+#Tid9 {
+  display: flex;
+  justify-content:flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+  width: 37px;
+  height: 100%;
+  background-color:lightblue;
+}
+#Tid10 {
+  display: flex;
+  justify-content:flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+  width: 105px;
+  height: 100%;
+  background-color: blue;
+}
+#Tid11 {
+  display: flex;
+  justify-content:flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+  width: 37px;
+  height: 100%;
+  background-color: lightblue;
+}
+#Tid12 {
+  display: flex;
+  justify-content:flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+  width: 106px;
+  height: 100%;
+  background-color: blue;
+}
+#Tid13 {
+  display: flex;
+  justify-content:flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+  width: 0px;
+  height: 100%;
+  background-color: lightblue;
+}
 
 
-  #Tid14 {
-    display: flex;
-    justify-content:flex-start;
-    align-content: flex-start;
-    align-items: flex-start;
-    width: 108px;
-    height: 100%;
-    background-color: blue;
+#Tid14 {
+  display: flex;
+  justify-content:flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+  width: 108px;
+  height: 100%;
+  background-color: blue;
+}
+#Tid15 {
+  display: flex;
+  justify-content:flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+  width: 37px;
+  height: 100%;
+  background-color: lightblue;
+}
+#Tid16 {
+  display: flex;
+  justify-content:flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+  width: 108px;
+  height: 100%;
+  background-color: blue;
+}
+#Tid17{
+  display: flex;
+  justify-content:flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+  width: 37px;
+  height: 100%;
+  background-color: lightblue;
+}
+#Tid18{
+  display: flex;
+  justify-content:flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+  width: 108px;
+  height: 100%;
+  background-color: blue;
+}
+#Tid19{
+  display: flex;
+  justify-content:flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+  width: 37px;
+  height: 100%;
+  background-color: lightblue;
+}
+#kaka {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  color: black;
+  background-color: white;
+}
+.LiveChangeTemp {
+  display: flex;
+  height: 100px;
+  width: 400px;
+  border: 4px solid blue;
+}
+#Station { 
+  display: flex;
+  height: 100%;
+  width: 34%;
+  border: 4px solid blue;
+  color: white;
+   }
+#LTemp {
+  display: flex;
+  height: 100%;
+  width: 33%;
+  border: 4px solid blue;
+  color: white;
   }
-  #Tid15 {
-    display: flex;
-    justify-content:flex-start;
-    align-content: flex-start;
-    align-items: flex-start;
-    width: 37px;
-    height: 100%;
-    background-color: lightblue;
+#LHum {
+  display: flex;
+  height: 100%;
+  width: 33%;
+  border: 4px solid blue;
+  color: white;
   }
-  #Tid16 {
-    display: flex;
-    justify-content:flex-start;
-    align-content: flex-start;
-    align-items: flex-start;
-    width: 108px;
-    height: 100%;
-    background-color: blue;
-  }
-  #Tid17{
-    display: flex;
-    justify-content:flex-start;
-    align-content: flex-start;
-    align-items: flex-start;
-    width: 37px;
-    height: 100%;
-    background-color: lightblue;
-  }
-  #Tid18{
-    display: flex;
-    justify-content:flex-start;
-    align-content: flex-start;
-    align-items: flex-start;
-    width: 108px;
-    height: 100%;
-    background-color: blue;
-  }
-  #Tid19{
-    display: flex;
-    justify-content:flex-start;
-    align-content: flex-start;
-    align-items: flex-start;
-    width: 37px;
-    height: 100%;
-    background-color: lightblue;
-  }
-  #kaka {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid black;
-    color: black;
-    background-color: white;
-  }
-  .LiveChangeTemp {
-    display: flex;
-    height: 100px;
-    width: 400px;
-    border: 4px solid blue;
-  }
-  #Station { 
-    display: flex;
-    height: 100%;
-    width: 34%;
-    border: 4px solid blue;
-    color: white;
-     }
-  #LTemp {
-    display: flex;
-    height: 100%;
-    width: 33%;
-    border: 4px solid blue;
-    color: white;
-    }
-  #LHum {
-    display: flex;
-    height: 100%;
-    width: 33%;
-    border: 4px solid blue;
-    color: white;
-    }
-  

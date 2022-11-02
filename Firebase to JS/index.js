@@ -13,40 +13,248 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-let FirstValue = 0;
-let SecondValue = 0;
-let ThirdValue = 0;
 const d = new Date();
 let hour = d.getHours();
-let hour2 = hour - 1
-let hour3 = hour2 - 1
+
+var TemperatureRef
+
+var HumidityRef
+
+var Datalistatest = new Array
 
 console.log(hour)
-console.log(hour3)
 
 const db = firebase.database();
 
-var TemperatureRef = db.ref("SimonsPlats/Dagar-0/Hour-" + hour + "/Minute-0/Temperature");
 
-var TemperatureRef2 = db.ref("SimonsPlats/Dagar-0/Hour-" + hour2 + "/Minute-0/Temperature");
 
-var TemperatureRef3 = db.ref("SimonsPlats/Dagar-0/Hour-" + hour3 + "/Minute-0/Temperature");
+var TemperatureRef2 = db.ref("SimonsPlats/Dagar-0/Hour-0/Minute-0/Temperature");
+
+var TemperatureRef3 = db.ref("SimonsPlats/Dagar-0/Hour-" + (hour - 3) + "/Minute-0/Temperature");
+
+
+
+
+
+var avg
+
+var Nonamearray1 = new Array
+var TotalvaluetempM = 0
+var TotalvaluehumM = 0
+var ValueM = 0
+var TotaladdedvaluestempM = 0
+
+var TotalvaluetempH = 0
+var TotalvaluehumH = 0
+var Tretimme = 0
+var Entimme = 0
+
+var Value
+
+var Tretimmetempoutput = 0
+var Tretimmehumoutput = 0
+
+let Minut = 0
+let Timme = 0
+let Dag = 0
+
+// imported and used array: "Datalista"
+var Datalistacopy = new Array
+
+
+
+
+
+
+
+
+
+
+
+TemperatureRef = db.ref("SimonsPlats/Dagar-" + Dag + "/Hour-" + 0 + "/Minute-5/Temperature");
 
 TemperatureRef.on("value", (temp) => {
-    let FirstValue = temp.val();
-    console.log(FirstValue);
-});
+    Value = temp.val();
+    if(Value != null){
+    console.log(Value);
 
-TemperatureRef2.on("value", (temp) => {
-    let SecondValue = temp.val();
-    console.log(SecondValue);
-});
+}})
 
-TemperatureRef3.on("value", (temp) => {
-    let ThirdValue = temp.val();
-    console.log(ThirdValue);
-});
 
-console.log(FirstValue);
-console.log(SecondValue);
-console.log(ThirdValue);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// for(let i = 10; i < Nonamearray1; i--){
+
+
+// for(let x = 10; x <){
+
+
+
+// }}
+
+
+
+// Dag = 0
+// // Dag
+// for(let k = 2; k >= 0; k--){
+
+// Dag = k
+
+
+
+// Tretimme = -1
+// // Tretimme
+// for(let p = 7; p >= 0; p--){
+
+// Tretimme++
+
+// // Temp
+// Entimme = 0
+// // Entimme
+// for(let o = 2; o >= 0; o--){
+// Entimme++
+// Timme = Tretimme * 3 + Entimme
+// // Min
+// for(let i = 5; i >= -1; i--){
+
+
+
+// Minut = i
+//     TemperatureRef = db.ref("SimonsPlats/Dagar-" + Dag + "/Hour-" + Timme + "/Minute-" + Minut + "/Temperature");
+
+// TemperatureRef.on("value", (temp) => {
+//     Value = temp.val();
+//     if(Value != null){
+//     console.log(Value);
+    
+//     TotalvaluetempM = TotalvaluetempM + Value
+//     console.log(TotalvaluetempM)
+// TotaladdedvaluestempM++
+//     }
+// });
+
+
+// }
+// // ---
+// TotalvaluetempH = TotalvaluetempH + TotalvaluetempM / TotaladdedvaluestempM
+// console.log(TotalvaluetempM + "hi")
+
+// TotalvaluetempM = 0
+// TotaladdedvaluestempM = 0
+// }               
+// // ---
+// Tretimmetempoutput = TotalvaluetempH / 3
+
+
+// // // Hum
+// // Entimme = 0
+// // for(let o = 3; o > 0; o--){
+// // Entimme++
+// // let Timme = Tretimme * 3 + Entimme
+
+// // for(let i = 60; i > 0; i--){
+
+// //     HumidityRef = db.ref("SimonsPlats/Dagar-" + Dag + "/Hour-" + Timme + "/Minute-" + i + "/Humidity");
+
+// //     HumidityRef.on("value", (hum) => {
+// //         ValueM = hum.val();
+// //         TotalvaluehumM = TotalvaluehumM + ValueM
+// //     });
+// // }
+// // TotalvaluehumH = TotalvaluehumH + TotalvaluehumM / 60
+
+// // }
+// // Tretimmehumoutput = TotalvaluehumH / 3
+
+
+// // Push datarad till Datalista
+// Datalistacopy.push(  ((Math.pow(10, 8)) * 1)  + (Math.pow(10, 6) * Dag)  +  (Math.pow(10, 4) * Tretimme)  +  ((Math.pow(10, 2)) * Math.round(Tretimmetempoutput * 2))  +  Math.round((Tretimmehumoutput * 2))  )
+// console.log("hi")
+
+
+
+
+// }
+
+
+
+// }
+// Datalistacopy.push(12323124)
+// Datalistacopy.forEach(logNames)
+
+
+// function logNames(name){
+
+//     console.log(name);
+//   }
+  
+
+
+
+
+
+
+// TemperatureRef = db.ref("SimonsPlats/Dagar-" + Dag + "/Hour-" + Timme + "/Minute-" + Minut + "/Temperature");
+
+
+// TemperatureRef.on("value", (temp) => {
+//     let Value = temp.val();
+//     console.log(Value);
+//     Datalistatest.push(Value)
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// TemperatureRef2.on("value", (temp) => {
+//     let Value = temp.val();
+//     console.log(Value);
+//     Datalistatest.push(Value)
+// });
+
+// TemperatureRef3.on("value", (temp) => {
+//     let Value = temp.val();
+//     console.log(Value);
+//     Datalistatest.push(Value)
+//     alert(Datalistatest[0])
+// });
