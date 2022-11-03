@@ -1,8 +1,8 @@
 
 // Deklarering av ALLA globala variabler
-var Valtdatum // 1 - 99
-var Valtmode // 1, 2
-var Valdstation // 1, 2, 3, 4, 5
+var Valtdatum = 1// 1 - 99
+var Valtmode = 1// 1, 2
+var Valdstation = 1// 1, 2, 3, 4, 5
 
 var Datalista = new Array()
 var Listavgtemps = new Array()
@@ -1007,3 +1007,4 @@ document.getElementById("Nummer2").innerHTML = "Lite kyligt till jämförelse"}}
                         else{
                   // Lite under medel
                   document.getElementById("Nummer2").innerHTML = "Lite lägre fuktighet"}}}
+
