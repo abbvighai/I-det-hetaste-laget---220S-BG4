@@ -437,6 +437,31 @@ tempKlassrum();
 tempLars();
 
 
+//  Firebase -> Lokal Array(Graf1 Js)(temp & hum):
+
+// var Datalistacopy = new Array
+
+var humvalue
+var tempvalue
+
+for(let i=49;i>=0;i--){
+    for(let x=7; x>=0;x--){
+    var TemperatureRef = db.ref("SimonsPlats/Dagar-" + i + "/Hour-" + x * 3 + "/Minute-5/Temperature");
+    TemperatureRef.on("value", (tempa) => {
+            tempvalue = Math.round(tempa.val())
+            console.log(tempvalue);
+            console.log("t:")
+        })
+    var HumidityRef = db.ref("SimonsPlats/Dagar-" + i + "/Hour-" + x * 3 + "/Minute-5/Humidity");
+    HumidityRef.on("value", (huma) => {
+            humvalue = Math.round(huma.val())
+            console.log(humvalue);
+            console.log("h:")
+if (tempvalue != 0 && humvalue != 0){
+    Datalista.push(10000000 + 100000 * i + 10000 * x + 200 * tempvalue + 2 * humvalue)
+    console.log(10000000 + 100000 * i + 10000 * x + 100 * tempvalue + humvalue)
+    }})}
+}
 
 
 
@@ -511,3 +536,5 @@ tempLars();
 //     alert("Graph updated, active graph: " + roomval + " & " + temporhum);
     
 // }
+
+
