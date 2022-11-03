@@ -186,7 +186,7 @@ function Refreshgraph() {
 
       Valtmode = document.getElementById("hejj").value
       
-      Valtdatum = prompt("Välj datum(1-99)")
+      Valtdatum = document.getElementById("hejjj").value
 // Ovan ska ersättas med input av Firebase
 LängdDatalista = (Datalista.length)
 
@@ -436,7 +436,6 @@ Mellan2Kolumn78 = Math.round(Kolumn7output - ((Kolumn7output - Kolumn8output) * 
 Mellan3Kolumn78 = Math.round(Kolumn7output - ((Kolumn7output - Kolumn8output) * 0.75))
 console.log("Graphfunctioncomplete")
 
-alert("hi")
 // Överför data till CSS(i form av strings). (Ex Class(boxP + (5)) = Class boxp5)
   document.getElementById("boxtarget1").setAttribute("class", "boxP" + (Kolumn1output + 1).toString())
   document.getElementById("boxtarget2").setAttribute("class", "boxP" + (Kolumn2output+ 1).toString())
@@ -469,11 +468,11 @@ alert("hi")
   document.getElementById("boxtarget78-M3").setAttribute("class", "boxP" + (Mellan3Kolumn78+ 1).toString())
 
 if(Valtmode == 1){
-document.getElementById("Nummer1").innerHTML = "Högsta temp: " + Graftopp/2 + "°C"
-document.getElementById("Nummer10").innerHTML = "Lägsta temp: " + Grafbotten/2 + "°C"
+document.getElementById("Nummer1").innerHTML = "Högsta temperatur: " + Graftopp/2 + "°C"
+document.getElementById("Nummer10").innerHTML = "Lägsta temperatur: " + Grafbotten/2 + "°C"
 }else{
-      document.getElementById("Nummer1").innerHTML = "Högsta fukt: " + Graftopp/2 + "%"
-      document.getElementById("Nummer10").innerHTML = "Lägsta fukt: " + Grafbotten/2 + "%"
+      document.getElementById("Nummer1").innerHTML = "Högsta fuktighet: " + Graftopp/2 + "%"
+      document.getElementById("Nummer10").innerHTML = "Lägsta fuktighet: " + Grafbotten/2 + "%"
 }
 
   }
@@ -686,17 +685,17 @@ if(Kolumn1order == Kolumn1genomsnittTempoutput){
 }
      else if(Kolumn1order > 1.15 * Kolumn1genomsnittTempoutput){
 // Långt över medel
-document.getElementById("Nummer2").innerHTML = "Varmt"}
+document.getElementById("Nummer2").innerHTML = "Varmt till jämförelse"}
 
       else if(Kolumn1order > Kolumn1genomsnittTempoutput){
 // Lite över medel
-document.getElementById("Nummer2").innerHTML = "Lite varmt"}
+document.getElementById("Nummer2").innerHTML = "Lite varmt till jämförelse"}
       else if(Kolumn1order < 0.85 * Kolumn1genomsnittTempoutput){
 // Långt under medel
-document.getElementById("Nummer2").innerHTML = "Kyligt"}
+document.getElementById("Nummer2").innerHTML = "Kyligt till jämförelse"}
       else{
 // Lite under medel
-document.getElementById("Nummer2").innerHTML = "Lite kyligt"}}
+document.getElementById("Nummer2").innerHTML = "Lite kyligt till jämförelse"}}
                         else{
                   document.getElementById("Nummer8").innerHTML = "Fuktighet: " + Kolumn1order/2 + "%"
                   
@@ -727,17 +726,17 @@ if(Kolumn2order == Kolumn2genomsnittTempoutput){
 }
      else if(Kolumn2order > 1.15 * Kolumn2genomsnittTempoutput){
 // Långt över medel
-document.getElementById("Nummer2").innerHTML = "Varmt"}
+document.getElementById("Nummer2").innerHTML = "Varmt till jämförelse"}
 
       else if(Kolumn2order > Kolumn2genomsnittTempoutput){
 // Lite över medel
-document.getElementById("Nummer2").innerHTML = "Lite varmt"}
+document.getElementById("Nummer2").innerHTML = "Lite varmt till jämförelse"}
       else if(Kolumn2order < 0.85 * Kolumn2genomsnittTempoutput){
 // Långt under medel
-document.getElementById("Nummer2").innerHTML = "Kyligt"}
+document.getElementById("Nummer2").innerHTML = "Kyligt till jämförelse"}
       else{
 // Lite under medel
-document.getElementById("Nummer2").innerHTML = "Lite kyligt"}}
+document.getElementById("Nummer2").innerHTML = "Lite kyligt till jämförelse"}}
                         else{
                   document.getElementById("Nummer8").innerHTML = "Fuktighet: " + Kolumn2order/2 + "%"
                   
@@ -773,17 +772,17 @@ if(Kolumn3order == Kolumn3genomsnittTempoutput){
 }
      else if(Kolumn3order > 1.15 * Kolumn3genomsnittTempoutput){
 // Långt över medel
-document.getElementById("Nummer2").innerHTML = "Varmt"}
+document.getElementById("Nummer2").innerHTML = "Varmt till jämförelse"}
 
       else if(Kolumn3order > Kolumn3genomsnittTempoutput){
 // Lite över medel
-document.getElementById("Nummer2").innerHTML = "Lite varmt"}
+document.getElementById("Nummer2").innerHTML = "Lite varmt till jämförelse"}
       else if(Kolumn3order < 0.85 * Kolumn3genomsnittTempoutput){
 // Långt under medel
-document.getElementById("Nummer2").innerHTML = "Kyligt"}
+document.getElementById("Nummer2").innerHTML = "Kyligt till jämförelse"}
       else{
 // Lite under medel
-document.getElementById("Nummer2").innerHTML = "Lite kyligt"}}
+document.getElementById("Nummer2").innerHTML = "Lite kyligt till jämförelse"}}
                         else{
                   document.getElementById("Nummer8").innerHTML = "Fuktighet: " + Kolumn3order/2 + "%"
                   
@@ -814,17 +813,17 @@ if(Kolumn4order == Kolumn4genomsnittTempoutput){
 }
      else if(Kolumn4order > 1.15 * Kolumn4genomsnittTempoutput){
 // Långt över medel
-document.getElementById("Nummer2").innerHTML = "Varmt"}
+document.getElementById("Nummer2").innerHTML = "Varmt till jämförelse"}
 
       else if(Kolumn4order > Kolumn4genomsnittTempoutput){
 // Lite över medel
-document.getElementById("Nummer2").innerHTML = "Lite varmt"}
+document.getElementById("Nummer2").innerHTML = "Lite varmt till jämförelse"}
       else if(Kolumn4order < 0.85 * Kolumn4genomsnittTempoutput){
 // Långt under medel
-document.getElementById("Nummer2").innerHTML = "Kyligt"}
+document.getElementById("Nummer2").innerHTML = "Kyligt till jämförelse"}
       else{
 // Lite under medel
-document.getElementById("Nummer2").innerHTML = "Lite kyligt"}}
+document.getElementById("Nummer2").innerHTML = "Lite kyligt till jämförelse"}}
                         else{
                   document.getElementById("Nummer8").innerHTML = "Fuktighet: " + Kolumn4order/2 + "%"
                   
@@ -856,17 +855,17 @@ if(Kolumn5order == Kolumn5genomsnittTempoutput){
 }
      else if(Kolumn5order > 1.15 * Kolumn5genomsnittTempoutput){
 // Långt över medel
-document.getElementById("Nummer2").innerHTML = "Varmt"}
+document.getElementById("Nummer2").innerHTML = "Varmt till jämförelse"}
 
       else if(Kolumn5order > Kolumn5genomsnittTempoutput){
 // Lite över medel
-document.getElementById("Nummer2").innerHTML = "Lite varmt"}
+document.getElementById("Nummer2").innerHTML = "Lite varmt till jämförelse"}
       else if(Kolumn5order < 0.85 * Kolumn5genomsnittTempoutput){
 // Långt under medel
-document.getElementById("Nummer2").innerHTML = "Kyligt"}
+document.getElementById("Nummer2").innerHTML = "Kyligt till jämförelse"}
       else{
 // Lite under medel
-document.getElementById("Nummer2").innerHTML = "Lite kyligt"}}
+document.getElementById("Nummer2").innerHTML = "Lite kyligt till jämförelse"}}
                         else{
                   document.getElementById("Nummer8").innerHTML = "Fuktighet: " + Kolumn5order/2 + "%"
                   
@@ -897,17 +896,17 @@ if(Kolumn6order == Kolumn6genomsnittTempoutput){
 }
      else if(Kolumn6order > 1.15 * Kolumn6genomsnittTempoutput){
 // Långt över medel
-document.getElementById("Nummer2").innerHTML = "Varmt"}
+document.getElementById("Nummer2").innerHTML = "Varmt till jämförelse"}
 
       else if(Kolumn6order > Kolumn6genomsnittTempoutput){
 // Lite över medel
-document.getElementById("Nummer2").innerHTML = "Lite varmt"}
+document.getElementById("Nummer2").innerHTML = "Lite varmt till jämförelse"}
       else if(Kolumn6order < 0.85 * Kolumn6genomsnittTempoutput){
 // Långt under medel
-document.getElementById("Nummer2").innerHTML = "Kyligt"}
+document.getElementById("Nummer2").innerHTML = "Kyligt till jämförelse"}
       else{
 // Lite under medel
-document.getElementById("Nummer2").innerHTML = "Lite kyligt"}}
+document.getElementById("Nummer2").innerHTML = "Lite kyligt till jämförelse"}}
                         else{
                   document.getElementById("Nummer8").innerHTML = "Fuktighet: " + Kolumn6order/2 + "%"
                   
@@ -938,17 +937,17 @@ if(Kolumn7order == Kolumn7genomsnittTempoutput){
 }
      else if(Kolumn7order > 1.15 * Kolumn7genomsnittTempoutput){
 // Långt över medel
-document.getElementById("Nummer2").innerHTML = "Varmt"}
+document.getElementById("Nummer2").innerHTML = "Varmt till jämförelse"}
 
       else if(Kolumn7order > Kolumn7genomsnittTempoutput){
 // Lite över medel
-document.getElementById("Nummer2").innerHTML = "Lite varmt"}
+document.getElementById("Nummer2").innerHTML = "Lite varmt till jämförelse"}
       else if(Kolumn7order < 0.85 * Kolumn7genomsnittTempoutput){
 // Långt under medel
-document.getElementById("Nummer2").innerHTML = "Kyligt"}
+document.getElementById("Nummer2").innerHTML = "Kyligt till jämförelse"}
       else{
 // Lite under medel
-document.getElementById("Nummer2").innerHTML = "Lite kyligt"}}
+document.getElementById("Nummer2").innerHTML = "Lite kyligt till jämförelse"}}
                         else{
                   document.getElementById("Nummer8").innerHTML = "Fuktighet: " + Kolumn7order/2 + "%"
                   
@@ -979,17 +978,17 @@ if(Kolumn8order == Kolumn8genomsnittTempoutput){
 }
      else if(Kolumn8order > 1.15 * Kolumn8genomsnittTempoutput){
 // Långt över medel
-document.getElementById("Nummer2").innerHTML = "Varmt"}
+document.getElementById("Nummer2").innerHTML = "Varmt till jämförelse"}
 
       else if(Kolumn8order > Kolumn8genomsnittTempoutput){
 // Lite över medel
-document.getElementById("Nummer2").innerHTML = "Lite varmt"}
+document.getElementById("Nummer2").innerHTML = "Lite varmt till jämförelse"}
       else if(Kolumn8order < 0.85 * Kolumn8genomsnittTempoutput){
 // Långt under medel
-document.getElementById("Nummer2").innerHTML = "Kyligt"}
+document.getElementById("Nummer2").innerHTML = "Kyligt till jämförelse"}
       else{
 // Lite under medel
-document.getElementById("Nummer2").innerHTML = "Lite kyligt"}}
+document.getElementById("Nummer2").innerHTML = "Lite kyligt till jämförelse"}}
                         else{
                   document.getElementById("Nummer8").innerHTML = "Fuktighet: " + Kolumn8order/2 + "%"
                   

@@ -458,7 +458,7 @@ for(let i=49;i>=0;i--){
             console.log("h:")
 if (tempvalue != 0 && humvalue != 0){
     Datalista.push(10000000 + 100000 * i + 10000 * x + 200 * tempvalue + 2 * humvalue)
-    console.log(10000000 + 100000 * i + 10000 * x + 100 * tempvalue + humvalue)
+    console.log(10000000 + 100000 * i + 10000 * x + 200 * tempvalue + 2 * humvalue)
     }})}
 }
 
