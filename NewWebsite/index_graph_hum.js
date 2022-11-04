@@ -442,7 +442,7 @@ HumLars();
 
 var humvalue
 var tempvalue
-
+// Simonsplats
 for(let i=49;i>=0;i--){
     for(let x=7; x>=0;x--){
     var TemperatureRef = db.ref("SimonsPlats/Dagar-" + i + "/Hour-" + x * 3 + "/Minute-5/Temperature");
@@ -462,7 +462,7 @@ if (tempvalue != 0 && humvalue != 0){
     }})}
 }
 
-
+// Hallonrummet
 for(let i=49;i>=0;i--){
     for(let x=7; x>=0;x--){
     var TemperatureRef = db.ref("Hallonrummet/Dagar-" + i + "/Hour-" + x * 3 + "/Minute-5/Temperature");
@@ -481,7 +481,7 @@ if (tempvalue != 0 && humvalue != 0){
     console.log(20000000 + 100000 * i + 10000 * x + 200 * tempvalue + 2 * humvalue)
     }})}
 }
-
+// Terrariet
 for(let i=49;i>=0;i--){
     for(let x=7; x>=0;x--){
     var TemperatureRef = db.ref("Terrariet/Dagar-" + i + "/Hour-" + x * 3 + "/Minute-5/Temperature");
@@ -500,7 +500,7 @@ if (tempvalue != 0 && humvalue != 0){
     console.log(30000000 + 100000 * i + 10000 * x + 200 * tempvalue + 2 * humvalue)
     }})}
 }
-
+// Klassrummmet
 for(let i=49;i>=0;i--){
     for(let x=7; x>=0;x--){
     var TemperatureRef = db.ref("Klassrum/Dagar-" + i + "/Hour-" + x * 3 + "/Minute-5/Temperature");
@@ -519,7 +519,7 @@ if (tempvalue != 0 && humvalue != 0){
     console.log(40000000 + 100000 * i + 10000 * x + 200 * tempvalue + 2 * humvalue)
     }})}
 }
-
+// Larsplats
 for(let i=49;i>=0;i--){
     for(let x=7; x>=0;x--){
     var TemperatureRef = db.ref("Lars/Dagar-" + i + "/Hour-" + x * 3 + "/Minute-5/Temperature");
