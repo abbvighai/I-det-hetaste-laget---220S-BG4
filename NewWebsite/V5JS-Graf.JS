@@ -115,38 +115,38 @@ var LängdDatalista
 var Övermedel
 
 // Artificiell data
-Datalista[1] = 12212010
-  Datalista[2] = 12222321
-  Datalista[3] = 12235323
-  Datalista[4] = 12243121
-  Datalista[5] = 12256040
-  Datalista[6] = 12263332
-  Datalista[7] = 12274236
-  Datalista[8] = 12286040
-  Datalista[9] = 12312032
-  Datalista[10] = 12322432
-  Datalista[11] = 12335312
-  Datalista[12] = 12346023
-  Datalista[13] = 12352434
-  Datalista[14] = 12364540
-  Datalista[15] = 12372324
-  Datalista[16] = 12386029
-  Datalista[17] = 12415223
-  Datalista[18] = 12426012
-  Datalista[19] = 12432040
-  Datalista[20] = 12445220
-  Datalista[21] = 12454110
-  Datalista[22] = 12464115
-  Datalista[23] = 12476023
-  Datalista[24] = 12482439
-  Datalista[25] = 12516019
-  Datalista[26] = 12523424
-  Datalista[27] = 12532031
-  Datalista[28] = 12545321
-  Datalista[29] = 12555514
-  Datalista[30] = 12565740
-  Datalista[31] = 12576012
-  Datalista[32] = 12583525
+// Datalista[1] = 12212010
+//   Datalista[2] = 12222321
+//   Datalista[3] = 12235323
+//   Datalista[4] = 12243121
+//   Datalista[5] = 12256040
+//   Datalista[6] = 12263332
+//   Datalista[7] = 12274236
+//   Datalista[8] = 12286040
+//   Datalista[9] = 12312032
+//   Datalista[10] = 12322432
+//   Datalista[11] = 12335312
+//   Datalista[12] = 12346023
+//   Datalista[13] = 12352434
+//   Datalista[14] = 12364540
+//   Datalista[15] = 12372324
+//   Datalista[16] = 12386029
+//   Datalista[17] = 12415223
+//   Datalista[18] = 12426012
+//   Datalista[19] = 12432040
+//   Datalista[20] = 12445220
+//   Datalista[21] = 12454110
+//   Datalista[22] = 12464115
+//   Datalista[23] = 12476023
+//   Datalista[24] = 12482439
+//   Datalista[25] = 12516019
+//   Datalista[26] = 12523424
+//   Datalista[27] = 12532031
+//   Datalista[28] = 12545321
+//   Datalista[29] = 12555514
+//   Datalista[30] = 12565740
+//   Datalista[31] = 12576012
+//   Datalista[32] = 12583525
   
 // INPUTSYSTEM FRÅN FIREBASE                      (INTE KLAR)
 
@@ -475,115 +475,119 @@ document.getElementById("Nummer10").innerHTML = "Lägsta temperatur: " + Grafbot
       document.getElementById("Nummer10").innerHTML = "Lägsta fuktighet: " + Grafbotten/2 + "%"
 }
 
+for (let i = Datalista.length; i > 0; i--) {
+      //temp:
+        if((((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100 < Temprekordlågoutput) {
+            Temprekordlågoutput = (((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100
+        }
+        else {
+        if((((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100 > Temprekordhögoutput) {
+            Temprekordhögoutput = (((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100
+        }
+        }
+      
+      //hum:
+        if((((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1 < Humrekordlågoutput) {
+            Humrekordlågoutput = (((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1
+        }
+        else {
+        if((((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1 > Humrekordhögoutput){
+            Humrekordhögoutput = (((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1
+      }}}
+      console.log("temphumrecordvaluedefinitioncomplete")
+      // Log - Devsyfte
+      
+      // Gå igenom hela listan av datarader för att beräkna medelvärden över alla (mättillfällen / tidperspektiv), för både Valtmode = 1(temp) och Valtmode = 2(hum). Alltså t.ex snitttemperaturen klockan 09:00 mellan alla dagar.
+      for (let i = Datalista.length; i > 0; i--) {
+        switch((((Datalista[i]) % 100000) - (Datalista[i] % 10000))/10000){
+      
+            case 1:
+            Kolumn1genomsnittTemp = Kolumn1genomsnittTemp + ((((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100)
+      Kolumn1genomsnittHum = Kolumn1genomsnittHum + ((((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1)
+      Kolumn1genomsnittcounterTemp++
+      Kolumn1genomsnittcounterHum++
+      
+            break
+            case 2:
+            Kolumn2genomsnittTemp = Kolumn2genomsnittTemp + ((((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100)
+      Kolumn2genomsnittHum = Kolumn2genomsnittHum + ((((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1)
+      Kolumn2genomsnittcounterTemp++
+      Kolumn2genomsnittcounterHum++
+      
+            break
+            case 3:
+            Kolumn3genomsnittTemp = Kolumn3genomsnittTemp + ((((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100)
+      Kolumn3genomsnittHum = Kolumn3genomsnittHum + ((((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1)
+      Kolumn3genomsnittcounterTemp++
+      Kolumn3genomsnittcounterHum++
+      
+            break
+            case 4:
+            Kolumn4genomsnittTemp = Kolumn4genomsnittTemp + ((((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100)
+      Kolumn4genomsnittHum = Kolumn4genomsnittHum + ((((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1)
+      Kolumn4genomsnittcounterTemp++
+      Kolumn4genomsnittcounterHum++
+      
+            break
+            case 5:
+            Kolumn5genomsnittTemp = Kolumn5genomsnittTemp + ((((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100)
+      Kolumn5genomsnittHum = Kolumn5genomsnittHum + ((((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1)
+      Kolumn5genomsnittcounterTemp++
+      Kolumn5genomsnittcounterHum++
+      
+            break
+            case 6:
+            Kolumn6genomsnittTemp = Kolumn6genomsnittTemp + ((((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100)
+      Kolumn6genomsnittHum = Kolumn6genomsnittHum + ((((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1)
+      Kolumn6genomsnittcounterTemp++
+      Kolumn6genomsnittcounterHum++
+      
+            break
+            case 7:
+            Kolumn7genomsnittTemp = Kolumn7genomsnittTemp + ((((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100)
+      Kolumn7genomsnittHum = Kolumn7genomsnittHum + ((((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1)
+      Kolumn7genomsnittcounterTemp++
+      Kolumn7genomsnittcounterHum++
+      
+            break
+            case 8:
+            Kolumn8genomsnittTemp = Kolumn8genomsnittTemp + ((((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100)
+      Kolumn8genomsnittHum = Kolumn8genomsnittHum + ((((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1)
+      Kolumn8genomsnittcounterTemp++
+      Kolumn8genomsnittcounterHum++
+      
+            break
+            default:
+              console.log("erroravgvaluecalcnocasefound")
+                break
+      }}
+      // Slutgiltig beräkning(tillhör övre stycke kod)
+      Kolumn1genomsnittTempoutput = Math.round(Kolumn1genomsnittTemp / Kolumn1genomsnittcounterTemp)
+      Kolumn2genomsnittTempoutput = Math.round(Kolumn2genomsnittTemp / Kolumn2genomsnittcounterTemp)
+      Kolumn3genomsnittTempoutput = Math.round(Kolumn3genomsnittTemp / Kolumn3genomsnittcounterTemp)
+      Kolumn4genomsnittTempoutput = Math.round(Kolumn4genomsnittTemp / Kolumn4genomsnittcounterTemp)
+      Kolumn5genomsnittTempoutput = Math.round(Kolumn5genomsnittTemp / Kolumn5genomsnittcounterTemp)
+      Kolumn6genomsnittTempoutput = Math.round(Kolumn6genomsnittTemp / Kolumn6genomsnittcounterTemp)
+      Kolumn7genomsnittTempoutput = Math.round(Kolumn7genomsnittTemp / Kolumn7genomsnittcounterTemp)
+      Kolumn8genomsnittTempoutput = Math.round(Kolumn8genomsnittTemp / Kolumn8genomsnittcounterTemp)
+      
+      Kolumn1genomsnittHumoutput = Math.round(Kolumn1genomsnittHum / Kolumn1genomsnittcounterHum)
+      Kolumn2genomsnittHumoutput = Math.round(Kolumn2genomsnittHum / Kolumn2genomsnittcounterHum)
+      Kolumn3genomsnittHumoutput = Math.round(Kolumn3genomsnittHum / Kolumn3genomsnittcounterHum)
+      Kolumn4genomsnittHumoutput = Math.round(Kolumn4genomsnittHum / Kolumn4genomsnittcounterHum)
+      Kolumn5genomsnittHumoutput = Math.round(Kolumn5genomsnittHum / Kolumn5genomsnittcounterHum)
+      Kolumn6genomsnittHumoutput = Math.round(Kolumn6genomsnittHum / Kolumn6genomsnittcounterHum)
+      Kolumn7genomsnittHumoutput = Math.round(Kolumn7genomsnittHum / Kolumn7genomsnittcounterHum)
+      Kolumn8genomsnittHumoutput = Math.round(Kolumn8genomsnittHum / Kolumn8genomsnittcounterHum)
+
+
+
   }
 // !!! Slutet av primär funktion. Allt nedan behöver bara beräknas vid öppning av websida. Detta för anledningen att utföra mindre mängder kod.
 
 
-  // Går igenom hela listan av datarader för att beräkna rekordmätningar för temp/hum(Kolla variabelnamn för vidare beskrivning)
-  for (let i = Datalista.length; i > 0; i--) {
-//temp:
-  if((((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100 < Temprekordlågoutput) {
-      Temprekordlågoutput = (((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100
-  }
-  else {
-  if((((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100 > Temprekordhögoutput) {
-      Temprekordhögoutput = (((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100
-  }
-  }
+ 
 
-//hum:
-  if((((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1 < Humrekordlågoutput) {
-      Humrekordlågoutput = (((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1
-  }
-  else {
-  if((((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1 > Humrekordhögoutput){
-      Humrekordhögoutput = (((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1
-}}}
-console.log("temphumrecordvaluedefinitioncomplete")
-// Log - Devsyfte
-
-// Gå igenom hela listan av datarader för att beräkna medelvärden över alla (mättillfällen / tidperspektiv), för både Valtmode = 1(temp) och Valtmode = 2(hum). Alltså t.ex snitttemperaturen klockan 09:00 mellan alla dagar.
-for (let i = Datalista.length; i > 0; i--) {
-  switch((((Datalista[i]) % 100000) - (Datalista[i] % 10000))/10000){
-
-      case 1:
-      Kolumn1genomsnittTemp = Kolumn1genomsnittTemp + ((((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100)
-Kolumn1genomsnittHum = Kolumn1genomsnittHum + ((((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1)
-Kolumn1genomsnittcounterTemp++
-Kolumn1genomsnittcounterHum++
-
-      break
-      case 2:
-      Kolumn2genomsnittTemp = Kolumn2genomsnittTemp + ((((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100)
-Kolumn2genomsnittHum = Kolumn2genomsnittHum + ((((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1)
-Kolumn2genomsnittcounterTemp++
-Kolumn2genomsnittcounterHum++
-
-      break
-      case 3:
-      Kolumn3genomsnittTemp = Kolumn3genomsnittTemp + ((((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100)
-Kolumn3genomsnittHum = Kolumn3genomsnittHum + ((((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1)
-Kolumn3genomsnittcounterTemp++
-Kolumn3genomsnittcounterHum++
-
-      break
-      case 4:
-      Kolumn4genomsnittTemp = Kolumn4genomsnittTemp + ((((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100)
-Kolumn4genomsnittHum = Kolumn4genomsnittHum + ((((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1)
-Kolumn4genomsnittcounterTemp++
-Kolumn4genomsnittcounterHum++
-
-      break
-      case 5:
-      Kolumn5genomsnittTemp = Kolumn5genomsnittTemp + ((((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100)
-Kolumn5genomsnittHum = Kolumn5genomsnittHum + ((((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1)
-Kolumn5genomsnittcounterTemp++
-Kolumn5genomsnittcounterHum++
-
-      break
-      case 6:
-      Kolumn6genomsnittTemp = Kolumn6genomsnittTemp + ((((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100)
-Kolumn6genomsnittHum = Kolumn6genomsnittHum + ((((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1)
-Kolumn6genomsnittcounterTemp++
-Kolumn6genomsnittcounterHum++
-
-      break
-      case 7:
-      Kolumn7genomsnittTemp = Kolumn7genomsnittTemp + ((((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100)
-Kolumn7genomsnittHum = Kolumn7genomsnittHum + ((((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1)
-Kolumn7genomsnittcounterTemp++
-Kolumn7genomsnittcounterHum++
-
-      break
-      case 8:
-      Kolumn8genomsnittTemp = Kolumn8genomsnittTemp + ((((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100)
-Kolumn8genomsnittHum = Kolumn8genomsnittHum + ((((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1)
-Kolumn8genomsnittcounterTemp++
-Kolumn8genomsnittcounterHum++
-
-      break
-      default:
-        console.log("erroravgvaluecalcnocasefound")
-          break
-}}
-// Slutgiltig beräkning(tillhör övre stycke kod)
-Kolumn1genomsnittTempoutput = Math.round(Kolumn1genomsnittTemp / Kolumn1genomsnittcounterTemp)
-Kolumn2genomsnittTempoutput = Math.round(Kolumn2genomsnittTemp / Kolumn2genomsnittcounterTemp)
-Kolumn3genomsnittTempoutput = Math.round(Kolumn3genomsnittTemp / Kolumn3genomsnittcounterTemp)
-Kolumn4genomsnittTempoutput = Math.round(Kolumn4genomsnittTemp / Kolumn4genomsnittcounterTemp)
-Kolumn5genomsnittTempoutput = Math.round(Kolumn5genomsnittTemp / Kolumn5genomsnittcounterTemp)
-Kolumn6genomsnittTempoutput = Math.round(Kolumn6genomsnittTemp / Kolumn6genomsnittcounterTemp)
-Kolumn7genomsnittTempoutput = Math.round(Kolumn7genomsnittTemp / Kolumn7genomsnittcounterTemp)
-Kolumn8genomsnittTempoutput = Math.round(Kolumn8genomsnittTemp / Kolumn8genomsnittcounterTemp)
-
-Kolumn1genomsnittHumoutput = Math.round(Kolumn1genomsnittHum / Kolumn1genomsnittcounterHum)
-Kolumn2genomsnittHumoutput = Math.round(Kolumn2genomsnittHum / Kolumn2genomsnittcounterHum)
-Kolumn3genomsnittHumoutput = Math.round(Kolumn3genomsnittHum / Kolumn3genomsnittcounterHum)
-Kolumn4genomsnittHumoutput = Math.round(Kolumn4genomsnittHum / Kolumn4genomsnittcounterHum)
-Kolumn5genomsnittHumoutput = Math.round(Kolumn5genomsnittHum / Kolumn5genomsnittcounterHum)
-Kolumn6genomsnittHumoutput = Math.round(Kolumn6genomsnittHum / Kolumn6genomsnittcounterHum)
-Kolumn7genomsnittHumoutput = Math.round(Kolumn7genomsnittHum / Kolumn7genomsnittcounterHum)
-Kolumn8genomsnittHumoutput = Math.round(Kolumn8genomsnittHum / Kolumn8genomsnittcounterHum)
 
 // Log för alla frekvent använda variabler, inputs och outputs från funktionen - Devsyfte
 console.log("Startvaluediagnostic")
