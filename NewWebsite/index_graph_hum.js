@@ -462,3 +462,79 @@ if (tempvalue != 0 && humvalue != 0){
     }})}
 }
 
+
+for(let i=49;i>=0;i--){
+    for(let x=7; x>=0;x--){
+    var TemperatureRef = db.ref("Hallonrummet/Dagar-" + i + "/Hour-" + x * 3 + "/Minute-5/Temperature");
+    TemperatureRef.on("value", (tempa) => {
+            tempvalue = Math.round(tempa.val())
+            console.log(tempvalue);
+            console.log("t:")
+        })
+    var HumidityRef = db.ref("Hallonrummet/Dagar-" + i + "/Hour-" + x * 3 + "/Minute-5/Humidity");
+    HumidityRef.on("value", (huma) => {
+            humvalue = Math.round(huma.val())
+            console.log(humvalue);
+            console.log("h:")
+if (tempvalue != 0 && humvalue != 0){
+    Datalista.push(20000000 + 100000 * i + 10000 * x + 200 * tempvalue + 2 * humvalue)
+    console.log(20000000 + 100000 * i + 10000 * x + 200 * tempvalue + 2 * humvalue)
+    }})}
+}
+
+for(let i=49;i>=0;i--){
+    for(let x=7; x>=0;x--){
+    var TemperatureRef = db.ref("Terrariet/Dagar-" + i + "/Hour-" + x * 3 + "/Minute-5/Temperature");
+    TemperatureRef.on("value", (tempa) => {
+            tempvalue = Math.round(tempa.val())
+            console.log(tempvalue);
+            console.log("t:")
+        })
+    var HumidityRef = db.ref("Terrariet/Dagar-" + i + "/Hour-" + x * 3 + "/Minute-5/Humidity");
+    HumidityRef.on("value", (huma) => {
+            humvalue = Math.round(huma.val())
+            console.log(humvalue);
+            console.log("h:")
+if (tempvalue != 0 && humvalue != 0){
+    Datalista.push(30000000 + 100000 * i + 10000 * x + 200 * tempvalue + 2 * humvalue)
+    console.log(30000000 + 100000 * i + 10000 * x + 200 * tempvalue + 2 * humvalue)
+    }})}
+}
+
+for(let i=49;i>=0;i--){
+    for(let x=7; x>=0;x--){
+    var TemperatureRef = db.ref("Klassrum/Dagar-" + i + "/Hour-" + x * 3 + "/Minute-5/Temperature");
+    TemperatureRef.on("value", (tempa) => {
+            tempvalue = Math.round(tempa.val())
+            console.log(tempvalue);
+            console.log("t:")
+        })
+    var HumidityRef = db.ref("Klassrum/Dagar-" + i + "/Hour-" + x * 3 + "/Minute-5/Humidity");
+    HumidityRef.on("value", (huma) => {
+            humvalue = Math.round(huma.val())
+            console.log(humvalue);
+            console.log("h:")
+if (tempvalue != 0 && humvalue != 0){
+    Datalista.push(40000000 + 100000 * i + 10000 * x + 200 * tempvalue + 2 * humvalue)
+    console.log(40000000 + 100000 * i + 10000 * x + 200 * tempvalue + 2 * humvalue)
+    }})}
+}
+
+for(let i=49;i>=0;i--){
+    for(let x=7; x>=0;x--){
+    var TemperatureRef = db.ref("Lars/Dagar-" + i + "/Hour-" + x * 3 + "/Minute-5/Temperature");
+    TemperatureRef.on("value", (tempa) => {
+            tempvalue = Math.round(tempa.val())
+            console.log(tempvalue);
+            console.log("t:")
+        })
+    var HumidityRef = db.ref("Lars/Dagar-" + i + "/Hour-" + x * 3 + "/Minute-5/Humidity");
+    HumidityRef.on("value", (huma) => {
+            humvalue = Math.round(huma.val())
+            console.log(humvalue);
+            console.log("h:")
+if (tempvalue != 0 && humvalue != 0){
+    Datalista.push(50000000 + 100000 * i + 10000 * x + 200 * tempvalue + 2 * humvalue)
+    console.log(50000000 + 100000 * i + 10000 * x + 200 * tempvalue + 2 * humvalue)
+    }})}
+}

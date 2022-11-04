@@ -743,7 +743,7 @@ document.getElementById("Nummer2").innerHTML = "Lite kyligt till jämförelse"}}
                   if(Kolumn2order == Kolumn2genomsnittHumoutput){
                         document.getElementById("Nummer2").innerHTML = "---"
                   }
-                       else if(Kolumnorder > 1.15 * Kolumn2genomsnittHumoutput){
+                       else if(Kolumn2order > 1.15 * Kolumn2genomsnittHumoutput){
                   // Långt över medel
                   document.getElementById("Nummer2").innerHTML = "Hög fuktighet"}
                         else if(Kolumn2order > Kolumn2genomsnittHumoutput){
