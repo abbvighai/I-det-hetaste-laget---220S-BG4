@@ -441,6 +441,9 @@ tempLars();
 var humvalue
 var tempvalue
 
+var humvalue
+var tempvalue
+
 for(let i=49;i>=0;i--){
     for(let x=7; x>=0;x--){
     var TemperatureRef = db.ref("SimonsPlats/Dagar-" + i + "/Hour-" + x * 3 + "/Minute-5/Temperature");
@@ -475,8 +478,8 @@ for(let i=49;i>=0;i--){
             console.log(humvalue);
             console.log("h:")
 if (tempvalue != 0 && humvalue != 0){
-    Datalista.push(10000000 + 100000 * i + 10000 * x + 200 * tempvalue + 2 * humvalue)
-    console.log(10000000 + 100000 * i + 10000 * x + 200 * tempvalue + 2 * humvalue)
+    Datalista.push(20000000 + 100000 * i + 10000 * x + 200 * tempvalue + 2 * humvalue)
+    console.log(20000000 + 100000 * i + 10000 * x + 200 * tempvalue + 2 * humvalue)
     }})}
 }
 
@@ -494,8 +497,8 @@ for(let i=49;i>=0;i--){
             console.log(humvalue);
             console.log("h:")
 if (tempvalue != 0 && humvalue != 0){
-    Datalista.push(10000000 + 100000 * i + 10000 * x + 200 * tempvalue + 2 * humvalue)
-    console.log(10000000 + 100000 * i + 10000 * x + 200 * tempvalue + 2 * humvalue)
+    Datalista.push(30000000 + 100000 * i + 10000 * x + 200 * tempvalue + 2 * humvalue)
+    console.log(30000000 + 100000 * i + 10000 * x + 200 * tempvalue + 2 * humvalue)
     }})}
 }
 
@@ -513,8 +516,8 @@ for(let i=49;i>=0;i--){
             console.log(humvalue);
             console.log("h:")
 if (tempvalue != 0 && humvalue != 0){
-    Datalista.push(10000000 + 100000 * i + 10000 * x + 200 * tempvalue + 2 * humvalue)
-    console.log(10000000 + 100000 * i + 10000 * x + 200 * tempvalue + 2 * humvalue)
+    Datalista.push(40000000 + 100000 * i + 10000 * x + 200 * tempvalue + 2 * humvalue)
+    console.log(40000000 + 100000 * i + 10000 * x + 200 * tempvalue + 2 * humvalue)
     }})}
 }
 
@@ -532,78 +535,8 @@ for(let i=49;i>=0;i--){
             console.log(humvalue);
             console.log("h:")
 if (tempvalue != 0 && humvalue != 0){
-    Datalista.push(10000000 + 100000 * i + 10000 * x + 200 * tempvalue + 2 * humvalue)
-    console.log(10000000 + 100000 * i + 10000 * x + 200 * tempvalue + 2 * humvalue)
+    Datalista.push(50000000 + 100000 * i + 10000 * x + 200 * tempvalue + 2 * humvalue)
+    console.log(50000000 + 100000 * i + 10000 * x + 200 * tempvalue + 2 * humvalue)
     }})}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//Refreshing feature, button
-
-// function refresh(){
-//     let temporhum = document.getElementById("temp_hum").value;
-//     if(temporhum=="humor"){
-
-//     }else if(temporhum=="tempor"){
-        
-//         hourT = d.getHours();
-//         hourT = hourT + 1;
-//         dagT = 0;
-//         for(let i=0; i<24;i++){
-//             TempList.pop();
-//             console.log(TempList)
-//         }
-//         for(let i=0; i<24;i++){
-//             var TemperatureRef1 = db.ref("SimonsPlats/Dagar-" + dagT + "/Hour-" + hourT + "/Minute-0/Temperature");
-//             TemperatureRef1.on("value", (temp) => {
-//                 let TheValue = temp.val();
-//                 TempList.push(TheValue)
-//                 console.log(TempList)
-//             });
-            
-//             hourT = hourT-1;
-//             dagT = otherDayChange(hourT,dagT);
-//             hourT = otherDayCheck(hourT);
-
-                
-//         }
-//         for(let i = 0; i<TempList;i++){
-//             TempList = TempList[i];
-//         }
-
-//         getTempData1()
-//         tempsimPlats();
-
-
-//     }else{
-//         alert("Kalle kula säger error");
-//     }
-//     let roomval = document.getElementById("room").value;
-//     alert("Graph updated, active graph: " + roomval + " & " + temporhum);
-    
-// }
-
 
