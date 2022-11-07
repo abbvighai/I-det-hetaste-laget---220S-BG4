@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script type ="text/javascript" src="C:\Users\22noamar\I-det-hetaste-laget---220S-BG4-7\NewWebsite\V5JS-Graf.JS"></script>
+        <link rel="stylesheet" href="C:\Users\22noamar\I-det-hetaste-laget---220S-BG4-7\NewWebsite\V5.css">
+        <script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-base.min.js"></script>
+
+        <link rel="stylesheet" href="index_graph_humtemp.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital@0;1&family=Inter&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap" rel="stylesheet">
+</head>
+<body>
+        <div class="f-col-start-center w-100 pa-b-100">
+            <div class="top-design">
+                <div id="orange-rect">
+                    
+                </div>
+            </div>
+            <div class="text">
+                
+                <p class="pre-title">The</p>
+                <p class="title">Weather Gazette</p>
+            
+            </div>
+            <div class="bottom-decoration">
+                <div id="green-rect">
+
+                </div>
+            </div>
+        </div>
+       
+
+
+        <div class="Menu">
+            <a href="index_home.html">Home</a>
+            <a href="index_graph_temp.html">Graphs & Data</a>
+            <a href="index_team.html">Meet The Team</a>
+            <a href="index_contact.html">Contact us</a>
+        </div>
+        <div class="divider">
+        </div>
+        <div class="divider">
+        </div>
+        <div class="info_box">
+            <div class="normal">Welcome to graphs & data. Here you can find submitted graphs & useful info for the project, the graphs show the latest temperature & humidity submitted from our high end weather measuring device ESP 8266 with AM2320 sensor attachment.
+                <br></br>Välkommen till grafer och data. Här kan du hitta inskickade grafer och användbar information för projektet, graferna visar den senaste temperaturen och luftfuktigheten som skickats in från vår avancerade vädermätare ESP 8266 med AM2320-sensor.
+                <br></br>그래프 및 데이터에 오신 것을 환영합니다. 여기에서 제출된 그래프 및 프로젝트에 대한 유용한 정보를 찾을 수 있습니다. 그래프는 AM2320 센서가 부착된 고급 기상 측정 장치 ESP 8266에서 제출된 최신 온도 및 습도를 보여줍니다.</div>
+                </div>
+            </div>
+    </div>
+    <div class ="n_box">
+        <div class="graphmenu">
+            <a href="index_graph_hum.html" id="humorad">Luftfuktighet</a>
+            <a href="index_graph_temp.html" id="temprat">Temperatur</a>
+        </div>
+        
+        <div id ="simPlats"></div>
+        <div id ="hallon"></div>
+        <div id ="terra"></div>
+        <div id ="klassRum"></div>
+        <div id ="Lars"></div>
+
+        
+        <p style="margin-bottom:10px;"></p>
+        <!-- test -->
+        <div class="graphmenu">
+
+            <!-- <div class="graphmenu">
+                <a href="index_graph_hum.html" id="humorad">Luftfuktighet</a>
+                <a href="index_graph_temp.html" id="temprat">Temperatur</a>
+            </div> -->
+
+            <select id="hej"  onchange="Refreshgraph()">
+              <option value="1">Simonsplats</option>
+              <option value="2">Hallonrummet</option>
+              <option value="3">Larsplats</option>
+              <option value="4">Biboteket</option>
+              <option value="5">Ingången</option>
+              <option value="6">Medel</option>
+            </select>
+        
+        <select id="hejj"  onchange="Refreshgraph()">
+              <option value="1" id="humorad">Temperatur</option>
+              <option value="2" id="humorad">Fuktighet</option>
+            </select>
+
+
+            <select id="hejjj"  onchange="Refreshgraph()">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+
+          </div>
+          
+          <div class="Graf">
+            <div class="Nummer">
+              <div id="Nummer1"><p>Högsta mätningen: </p></div>
+              <div id="Nummer5"></div>
+              <div id="Nummer2"><p>Högre/Lägre än medel?</p></div>
+              <div id="Nummer7"><p></p></div>
+              <div id="Nummer8"><p>Mätvärde</p></div>
+              <div id="Nummer9"><p></p></div>
+              <div id="Nummer10"><p>Lägsta mätningen: </p></div>
+        
+              <!-- <img src=""></img> -->
+        
+        
+            </div>
+            <!-- Graf1: -->
+                <div class="MainGraf">
+                  <div id="rad0"></div>
+                  <div id="rad1"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><button id="boxtarget1"onmouseenter="b1()">    </button></div>
+                  <div id="rad2"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><button id="boxtarget12-M1"></button></div>
+                  <div id="rad1"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><button id="boxtarget12-M2"></button></div>
+                  <div id="rad2"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><button id="boxtarget12-M3"></button></div>
+                  <div id="rad1"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><button id="boxtarget2"onmouseenter="b2()">    </button></div>
+                  <div id="rad2"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><button id="boxtarget23-M1"></button></div>
+                  <div id="rad1"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><button id="boxtarget23-M2"></button></div>
+                  <div id="rad2"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><button id="boxtarget23-M3"></button></div>
+                  <div id="rad1"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><button id="boxtarget3"onmouseenter="b3()">    </button></div>
+                  <div id="rad2"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><button id="boxtarget34-M1"></button></div>
+                  <div id="rad1"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><button id="boxtarget34-M2"></button></div>
+                  <div id="rad2"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><button id="boxtarget34-M3"></button></div>
+                  <div id="rad1"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><button id="boxtarget4"onmouseenter="b4()">    </button></div>
+                  <div id="rad2"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><button id="boxtarget45-M1"></button></div>
+                  <div id="rad1"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><button id="boxtarget45-M2"></button></div>
+                  <div id="rad2"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><button id="boxtarget45-M3"></button></div>
+                  <div id="rad1"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><button id="boxtarget5"onmouseenter="b5()">    </button></div>
+                  <div id="rad2"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><button id="boxtarget56-M1"></button></div>
+                  <div id="rad1"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><button id="boxtarget56-M2"></button></div>
+                  <div id="rad2"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><button id="boxtarget56-M3"></button></div>
+                  <div id="rad1"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><button id="boxtarget6"onmouseenter="b6()">    </button></div>
+                  <div id="rad2"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><button id="boxtarget67-M1"></button></div>
+                  <div id="rad1"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><button id="boxtarget67-M2"></button></div>
+                  <div id="rad2"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><button id="boxtarget67-M3"></button></div>
+                  <div id="rad1"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><button id="boxtarget7"onmouseenter="b7()">    </button></div>
+                  <div id="rad2"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><button id="boxtarget78-M1"></button></div>
+                  <div id="rad1"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><button id="boxtarget78-M2"></button></div>
+                  <div id="rad2"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><button id="boxtarget78-M3"></button></div>
+                  <div id="rad1"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><button id="boxtarget8"onmouseenter="b8()">    </button></div>
+              
+                </div>
+                
+          </div>
+          <div class="undergraf">
+            <div class="undergrafbox">
+              <div id="Tid1"> <div id="L"><p>Tider -></p></div></div>
+              <div id="Tid2"></div>   
+              <div id="Tid3">._03:00_.</div>
+              <div id="Tid4"></div>
+              <div id="Tid3">._06:00_.</div>
+              <div id="Tid4"></div>
+              <div id="Tid3">._09:00_.</div>   
+              <div id="Tid4"></div>
+              <div id="Tid3">._12:00_.</div>
+              <div id="Tid4"></div>
+              <div id="Tid3">._15:00_.</div>
+              <div id="Tid4"></div>
+              <div id="Tid3">._18:00_.</div>
+              <div id="Tid4"></div>
+              <div id="Tid3">._21:00_.</div>
+              <div id="Tid4"></div>
+              <div id="Tid3">._24:00_.</div>
+           </div>
+          </div>
+        
+           <!-- test -->
+        
+
+    </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+    <script src="index_graph_temp.js"></script>
+</body>
+</html>

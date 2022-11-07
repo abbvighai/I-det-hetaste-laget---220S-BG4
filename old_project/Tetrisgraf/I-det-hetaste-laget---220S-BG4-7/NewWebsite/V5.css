@@ -1,0 +1,540 @@
+#Rubrik1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 99%;
+  height: 100px;
+  border: 3px solid black;
+  background-color: white;
+}#MainS {
+  display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    
+    width: 95%;
+    height: 60px;
+    
+    background-color: #f49a11;
+} 
+.Graf {
+  display: flex;
+  justify-content: center;
+  width: 95%;
+  height: 320px;
+  border: 3px solid rgb(0, 0, 0);
+  }
+  .Nummer {
+    align-items: center;
+    width:13%;
+    height: 100%;
+    border: 2px solid white;
+   }
+        #Nummer1 {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 10%;
+        background-color:black;
+        color: white;
+        font-size: 90;
+        }#Nummer2 {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 10%;
+        background-color:black;
+        color: white;
+        }#Nummer3 {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 10%;
+        background-color:gray;
+        color: white;
+        }#Nummer4 {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 10%;
+        background-color:black;
+        color: white;
+        font-size: 90%;
+        }#Nummer5 {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 40%;
+        background-color:gray;
+        color: white;
+        }#Nummer6 {
+        justify-content: center;
+        align-items: center;
+        display:flex;
+        width: 100%;
+        height: 10%;
+        background-color:black;
+        color: white;
+        }#Nummer7 {
+        justify-content: center;
+        align-items: center;
+        display:flex;
+        width: 100%;
+        height: 10%;
+        background-color:gray;
+        color: white;
+        }#Nummer8 {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 10%;
+        background-color:black;
+        color: white;
+        font-size:90%;
+        }#Nummer9 {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 10%;
+        background-color:gray;
+        color: white;
+        }#Nummer10 {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 10%;
+        background-color:black;
+        color: white;
+        font-size: 90%;
+        }.MainGraf {
+        display: flex;
+        align-items: center;
+        width: 95%;
+        height: 100%;
+        border: 2px solid black;
+
+                                            
+      } #rad1 {
+        align-items: center;
+        width: 3.5%;
+        height: 100%;
+        background-color:black;                                    
+        display: flex;
+        flex-direction: column-reverse;                                                      
+      } #rad2 {
+        align-items: center;
+        width: 3.5%;
+        height: 100%;
+        background-color:gray;
+        display: flex;
+        flex-direction: column-reverse;                
+        }
+      /* BOXAR: */
+      #boxtarget1 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color:blue;
+        justify-content: center;
+        align-items: center; 
+      }   #boxtarget12-M1 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: navy;           
+      } #boxtarget12-M2 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: navy;              
+      } #boxtarget12-M3 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: navy;           
+      }  #boxtarget2 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color:  blue;   
+        justify-content: center;
+        align-items: center;       
+      } #boxtarget23-M1 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: navy;        
+      } #boxtarget23-M2 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: navy;      
+      }  #boxtarget23-M3 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: navy;     
+      } #boxtarget3 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: blue;  
+        justify-content: center;
+        align-items: center;       
+      }  #boxtarget34-M1 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: navy;    
+      }  #boxtarget34-M2 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: navy;            
+      } #boxtarget34-M3 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: navy;   
+      } #boxtarget4 {
+        display: flex;
+
+        width: 100%;
+        height: 10%;
+        background-color: blue;    
+        justify-content: center;
+        align-items: center;   
+      } #boxtarget45-M1 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: navy;  
+      } #boxtarget45-M2 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: navy;     
+      } #boxtarget45-M3 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: navy;         
+      }  #boxtarget5 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color:  blue;        
+        justify-content: center;
+        align-items: center; 
+      }  #boxtarget56-M1 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: navy;     
+      }  #boxtarget56-M2 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: navy;       
+      }  #boxtarget56-M3 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: navy;   
+      } #boxtarget6 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color:  blue;
+        justify-content: center;
+        align-items: center;   
+      } #boxtarget67-M1 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: navy;       
+      }  #boxtarget67-M2 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: navy;    
+      }  #boxtarget67-M3 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: navy;     
+      }  #boxtarget7 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color:  blue;
+        justify-content: center;
+        align-items: center; 
+      } #boxtarget78-M1 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: navy;         
+      } #boxtarget78-M2 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: navy;       
+      }  #boxtarget78-M3 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: navy;       
+      } #boxtarget8 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color:  blue;  
+        justify-content: center;
+        align-items: center;      
+      } #box1 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: rgb(236, 234, 234);
+        order: 1;
+      }  #box2 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: rgb(236, 234, 234);
+        order:2
+      }     #box3 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: rgb(236, 234, 234);
+        order:3
+      }     #box4 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: rgb(236, 234, 234);
+        order:4
+      }     #box5 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color:rgb(236, 234, 234);
+        order:5
+      }     #box6 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: rgb(236, 234, 234);
+        order:6
+      }     #box7 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: rgb(236, 234, 234);
+        order:7
+
+      }     #box8 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color :rgb(236, 234, 234);
+        order:8
+      }     #box9 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: rgb(236, 234, 234);
+        order:9
+      }
+      .boxP1 {
+       order:0
+      }
+      .boxP2 {
+        order:1
+      }     .boxP3 {
+        order:2
+      }     .boxP4 {
+        order:3
+      }     .boxP5 {
+        order:4
+      }     .boxP6 {
+        order:5
+      }     .boxP7 {
+        order:6
+      }     .boxP8 {
+        order:7
+      }     .boxP9 {
+        order:8
+      }   .boxP10 {
+        order:9
+      }
+      .boxtarget1 {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: red;
+        order: 1                              
+      }   .Options {
+  align-items: center;
+  width: 100px;
+  height: 50px;
+  border: 2px solid;
+}  .OB {
+  align-items: center;
+  width: 100px;
+  height: 46px;
+  border: 2px solid rgb(255, 0, 0);
+} .undergraf {
+  display: flex;
+  justify-content: flex-start;
+  width: 95%;
+  height: 40px;
+  border: 3px solid black;
+  background-color: black;
+} #Java {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: black;
+  border:2px solid;
+  scale: 100%;
+}
+.undergrafbox {
+  display: flex;
+  border: 3px solid ;
+  width: 100%;
+  height: 97%;
+}
+#MainS {
+  background-color: black;
+
+}
+#Tid1 {
+  display: flex;
+  justify-content:flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+  width:200px;
+  height: 100%;
+  background-color:black;
+  color: white;
+  font-size: 115%;
+
+}
+#L {
+  display: flex;
+  justify-content:center;
+  align-content: center;
+  align-items: center;
+  width: 132px;
+  height: 25px;
+}
+#Tid2 {
+  display: flex;
+  justify-content:flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+  width: 13px;
+  height: 100%;
+  background-color: lightblue;
+}
+#Tid3 {
+  display: flex;
+  justify-content:flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+  width: 50.5px;
+  height: 100%;
+  background-color:lightblue;
+}
+#Tid4 {
+  display: flex;
+  justify-content:flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+  width: 157.5px;
+  height: 100%;
+  background-color: blue;
+}
+#kaka {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  color: black;
+  background-color: white;
+}
+.LiveChangeTemp {
+  display: flex;
+  height: 100px;
+  width: 400px;
+  border: 4px solid blue;
+}
+#Station { 
+  display: flex;
+  height: 100%;
+  width: 34%;
+  border: 4px solid blue;
+  color: white;
+   }
+#LTemp {
+  display: flex;
+  height: 100%;
+  width: 33%;
+  border: 4px solid blue;
+  color: white;
+  }
+#LHum {
+  display: flex;
+  height: 100%;
+  width: 33%;
+  border: 4px solid blue;
+  color: white;
+  }
+#hej{
+  display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    
+    width: 20%;
+    height: 40px;
+    
+    background-color: lightgrey;
+}
+#hejj{
+  display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    
+    width: 20%;
+    height: 40px;
+    
+    background-color: lightgrey;
+}
+#hejjj{
+  display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    
+    width: 20%;
+    height: 40px;
+    
+    background-color: lightgrey;
+}
