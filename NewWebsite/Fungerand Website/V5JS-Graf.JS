@@ -335,14 +335,14 @@ if(Valdstation == 6){
       // HIT
 
 // Repeterad operator för att omvandla Temp/hum till grafposition. (Ex: 30celcius - Y-posotion 4 i grafkolumn)
-Kolumn1output = Math.floor(((Kolumn1order - Grafbotten) / (Graftopp - Grafbotten)) * 9.99)
-Kolumn2output = Math.floor(((Kolumn2order - Grafbotten) / (Graftopp - Grafbotten)) * 9.99)
-Kolumn3output = Math.floor(((Kolumn3order - Grafbotten) / (Graftopp - Grafbotten)) * 9.99)
-Kolumn4output = Math.floor(((Kolumn4order - Grafbotten) / (Graftopp - Grafbotten)) * 9.99)
-Kolumn5output = Math.floor(((Kolumn5order - Grafbotten) / (Graftopp - Grafbotten)) * 9.99)
-Kolumn6output = Math.floor(((Kolumn6order - Grafbotten) / (Graftopp - Grafbotten)) * 9.99)
-Kolumn7output = Math.floor(((Kolumn7order - Grafbotten) / (Graftopp - Grafbotten)) * 9.99)
-Kolumn8output = Math.floor(((Kolumn8order - Grafbotten) / (Graftopp - Grafbotten)) * 9.99)
+Kolumn1output = Math.floor(((Kolumn1order - Grafbotten) / (Graftopp - Grafbotten)) * 9.95)
+Kolumn2output = Math.floor(((Kolumn2order - Grafbotten) / (Graftopp - Grafbotten)) * 9.95)
+Kolumn3output = Math.floor(((Kolumn3order - Grafbotten) / (Graftopp - Grafbotten)) * 9.95)
+Kolumn4output = Math.floor(((Kolumn4order - Grafbotten) / (Graftopp - Grafbotten)) * 9.95)
+Kolumn5output = Math.floor(((Kolumn5order - Grafbotten) / (Graftopp - Grafbotten)) * 9.95)
+Kolumn6output = Math.floor(((Kolumn6order - Grafbotten) / (Graftopp - Grafbotten)) * 9.95)
+Kolumn7output = Math.floor(((Kolumn7order - Grafbotten) / (Graftopp - Grafbotten)) * 9.95)
+Kolumn8output = Math.floor(((Kolumn8order - Grafbotten) / (Graftopp - Grafbotten)) * 9.95)
 
 // Positioner för "stödkolumner" som syns mellan mätvärden i grafen
 Mellan1Kolumn12 = Math.round(Kolumn1output - ((Kolumn1output - Kolumn2output) * 0.25))
@@ -412,9 +412,10 @@ document.getElementById("Nummer10").innerHTML = "Lägsta temperatur: " + (Grafbo
       document.getElementById("Nummer1").innerHTML = "Högsta fuktighet: " + (Graftopp/10 + 16) + "%"
       document.getElementById("Nummer10").innerHTML = "Lägsta fuktighet: " + (Grafbotten/10 + 16) + "%"
 }
-
+// Temp/hum högsta & lägsta mätning (INTE IMPLEMENTERAD)
 for (let i = Datalista.length; i > 0; i--) {
       //temp:
+     
         if((((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100 < Temprekordlågoutput) {
             Temprekordlågoutput = (((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100
         }
@@ -437,6 +438,8 @@ for (let i = Datalista.length; i > 0; i--) {
       
       // Gå igenom hela listan av datarader för att beräkna medelvärden över alla (mättillfällen / tidperspektiv), för både Valtmode = 1(temp) och Valtmode = 2(hum). Alltså t.ex snitttemperaturen klockan 09:00 mellan alla dagar.
       for (let i = Datalista.length; i > 0; i--) {
+           if((((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100 != 18){
+
         switch((((Datalista[i]) % 100000) - (Datalista[i] % 10000))/10000){
       
             case 1:
@@ -444,7 +447,6 @@ for (let i = Datalista.length; i > 0; i--) {
       Kolumn1genomsnittHum = Kolumn1genomsnittHum + ((((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1)
       Kolumn1genomsnittcounterTemp++
       Kolumn1genomsnittcounterHum++
-      
             break
             case 2:
             Kolumn2genomsnittTemp = Kolumn2genomsnittTemp + ((((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100)
@@ -498,8 +500,10 @@ for (let i = Datalista.length; i > 0; i--) {
             default:
               console.log("erroravgvaluecalcnocasefound")
                 break
-      }}
+      }}}
       // Slutgiltig beräkning(tillhör övre stycke kod)
+
+      
       Kolumn1genomsnittTempoutput = Math.round(Kolumn1genomsnittTemp / Kolumn1genomsnittcounterTemp)
       Kolumn2genomsnittTempoutput = Math.round(Kolumn2genomsnittTemp / Kolumn2genomsnittcounterTemp)
       Kolumn3genomsnittTempoutput = Math.round(Kolumn3genomsnittTemp / Kolumn3genomsnittcounterTemp)
