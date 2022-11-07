@@ -37,7 +37,7 @@ float SensorHum;
 float humi;
 float temp;
 
-int dagar = 0;
+int dagar = 6;
 int timmar;
 int minuter;
 
@@ -197,8 +197,8 @@ void loop() {
     //Våran data åker enda bort till Singapore. Varför?? Jo!! Den måste åka på en resa runt nästan hela jorden och så vill vi spara el här i Europa
     //På grund av Rysslands invasion av Ukraina har elpriserna gått up och databaser drar mycket el. Därför vill vi hjälpa våra belgiska bröder genom att inte använda deras el (:
     
-    Firebase.setInt(firebaseData, "/SimonsPlats/Dagar-" + String(dagar) + "/Hour-" + String(timmar) + "/Minute-" + String(minuter) + "/Temperature", temp);
-    Firebase.setInt(firebaseData, "/SimonsPlats//Dagar-" + String(dagar) + "/Hour-" + String(timmar) + "/Minute-" + String(minuter) + "/Humidity", humi);
+    Firebase.setInt(firebaseData, "/Terrariet/Dagar-" + String(dagar) + "/Hour-" + String(timmar) + "/Minute-" + String(minuter) + "/Temperature", temp);
+    Firebase.setInt(firebaseData, "/Terrariet/Dagar-" + String(dagar) + "/Hour-" + String(timmar) + "/Minute-" + String(minuter) + "/Humidity", humi);
 
     //Här använder vi functionerna som skriver ut värdena på displayen. En delay har vi för att varför inte. Och innan så behövdes delay av någon anledning. Så för att vara på säkra sidan lade jag till det!
 
