@@ -406,11 +406,11 @@ console.log("Graphfunctioncomplete")
   document.getElementById("boxtarget78-M3").setAttribute("class", "boxP" + (Mellan3Kolumn78+ 1).toString())
 
 if(Valtmode == 1){
-document.getElementById("Nummer1").innerHTML = "Högsta temperatur: " + (Graftopp/10 + 18) + "°C"
-document.getElementById("Nummer10").innerHTML = "Lägsta temperatur: " + (Grafbotten/10 + 18) + "°C"
+document.getElementById("Nummer1").innerHTML = "Högsta temperatur: " + (Graftopp/10 + 18) + "°C ->"
+document.getElementById("Nummer10").innerHTML = "Lägsta temperatur: " + (Grafbotten/10 + 18) + "°C ->"
 }else{
-      document.getElementById("Nummer1").innerHTML = "Högsta fuktighet: " + (Graftopp/10 + 16) + "%"
-      document.getElementById("Nummer10").innerHTML = "Lägsta fuktighet: " + (Grafbotten/10 + 16) + "%"
+      document.getElementById("Nummer1").innerHTML = "Högsta fuktighet: " + (Graftopp/10 + 16) + "% ->"
+      document.getElementById("Nummer10").innerHTML = "Lägsta fuktighet: " + (Grafbotten/10 + 16) + "% ->"
 }
 // Temp/hum högsta & lägsta mätning (INTE IMPLEMENTERAD)
 for (let i = Datalista.length; i > 0; i--) {
