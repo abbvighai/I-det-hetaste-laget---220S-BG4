@@ -409,8 +409,8 @@ if(Valtmode == 1){
 document.getElementById("Nummer1").innerHTML = "Högsta temperatur: " + (Graftopp/10 + 18) + "°C"
 document.getElementById("Nummer10").innerHTML = "Lägsta temperatur: " + (Grafbotten/10 + 18) + "°C"
 }else{
-      document.getElementById("Nummer1").innerHTML = "Högsta fuktighet: " + (Graftopp/10 + 18) + "%"
-      document.getElementById("Nummer10").innerHTML = "Lägsta fuktighet: " + (Grafbotten/10 + 18) + "%"
+      document.getElementById("Nummer1").innerHTML = "Högsta fuktighet: " + (Graftopp/10 + 16) + "%"
+      document.getElementById("Nummer10").innerHTML = "Lägsta fuktighet: " + (Grafbotten/10 + 16) + "%"
 }
 
 for (let i = Datalista.length; i > 0; i--) {
@@ -639,7 +639,7 @@ document.getElementById("Nummer2").innerHTML = "Kyligt till jämförelse"}
 // Lite under medel
 document.getElementById("Nummer2").innerHTML = "Lite kyligt till jämförelse"}}
                         else{
-                  document.getElementById("Nummer8").innerHTML = "Fuktighet: " + Kolumn1order/2 + "%"
+                  document.getElementById("Nummer8").innerHTML = "Fuktighet: " + (Kolumn1order/10 + 16) + "%"
                   
                   if(Kolumn1order == Kolumn1genomsnittHumoutput){
                         document.getElementById("Nummer2").innerHTML = "---"
@@ -680,7 +680,7 @@ document.getElementById("Nummer2").innerHTML = "Kyligt till jämförelse"}
 // Lite under medel
 document.getElementById("Nummer2").innerHTML = "Lite kyligt till jämförelse"}}
                         else{
-                  document.getElementById("Nummer8").innerHTML = "Fuktighet: " + Kolumn2order/2 + "%"
+                  document.getElementById("Nummer8").innerHTML = "Fuktighet: " + (Kolumn2order/10 + 16) + "%"
                   
                   if(Kolumn2order == Kolumn2genomsnittHumoutput){
                         document.getElementById("Nummer2").innerHTML = "---"
@@ -726,7 +726,7 @@ document.getElementById("Nummer2").innerHTML = "Kyligt till jämförelse"}
 // Lite under medel
 document.getElementById("Nummer2").innerHTML = "Lite kyligt till jämförelse"}}
                         else{
-                  document.getElementById("Nummer8").innerHTML = "Fuktighet: " + Kolumn3order/2 + "%"
+                  document.getElementById("Nummer8").innerHTML = "Fuktighet: " + (Kolumn3order/10 + 16) + "%"
                   
                   if(Kolumn3order == Kolumn3genomsnittHumoutput){
                         document.getElementById("Nummer2").innerHTML = "---"
@@ -767,7 +767,7 @@ document.getElementById("Nummer2").innerHTML = "Kyligt till jämförelse"}
 // Lite under medel
 document.getElementById("Nummer2").innerHTML = "Lite kyligt till jämförelse"}}
                         else{
-                  document.getElementById("Nummer8").innerHTML = "Fuktighet: " + Kolumn4order/2 + "%"
+                  document.getElementById("Nummer8").innerHTML = "Fuktighet: " + (Kolumn4order/10 + 16) + "%"
                   
                   if(Kolumn4order == Kolumn4genomsnittHumoutput){
                         document.getElementById("Nummer2").innerHTML = "---"
@@ -809,7 +809,7 @@ document.getElementById("Nummer2").innerHTML = "Kyligt till jämförelse"}
 // Lite under medel
 document.getElementById("Nummer2").innerHTML = "Lite kyligt till jämförelse"}}
                         else{
-                  document.getElementById("Nummer8").innerHTML = "Fuktighet: " + Kolumn5order/2 + "%"
+                  document.getElementById("Nummer8").innerHTML = "Fuktighet: " + (Kolumn5order/10 + 16) + "%"
                   
                   if(Kolumn5order == Kolumn5genomsnittHumoutput){
                         document.getElementById("Nummer2").innerHTML = "---"
@@ -850,7 +850,7 @@ document.getElementById("Nummer2").innerHTML = "Kyligt till jämförelse"}
 // Lite under medel
 document.getElementById("Nummer2").innerHTML = "Lite kyligt till jämförelse"}}
                         else{
-                  document.getElementById("Nummer8").innerHTML = "Fuktighet: " + Kolumn6order/2 + "%"
+                  document.getElementById("Nummer8").innerHTML = "Fuktighet: " + (Kolumn6order/10 + 16) + "%"
                   
                   if(Kolumn6order == Kolumn6genomsnittHumoutput){
                         document.getElementById("Nummer2").innerHTML = "---"
@@ -891,7 +891,7 @@ document.getElementById("Nummer2").innerHTML = "Kyligt till jämförelse"}
 // Lite under medel
 document.getElementById("Nummer2").innerHTML = "Lite kyligt till jämförelse"}}
                         else{
-                  document.getElementById("Nummer8").innerHTML = "Fuktighet: " + Kolumn7order/2 + "%"
+                  document.getElementById("Nummer8").innerHTML = "Fuktighet: " + (Kolumn7order/10 + 16) + "%"
                   
                   if(Kolumn7order == Kolumn7genomsnittHumoutput){
                         document.getElementById("Nummer2").innerHTML = "---"
@@ -932,7 +932,7 @@ document.getElementById("Nummer2").innerHTML = "Kyligt till jämförelse"}
 // Lite under medel
 document.getElementById("Nummer2").innerHTML = "Lite kyligt till jämförelse"}}
                         else{
-                  document.getElementById("Nummer8").innerHTML = "Fuktighet: " + Kolumn8order/2 + "%"
+                  document.getElementById("Nummer8").innerHTML = "Fuktighet: " + (Kolumn8order/10 + 16) + "%"
                   
                   if(Kolumn8order == Kolumn8genomsnittHumoutput){
                         document.getElementById("Nummer2").innerHTML = "---"

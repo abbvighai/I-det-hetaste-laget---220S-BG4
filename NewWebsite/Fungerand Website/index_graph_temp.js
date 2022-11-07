@@ -433,6 +433,7 @@ tempKlassrum();
 tempLars();
 
 
+
 //  Firebase -> Lokal Array(Graf1 Js)(temp & hum):
 
 // var Datalistacopy = new Array
@@ -450,11 +451,11 @@ for(let i=49;i>=0;i--){
         })
     var HumidityRef = db.ref("SimonsPlats/Dagar-" + i + "/Hour-" + x * 3 + "/Minute-5/Humidity");
     HumidityRef.on("value", (huma) => {
-            humvalue = (Math.round(huma.val() * 2))/2
+            humvalue = Math.round((huma.val() - 16) * 10)
             console.log(humvalue);
             console.log("h:")
 if (tempvalue != 0 && humvalue != 0){
-    Datalista.push(10000000 + 100000 * i + 10000 * x + 100 * tempvalue + humvalue)
+    Datalista.push(10000000 + 100000 * i + 10000 * (x + 1) + 100 * tempvalue + humvalue)
     }})}
 }
 
@@ -469,11 +470,11 @@ for(let i=49;i>=0;i--){
         })
     var HumidityRef = db.ref("Hallonrummet/Dagar-" + i + "/Hour-" + x * 3 + "/Minute-5/Humidity");
     HumidityRef.on("value", (huma) => {
-            humvalue = (Math.round(huma.val() * 2))/2
+            humvalue = Math.round((huma.val() - 16) * 10)
             console.log(humvalue);
             console.log("h:")
 if (tempvalue != 0 && humvalue != 0){
-    Datalista.push(20000000 + 100000 * i + 10000 * x + 100 * tempvalue + humvalue)
+    Datalista.push(20000000 + 100000 * i + 10000 * (x + 1) + 100 * tempvalue + humvalue)
     }})}
 }
 // Terrariet
@@ -487,11 +488,11 @@ for(let i=49;i>=0;i--){
         })
     var HumidityRef = db.ref("Terrariet/Dagar-" + i + "/Hour-" + x * 3 + "/Minute-5/Humidity");
     HumidityRef.on("value", (huma) => {
-            humvalue = (Math.round(huma.val() * 2))/2
+            humvalue = Math.round((huma.val() - 16) * 10)
             console.log(humvalue);
             console.log("h:")
 if (tempvalue != 0 && humvalue != 0){
-    Datalista.push(30000000 + 100000 * i + 10000 * x + 100 * tempvalue + humvalue)
+    Datalista.push(30000000 + 100000 * i + 10000 * (x + 1) + 100 * tempvalue + humvalue)
     }})}
 }
 // Klassrummmet
@@ -505,11 +506,11 @@ for(let i=49;i>=0;i--){
         })
     var HumidityRef = db.ref("Klassrum/Dagar-" + i + "/Hour-" + x * 3 + "/Minute-5/Humidity");
     HumidityRef.on("value", (huma) => {
-            humvalue = (Math.round(huma.val() * 2))/2
+            humvalue = Math.round((huma.val() - 16) * 10)
             console.log(humvalue);
             console.log("h:")
 if (tempvalue != 0 && humvalue != 0){
-    Datalista.push(40000000 + 100000 * i + 10000 * x + 100 * tempvalue + humvalue)
+    Datalista.push(40000000 + 100000 * i + 10000 * (x + 1) + 100 * tempvalue + humvalue)
     }})}
 }
 // Larsplats
@@ -523,10 +524,10 @@ for(let i=49;i>=0;i--){
         })
     var HumidityRef = db.ref("Lars/Dagar-" + i + "/Hour-" + x * 3 + "/Minute-5/Humidity");
     HumidityRef.on("value", (huma) => {
-            humvalue = (Math.round(huma.val() * 2))/2
+            humvalue = Math.round((huma.val() - 16) * 10)
             console.log(humvalue);
             console.log("h:")
 if (tempvalue != 0 && humvalue != 0){
-    Datalista.push(50000000 + 100000 * i + 10000 * x + 100 * tempvalue + humvalue)
+    Datalista.push(50000000 + 100000 * i + 10000 * (x + 1) + 100 * tempvalue + humvalue)
     }})}
 }
