@@ -1,0 +1,251 @@
+body, html {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    min-width: 100%;
+}
+
+
+
+body {
+    font-size: 14px;
+    background: url('https://free4kwallpapers.com/uploads/originals/2015/10/27/beautiful-clouds-from-the-top-view-wallpaper.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
+}
+
+
+* {
+    box-sizing: border-box;
+    font-family: 'Inria Sans', sans-serif;
+    }
+
+
+.Menu a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.Menu a:hover {
+    text-decoration: underline;
+}
+
+.Menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 123px;
+    background-color: #FFBF60;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 26px;
+    color: white;
+    
+}
+.divider {
+    display: flex;
+    width:100%;
+    height: 20px;
+}
+
+
+
+.f-col-start-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px 0px 0px 300px;
+    gap: 10px;
+    height: fit-content;
+    width: 100%;
+}
+
+
+.title {
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 96px;
+    width: 100%;
+    color: #000000;
+    margin: 0;
+}
+
+.pre-title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 64px;
+    margin: 0;
+    width: 100%;
+    color: #000000;
+
+}
+
+#orange-rect {
+    width: 848px;
+    height: 68px;
+    background: #FFEF5F;
+}
+
+.top-design {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0px;
+    gap: 10px;
+
+    width: 100%;
+    padding: 20px 0;
+
+}
+
+.bottom-decoration {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 10px;
+    width: 100%;
+
+}
+
+#green-rect{
+    width: 240px;
+    height: 30px;
+
+    background: #0E0E0E;
+
+}
+
+.pa-b-100 {
+    padding-bottom: 100px;
+}
+.contact_us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    
+    width: 100%;
+    height: 695px;
+    
+    background: #787878;
+}
+.touch {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 10px;
+    gap: 10px;
+    
+    width: 100%;
+    height: 141px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 96px;
+    line-height: 116px;
+    text-align: center;
+    
+    color: #FFFFFF;
+    }
+.boxes {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 10px;
+    
+    width: 100%;
+    height: 508px;
+    }
+.sub-box {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 55px 71px;
+    gap: 10px;
+    
+    width: 100%;
+    height: 100%;
+    
+    background: #FFBF60;
+    }
+.inside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 10px;
+    
+    width: 250px;
+    height: 100%;
+    }
+
+.big-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
+
+    color: #FFFFFF;
+    }
+.picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.bolder{
+    font-family: 'Inter';
+    font-style: bold;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 29px;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+.normal{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 29px;
+    text-align: center;
+
+    color: #FFFFFF;
+}
