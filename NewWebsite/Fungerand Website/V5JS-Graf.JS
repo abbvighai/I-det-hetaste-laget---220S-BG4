@@ -626,7 +626,7 @@ function b1(){
 if(Valtmode == 1){
 document.getElementById("Nummer8").innerHTML = "Temperatur: " + (Kolumn1order / 10 + 18) + "°C"
 
-if(Kolumn1order == Kolumn1genomsnittTempoutput){
+if(Valdstation == 6){
       document.getElementById("Nummer2").innerHTML = "---"
 }
      else if(Kolumn1order > 1.15 * Kolumn1genomsnittTempoutput){
@@ -645,7 +645,7 @@ document.getElementById("Nummer2").innerHTML = "Lite kyligt till jämförelse"}}
                         else{
                   document.getElementById("Nummer8").innerHTML = "Fuktighet: " + (Kolumn1order/10 + 16) + "%"
                   
-                  if(Kolumn1order == Kolumn1genomsnittHumoutput){
+                  if(Valdstation == 6){
                         document.getElementById("Nummer2").innerHTML = "---"
                   }
                        else if(Kolumn1order > 1.15 * Kolumn1genomsnittHumoutput){
@@ -667,7 +667,7 @@ if(Valtmode == 1){
 document.getElementById("Nummer8").innerHTML = "Temperatur: " + (Kolumn2order / 10 + 18) + "°C"
 
 
-if(Kolumn2order == Kolumn2genomsnittTempoutput){
+if(Valdstation == 6){
       document.getElementById("Nummer2").innerHTML = "---"
 }
      else if(Kolumn2order > 1.15 * Kolumn2genomsnittTempoutput){
@@ -686,7 +686,7 @@ document.getElementById("Nummer2").innerHTML = "Lite kyligt till jämförelse"}}
                         else{
                   document.getElementById("Nummer8").innerHTML = "Fuktighet: " + (Kolumn2order/10 + 16) + "%"
                   
-                  if(Kolumn2order == Kolumn2genomsnittHumoutput){
+                  if(Valdstation == 6){
                         document.getElementById("Nummer2").innerHTML = "---"
                   }
                        else if(Kolumn2order > 1.15 * Kolumn2genomsnittHumoutput){
@@ -713,7 +713,7 @@ if(Valtmode == 1){
 document.getElementById("Nummer8").innerHTML = "Temperatur: " + (Kolumn3order / 10 + 18) + "°C"
 
 
-if(Kolumn3order == Kolumn3genomsnittTempoutput){
+if(Valdstation == 6){
       document.getElementById("Nummer2").innerHTML = "---"
 }
      else if(Kolumn3order > 1.15 * Kolumn3genomsnittTempoutput){
@@ -732,7 +732,7 @@ document.getElementById("Nummer2").innerHTML = "Lite kyligt till jämförelse"}}
                         else{
                   document.getElementById("Nummer8").innerHTML = "Fuktighet: " + (Kolumn3order/10 + 16) + "%"
                   
-                  if(Kolumn3order == Kolumn3genomsnittHumoutput){
+                  if(Valdstation == 6){
                         document.getElementById("Nummer2").innerHTML = "---"
                   }
                        else if(Kolumn3order > 1.15 * Kolumn3genomsnittHumoutput){
@@ -754,7 +754,7 @@ if(Valtmode == 1){
 document.getElementById("Nummer8").innerHTML = "Temperatur: " + (Kolumn4order / 10 + 18) + "°C"
 
 
-if(Kolumn4order == Kolumn4genomsnittTempoutput){
+if(Valdstation == 6){
       document.getElementById("Nummer2").innerHTML = "---"
 }
      else if(Kolumn4order > 1.15 * Kolumn4genomsnittTempoutput){
@@ -773,7 +773,7 @@ document.getElementById("Nummer2").innerHTML = "Lite kyligt till jämförelse"}}
                         else{
                   document.getElementById("Nummer8").innerHTML = "Fuktighet: " + (Kolumn4order/10 + 16) + "%"
                   
-                  if(Kolumn4order == Kolumn4genomsnittHumoutput){
+                  if(Valdstation == 6){
                         document.getElementById("Nummer2").innerHTML = "---"
                   }
                        else if(Kolumn4order > 1.15 * Kolumn4genomsnittHumoutput){
@@ -796,7 +796,7 @@ if(Valtmode == 1){
 document.getElementById("Nummer8").innerHTML = "Temperatur: " + (Kolumn5order / 10 + 18) + "°C"
 
 
-if(Kolumn5order == Kolumn5genomsnittTempoutput){
+if(Valdstation == 6){
       document.getElementById("Nummer2").innerHTML = "---"
 }
      else if(Kolumn5order > 1.15 * Kolumn5genomsnittTempoutput){
@@ -815,7 +815,7 @@ document.getElementById("Nummer2").innerHTML = "Lite kyligt till jämförelse"}}
                         else{
                   document.getElementById("Nummer8").innerHTML = "Fuktighet: " + (Kolumn5order/10 + 16) + "%"
                   
-                  if(Kolumn5order == Kolumn5genomsnittHumoutput){
+                  if(Valdstation == 6){
                         document.getElementById("Nummer2").innerHTML = "---"
                   }
                        else if(Kolumn5order > 1.15 * Kolumn5genomsnittHumoutput){
@@ -837,7 +837,7 @@ if(Valtmode == 1){
 document.getElementById("Nummer8").innerHTML = "Temperatur: " + (Kolumn6order / 10 + 18) + "°C"
 
 
-if(Kolumn6order == Kolumn6genomsnittTempoutput){
+if(Valdstation == 6){
       document.getElementById("Nummer2").innerHTML = "---"
 }
      else if(Kolumn6order > 1.15 * Kolumn6genomsnittTempoutput){
@@ -856,7 +856,7 @@ document.getElementById("Nummer2").innerHTML = "Lite kyligt till jämförelse"}}
                         else{
                   document.getElementById("Nummer8").innerHTML = "Fuktighet: " + (Kolumn6order/10 + 16) + "%"
                   
-                  if(Kolumn6order == Kolumn6genomsnittHumoutput){
+                  if(Valdstation == 6){
                         document.getElementById("Nummer2").innerHTML = "---"
                   }
                        else if(Kolumn6order > 1.15 * Kolumn6genomsnittHumoutput){
@@ -878,7 +878,7 @@ if(Valtmode == 1){
 document.getElementById("Nummer8").innerHTML = "Temperatur: " + (Kolumn7order / 10 + 18) + "°C"
 
 
-if(Kolumn7order == Kolumn7genomsnittTempoutput){
+if(Valdstation == 6){
       document.getElementById("Nummer2").innerHTML = "---"
 }
      else if(Kolumn7order > 1.15 * Kolumn7genomsnittTempoutput){
@@ -897,7 +897,7 @@ document.getElementById("Nummer2").innerHTML = "Lite kyligt till jämförelse"}}
                         else{
                   document.getElementById("Nummer8").innerHTML = "Fuktighet: " + (Kolumn7order/10 + 16) + "%"
                   
-                  if(Kolumn7order == Kolumn7genomsnittHumoutput){
+                  if(Valdstation == 6){
                         document.getElementById("Nummer2").innerHTML = "---"
                   }
                        else if(Kolumn7order > 1.15 * Kolumn7genomsnittHumoutput){
@@ -919,7 +919,7 @@ if(Valtmode == 1){
 document.getElementById("Nummer8").innerHTML = "Temperatur: " + (Kolumn8order / 10 + 18) + "°C"
 
 
-if(Kolumn8order == Kolumn8genomsnittTempoutput){
+if(Valdstation == 6){
       document.getElementById("Nummer2").innerHTML = "---"
 }
      else if(Kolumn8order > 1.15 * Kolumn8genomsnittTempoutput){
@@ -938,7 +938,7 @@ document.getElementById("Nummer2").innerHTML = "Lite kyligt till jämförelse"}}
                         else{
                   document.getElementById("Nummer8").innerHTML = "Fuktighet: " + (Kolumn8order/10 + 16) + "%"
                   
-                  if(Kolumn8order == Kolumn8genomsnittHumoutput){
+                  if(Valdstation == 6){
                         document.getElementById("Nummer2").innerHTML = "---"
                   }
                        else if(Kolumn8order > 1.15 * Kolumn8genomsnittHumoutput){
