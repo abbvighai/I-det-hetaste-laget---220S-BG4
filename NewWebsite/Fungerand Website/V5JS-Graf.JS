@@ -620,7 +620,7 @@ console.log("Endvaluediagnostic")
 function b1(){
 // temp/hum
 if(Valtmode == 1){
-document.getElementById("Nummer8").innerHTML = "Temperatur: " + Kolumn1order/2 + "°C"
+document.getElementById("Nummer8").innerHTML = "Temperatur: " + (Kolumn1order / 10 + 18) + "°C"
 
 if(Kolumn1order == Kolumn1genomsnittTempoutput){
       document.getElementById("Nummer2").innerHTML = "---"
@@ -660,7 +660,7 @@ document.getElementById("Nummer2").innerHTML = "Lite kyligt till jämförelse"}}
 function b2(){
 // temp/hum
 if(Valtmode == 1){
-document.getElementById("Nummer8").innerHTML = "Temperatur: " + Kolumn2order/2 + "°C"
+document.getElementById("Nummer8").innerHTML = "Temperatur: " + (Kolumn2order / 10 + 18) + "°C"
 
 
 if(Kolumn2order == Kolumn2genomsnittTempoutput){
@@ -706,7 +706,7 @@ document.getElementById("Nummer2").innerHTML = "Lite kyligt till jämförelse"}}
 function b3(){
 // temp/hum
 if(Valtmode == 1){
-document.getElementById("Nummer8").innerHTML = "Temperatur: " + Kolumn3order/2 + "°C"
+document.getElementById("Nummer8").innerHTML = "Temperatur: " + (Kolumn3order / 10 + 18) + "°C"
 
 
 if(Kolumn3order == Kolumn3genomsnittTempoutput){
@@ -747,7 +747,7 @@ document.getElementById("Nummer2").innerHTML = "Lite kyligt till jämförelse"}}
                   function b4(){
 // temp/hum
 if(Valtmode == 1){
-document.getElementById("Nummer8").innerHTML = "Temperatur: " + Kolumn4order/2 + "°C"
+document.getElementById("Nummer8").innerHTML = "Temperatur: " + (Kolumn4order / 10 + 18) + "°C"
 
 
 if(Kolumn4order == Kolumn4genomsnittTempoutput){
@@ -789,7 +789,7 @@ document.getElementById("Nummer2").innerHTML = "Lite kyligt till jämförelse"}}
                   function b5(){
 // temp/hum
 if(Valtmode == 1){
-document.getElementById("Nummer8").innerHTML = "Temperatur: " + Kolumn5order/2 + "°C"
+document.getElementById("Nummer8").innerHTML = "Temperatur: " + (Kolumn5order / 10 + 18) + "°C"
 
 
 if(Kolumn5order == Kolumn5genomsnittTempoutput){
@@ -830,7 +830,7 @@ document.getElementById("Nummer2").innerHTML = "Lite kyligt till jämförelse"}}
                        function b6(){
 // temp/hum
 if(Valtmode == 1){
-document.getElementById("Nummer8").innerHTML = "Temperatur: " + Kolumn6order/2 + "°C"
+document.getElementById("Nummer8").innerHTML = "Temperatur: " + (Kolumn6order / 10 + 18) + "°C"
 
 
 if(Kolumn6order == Kolumn6genomsnittTempoutput){
@@ -871,7 +871,7 @@ document.getElementById("Nummer2").innerHTML = "Lite kyligt till jämförelse"}}
                        function b7(){
 // temp/hum
 if(Valtmode == 1){
-document.getElementById("Nummer8").innerHTML = "Temperatur: " + Kolumn7order/2 + "°C"
+document.getElementById("Nummer8").innerHTML = "Temperatur: " + (Kolumn7order / 10 + 18) + "°C"
 
 
 if(Kolumn7order == Kolumn7genomsnittTempoutput){
@@ -912,7 +912,7 @@ document.getElementById("Nummer2").innerHTML = "Lite kyligt till jämförelse"}}
                           function b8(){
 // temp/hum
 if(Valtmode == 1){
-document.getElementById("Nummer8").innerHTML = "Temperatur: " + Kolumn8order/2 + "°C"
+document.getElementById("Nummer8").innerHTML = "Temperatur: " + (Kolumn8order / 10 + 18) + "°C"
 
 
 if(Kolumn8order == Kolumn8genomsnittTempoutput){
