@@ -53,6 +53,7 @@ var Kolumn6genomsnittHumoutput = 0
 var Kolumn7genomsnittHumoutput = 0
 var Kolumn8genomsnittHumoutput = 0
 
+
 var Kolumn1genomsnittcounterHum = 0
 var Kolumn2genomsnittcounterHum = 0
 var Kolumn3genomsnittcounterHum = 0
@@ -114,69 +115,6 @@ var LängdDatalista
 
 var Övermedel
 
-// Artificiell data
-// Datalista[1] = 12212010
-//   Datalista[2] = 12222321
-//   Datalista[3] = 12235323
-//   Datalista[4] = 12243121
-//   Datalista[5] = 12256040
-//   Datalista[6] = 12263332
-//   Datalista[7] = 12274236
-//   Datalista[8] = 12286040
-//   Datalista[9] = 12312032
-//   Datalista[10] = 12322432
-//   Datalista[11] = 12335312
-//   Datalista[12] = 12346023
-//   Datalista[13] = 12352434
-//   Datalista[14] = 12364540
-//   Datalista[15] = 12372324
-//   Datalista[16] = 12386029
-//   Datalista[17] = 12415223
-//   Datalista[18] = 12426012
-//   Datalista[19] = 12432040
-//   Datalista[20] = 12445220
-//   Datalista[21] = 12454110
-//   Datalista[22] = 12464115
-//   Datalista[23] = 12476023
-//   Datalista[24] = 12482439
-//   Datalista[25] = 12516019
-//   Datalista[26] = 12523424
-//   Datalista[27] = 12532031
-//   Datalista[28] = 12545321
-//   Datalista[29] = 12555514
-//   Datalista[30] = 12565740
-//   Datalista[31] = 12576012
-//   Datalista[32] = 12583525
-  
-// INPUTSYSTEM FRÅN FIREBASE                      (INTE KLAR)
-
-// ANTECKNINGAR: Detta system kommer behandla datan från en dataform enligt(Dag, timme, minut) TILL endast (timme). 
-// Systemet kommer stödja ett timme-värde upp till 999, alltså kommer systemet krasha efter dag 41(gränsen kan höjas i framtiden med lite arbete)
-// Inget behöver ändras för koden i C++. Omvandlingen behövs för att göra dataformen kompatibel med Graf1 eftersom den blev kodad innan firebase och inte är anpassad.
-// Ytterliggare data från firebase(dagar, minuter) kommer istället användas för andra grafer.
-
-// db.Mätstation X.Dag Y. Timme Z
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// INPUTSYSTEM FRÅN FIREBASE
 
 
   // Start av primär funktion
