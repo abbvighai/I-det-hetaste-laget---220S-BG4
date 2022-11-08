@@ -60,6 +60,7 @@ let HumListKlassrum = [];
 let HumListLars = [];
 let HourList = [];
 
+//Här sätts referatet till firebase databasen
 const db = firebase.database();
 
 // Checkar om det är en ny dag och om timmen ska ändras
@@ -81,24 +82,26 @@ function otherDayChange(tim,dat) {
     }
 }
 
-
+//Lägger in nuvarande timme till timmen för 24 timmar sen I en 24 lång array.
 for(let i=0; i<24;i++){
     HourList.push(hour);
     hour = hour-1;
     hour = otherDayCheck(hour);
 }
-//Bygger en array för Hum
+//Bygger en array för Humidity value
+//Görs en gång för varje graf/rum
 for(let i=0; i<24;i++){
     var HumidityRef1 = db.ref("SimonsPlats/Dagar-" + dagSimon + "/Hour-" + hourSimon + "/Minute-0/Humidity");
     HumidityRef1.on("value", (Hum) => {
         let TheValue1 = Hum.val();
         HumListSimon.push(TheValue1)
-        //console.log(HumListSimon)
     });
 
     hourSimon = hourSimon-1;
     dagSimon = otherDayChange(hourSimon,dagSimon);
     hourSimon = otherDayCheck(hourSimon);
+    //Den letar efter minut 0 av timmen som är vald och pushar in det I humidity arrayen. 
+    //Sedan ändras Timme och kanske dag. ifall det behövs.
 
 }
 for(let i=0; i<24;i++){
@@ -106,7 +109,6 @@ for(let i=0; i<24;i++){
     HumidityRef2.on("value", (Hum) => {
         let TheValue2 = Hum.val();
         HumListHallon.push(TheValue2)
-        //console.log(HumListHallon)
     });
 
     hourHallon = hourHallon-1;
@@ -427,6 +429,8 @@ function getHumData5(){
         [HourList[0],HumListLars[0]],
         ];
     }
+
+// Här på slutet körs graferna så att de kommet upp på hemsidan
 HumsimPlats();
 HumHallon();
 HumTerraria();
