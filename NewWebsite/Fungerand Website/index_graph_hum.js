@@ -1,3 +1,5 @@
+// Graferna fungerar på samma sätt oavsett Temperatur/Humidity
+
 const firebaseConfig = {
     apiKey: "AIzaSyDY7wGtFEKln8NJ3LFDqO26V5dzsEu_Dhs",
     authDomain: "i-det-hetaste-laget-bg4.firebaseapp.com",
