@@ -1,3 +1,6 @@
+//DENNA KOD FUNGERAR PÅ SAMMA SÄTT SOM index_graph_temp.js!
+//Gå ditt för att läsa om hur denna kod fungerar!!
+
 const firebaseConfig = {
     apiKey: "AIzaSyDY7wGtFEKln8NJ3LFDqO26V5dzsEu_Dhs",
     authDomain: "i-det-hetaste-laget-bg4.firebaseapp.com",
