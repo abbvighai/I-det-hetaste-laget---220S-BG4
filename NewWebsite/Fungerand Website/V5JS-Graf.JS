@@ -117,7 +117,7 @@ var Övermedel
 
 
 
-  // Start av primär funktion
+  // Start av primär funktion, startas varje gång klienten uppdaterar information kopplad till Graf1.
 function Refreshgraph() {
     
       Valdstation = document.getElementById("hej").value
@@ -125,7 +125,7 @@ function Refreshgraph() {
       Valtmode = document.getElementById("hejj").value
       
       Valtdatum = document.getElementById("hejjj").value
-// Ovan ska ersättas med input av Firebase
+
 LängdDatalista = (Datalista.length)
 
 // Nollställer datavärden inför beräkningar
@@ -172,20 +172,27 @@ Mellan3Kolumn78 = 0
 Grafbotten = 100
 Graftopp = 0
 
-// Går igenom varje datarad och filtrera bort alla som inte är relevanta för grafen(matchar EJ Valdstation, Valtmode eller Tidsram)
+// Hämtas varje värde från Datalista(Lokal array med komprimerad data från firebase)
+// Varje lång beråkning som t.ex "((((Datalista[i]) % 1000000000) - (Datalista[i] % 10000000))/10000000)" "bryter ut" specefik data och kollar om den matchar inställningarna hos HTML.
+// Om all data matchar så kommer datan att läsas av och användas vid vidare beräkningar. 
+// Det är sedan en lång process tills att ny data returneras till HTML(~ rad 380), och i fallet att klienten efterfrågar data om ett genomsnitt(Valtmode == 6) kommer mycket kod ej genomföras
+
+// För varje kolumn i grafen används OLIKA variabler.
+// Jag fann inget sätt att systematiskt hämta flera olika variabler och av den anledningen behöver vissa delar kod repeteras för alla dessa 8 variabler.
+if(Valtmode != 6){
 for (let i = Datalista.length; i > 0; i--) {
 if(((((Datalista[i]) % 1000000000) - (Datalista[i] % 10000000))/10000000) == Valdstation && (((((Datalista[i]) % 10000000) - (Datalista[i] % 100000))/100000) == Valtdatum)){
 
 if(Valtmode == 1) {
 
    
-// Beräkna Grafbotten
+// Beräkna Anpassad graftopp utifrån visad data
 if((((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100 < Grafbotten){
 
 Grafbotten = (((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100
 
 }
-// Beräkna Graftopp
+// Beräkna Anpassad graftopp utifrån visad data
 if((((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100 > Graftopp){
 
 Graftopp = (((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100
@@ -194,42 +201,33 @@ Graftopp = (((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100
 // Tilldela datarad till rätt tidpunkt(1-8)
 switch(((((Datalista[i]) % 100000) - (Datalista[i] % 10000))/10000)){
         case 1:
-
         Kolumn1order = (((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100
         break
         case 2:
-
         Kolumn2order = (((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100
         break
         case 3:
-
         Kolumn3order = (((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100
         break
         case 4:
-
         Kolumn4order = (((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100
         break
         case 5:
-
         Kolumn5order = (((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100
         break
         case 6:
-
         Kolumn6order = (((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100
         break
         case 7:
-
         Kolumn7order = (((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100
         break
         case 8:
-
         Kolumn8order = (((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100
         break
-
 default:
     // Error - Devsyfte
     console.log("errortempswitchnocasefound")
-   
+break
 }}
 
 // Samma fast för Valtmode = 2 (hum) SKIPPA TILL "HIT"
@@ -276,7 +274,7 @@ default:
       // Error - Devsyfte
     console.log("errortempswitchnocasefound")
 break
-}}}}
+}}}}}
 // HIT
 
 // Log - Devsyfte
@@ -284,9 +282,9 @@ console.log("Columndatadistributioncomplete")
 
 // "Medel" står på plats 6 i listan över mätplatser. Om "Medel"-alternativet är valt görs den nedre koden ISTÄLLET för ALLT ovan som tillhör funktionen "Refreshgraph"
 if(Valdstation == 6){
-    // (temp)
+ 
       if(Valtmode == 1){
-      // Ge medelvärden till grafen
+      // Ge medelvärden till grafen. Beräkningen av medelvärden är redan gjorda utanför funktionen "Refreshgraph"
       Kolumn1order = Kolumn1genomsnittTempoutput
       Kolumn2order = Kolumn2genomsnittTempoutput
       Kolumn3order = Kolumn3genomsnittTempoutput
@@ -295,7 +293,7 @@ if(Valdstation == 6){
       Kolumn6order = Kolumn6genomsnittTempoutput
       Kolumn7order = Kolumn7genomsnittTempoutput
       Kolumn8order = Kolumn8genomsnittTempoutput
-      // Bestäm graftopp & grafbotten
+      // Uppdatera graftopp & grafbotten
       Listavgtemps = [Kolumn1genomsnittTempoutput, Kolumn2genomsnittTempoutput, Kolumn3genomsnittTempoutput, Kolumn4genomsnittTempoutput, Kolumn5genomsnittTempoutput, Kolumn6genomsnittTempoutput, Kolumn7genomsnittTempoutput, Kolumn8genomsnittTempoutput]
       
       for (let i = Listavgtemps.length; i > 0; i--){
@@ -328,13 +326,10 @@ if(Valdstation == 6){
       }
       if(Listavghums[i] > Graftopp){
          Graftopp = Listavghums[i]
-      }
-      }
-      }
-      }
+      }}}}
       // HIT
 
-// Repeterad operator för att omvandla Temp/hum till grafposition. (Ex: 30celcius - Y-posotion 4 i grafkolumn)
+// Repeterad operator för att omvandla Temp/hum-data till position(1-10) i respektive kolumn utifrån Graftopp & Grafbotten.
 Kolumn1output = Math.floor(((Kolumn1order - Grafbotten) / (Graftopp - Grafbotten)) * 9.95)
 Kolumn2output = Math.floor(((Kolumn2order - Grafbotten) / (Graftopp - Grafbotten)) * 9.95)
 Kolumn3output = Math.floor(((Kolumn3order - Grafbotten) / (Graftopp - Grafbotten)) * 9.95)
@@ -344,7 +339,8 @@ Kolumn6output = Math.floor(((Kolumn6order - Grafbotten) / (Graftopp - Grafbotten
 Kolumn7output = Math.floor(((Kolumn7order - Grafbotten) / (Graftopp - Grafbotten)) * 9.95)
 Kolumn8output = Math.floor(((Kolumn8order - Grafbotten) / (Graftopp - Grafbotten)) * 9.95)
 
-// Positioner för "stödkolumner" som syns mellan mätvärden i grafen
+// Positioner för "stödkolumner" som syns mellan mätvärden i grafen.
+// Det menar kolumnerna vars syfte är att ge bättre "flyt" i grafen.
 Mellan1Kolumn12 = Math.round(Kolumn1output - ((Kolumn1output - Kolumn2output) * 0.25))
 Mellan2Kolumn12 = Math.round(Kolumn1output - ((Kolumn1output - Kolumn2output) * 0.5))
 Mellan3Kolumn12 = Math.round(Kolumn1output - ((Kolumn1output - Kolumn2output) * 0.75))
@@ -374,7 +370,7 @@ Mellan2Kolumn78 = Math.round(Kolumn7output - ((Kolumn7output - Kolumn8output) * 
 Mellan3Kolumn78 = Math.round(Kolumn7output - ((Kolumn7output - Kolumn8output) * 0.75))
 console.log("Graphfunctioncomplete")
 
-// Överför data till CSS(i form av strings). (Ex Class(boxP + (5)) = Class boxp5)
+// Överför data till CSS(Order 1-10)
   document.getElementById("boxtarget1").setAttribute("class", "boxP" + (Kolumn1output + 1).toString())
   document.getElementById("boxtarget2").setAttribute("class", "boxP" + (Kolumn2output+ 1).toString())
   document.getElementById("boxtarget3").setAttribute("class", "boxP" + (Kolumn3output+ 1).toString())
@@ -405,6 +401,7 @@ console.log("Graphfunctioncomplete")
   document.getElementById("boxtarget78-M2").setAttribute("class", "boxP" + (Mellan2Kolumn78+ 1).toString())
   document.getElementById("boxtarget78-M3").setAttribute("class", "boxP" + (Mellan3Kolumn78+ 1).toString())
 
+// Ange Graftopp & Grafbotten till HTML
 if(Valtmode == 1){
 document.getElementById("Nummer1").innerHTML = "Högsta temperatur: " + (Graftopp/10 + 18) + "°C ->"
 document.getElementById("Nummer10").innerHTML = "Lägsta temperatur: " + (Grafbotten/10 + 18) + "°C ->"
@@ -412,7 +409,9 @@ document.getElementById("Nummer10").innerHTML = "Lägsta temperatur: " + (Grafbo
       document.getElementById("Nummer1").innerHTML = "Högsta fuktighet: " + (Graftopp/10 + 16) + "% ->"
       document.getElementById("Nummer10").innerHTML = "Lägsta fuktighet: " + (Grafbotten/10 + 16) + "% ->"
 }
-// Temp/hum högsta & lägsta mätning (INTE IMPLEMENTERAD)
+// Beräkna temp/hum högsta & lägsta mätning.
+// Görs bara vid öppning av hemsida
+// Detta är INTE IMPLEMENTERAT till HTML
 for (let i = Datalista.length; i > 0; i--) {
       //temp:
      
@@ -502,8 +501,6 @@ for (let i = Datalista.length; i > 0; i--) {
                 break
       }}}
       // Slutgiltig beräkning(tillhör övre stycke kod)
-
-      
       Kolumn1genomsnittTempoutput = Math.round(Kolumn1genomsnittTemp / Kolumn1genomsnittcounterTemp)
       Kolumn2genomsnittTempoutput = Math.round(Kolumn2genomsnittTemp / Kolumn2genomsnittcounterTemp)
       Kolumn3genomsnittTempoutput = Math.round(Kolumn3genomsnittTemp / Kolumn3genomsnittcounterTemp)
@@ -521,15 +518,7 @@ for (let i = Datalista.length; i > 0; i--) {
       Kolumn6genomsnittHumoutput = Math.round(Kolumn6genomsnittHum / Kolumn6genomsnittcounterHum)
       Kolumn7genomsnittHumoutput = Math.round(Kolumn7genomsnittHum / Kolumn7genomsnittcounterHum)
       Kolumn8genomsnittHumoutput = Math.round(Kolumn8genomsnittHum / Kolumn8genomsnittcounterHum)
-
-
-
   }
-// !!! Slutet av primär funktion. Allt nedan behöver bara beräknas vid öppning av websida. Detta för anledningen att utföra mindre mängder kod.
-
-
- 
-
 
 // Log för alla frekvent använda variabler, inputs och outputs från funktionen - Devsyfte
 console.log("Startvaluediagnostic")
@@ -619,8 +608,9 @@ console.log(LängdDatalista)
 
 console.log("Endvaluediagnostic")
 
-// Större/mindre än genomsnitt för vald tidpunkt / tidsperspektiv
-
+// Beräkningar vid "onmousehover" för mätningarna visade i Grafen.
+// Anledningen till till att det är 8 olika funktioner är för att urskilja de 8 olika mätningarna i grafen, därav används endast en bråkdel av koden av programmet.
+// Därav den stora mängden repeterad kod.
 function b1(){
 // temp/hum
 if(Valtmode == 1){

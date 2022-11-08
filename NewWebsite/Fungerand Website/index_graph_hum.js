@@ -432,9 +432,10 @@ HumLars();
 
 
 
-//  Firebase -> Lokal Array(Graf1 Js)(temp & hum):
-
-// var Datalistacopy = new Array
+// All data från firebase komprimeras till "datarader" i en lokal array.
+// En rad ser ungefär ut som följande ex: "13614582".
+// Varje "datarad" innehåller data om vilken mätstation mätningen togs av, vilken dag, vilken tid på dagen, samt vilket temperatur respektive fuktighet som observerades(med 1 decimal säkerhet).
+// Anledningen att data till grafen inte hämtas direkt från firebase är för att inte behöva vänta på servrarna vilket tar lång tid.
 
 var humvalue
 var tempvalue

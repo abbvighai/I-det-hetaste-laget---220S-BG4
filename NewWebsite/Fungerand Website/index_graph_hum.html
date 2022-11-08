@@ -70,14 +70,12 @@
 
 
         <p style="margin-bottom:10px;"></p>
-        <!-- test  p? -->
         <div class="graphmenu">
 
-            <!-- <div class="graphmenu">
-                <a href="index_graph_hum.html" id="humorad">Luftfuktighet</a>
-                <a href="index_graph_temp.html" id="temprat">Temperatur</a>
-            </div> -->
+        <!-- Allt kopplat till Graf1: -->
 
+        <!-- 3 select-knappar som tar in data till Graf1.
+        "Defaultvärdet"(value="99") kan inte tolkas av grafen och medför att grafen ej uppdateras innan alla inställningar är valda. -->
             <select id="hej"  onchange="Refreshgraph()">
                 <option value="99">Välj mätplats:</option>
               <option value="1">Simonsplats</option>
@@ -121,6 +119,8 @@
 
           </div>
           
+          <!-- Flera div som visas vid sidan av grafen och innehåller textinformation.
+          Visar av default en beskrivning av respektive divs syfte. -->
           <div class="Graf">
             <div class="Nummer">
               <div id="Nummer1"><p>Högsta mätningen: </p></div>
@@ -135,7 +135,13 @@
         
         
             </div>
-            <!-- Graf1: -->
+            <!-- Alla box-divs i själva grafen.
+            Denna yta är i sig placerad i en större flexbox.
+            På X-leden består ytan av 29 kolumner; varje kolumn med 10 boxar i höj(Y-led).
+            Data från JS(V5JS-Graf.JS)anges till en ifylld box i varje kolumn med hjälp av metoden "order".
+            Ett högt givet order-värde innebär att den ifyllda boxen placeras högre upp i dess givna kolumn.
+            Vid "onmouseenter" körs en funktion för att ändra informationen på sidan av grafen(Det svart/gråa området). -->
+
                 <div class="MainGraf">
                   <div id="rad0"></div>
                   <div id="rad1"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><button id="boxtarget1"onmouseenter="b1()">    </button></div>
