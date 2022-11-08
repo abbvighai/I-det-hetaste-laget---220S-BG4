@@ -178,7 +178,7 @@ Graftopp = 0
 // Det är sedan en lång process tills att ny data returneras till HTML(~ rad 380), och i fallet att klienten efterfrågar data om ett genomsnitt(Valtmode == 6) kommer mycket kod ej genomföras
 
 // För varje kolumn i grafen används OLIKA variabler.
-// Jag fann inget sätt att systematiskt hämta olika variabler och av den anledningen behöver vissa delar kod repeteras för alla dessa 8 variabler.
+// Jag fann inget sätt att systematiskt hämta olika variabler med samma kod och av den anledningen behöver vissa delar kod repeteras för alla dessa 8 variabler.
 if(Valtmode != 6){
 for (let i = Datalista.length; i > 0; i--) {
 if(((((Datalista[i]) % 1000000000) - (Datalista[i] % 10000000))/10000000) == Valdstation && (((((Datalista[i]) % 10000000) - (Datalista[i] % 100000))/100000) == Valtdatum)){
