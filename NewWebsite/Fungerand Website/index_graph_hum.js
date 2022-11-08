@@ -10,7 +10,7 @@ const firebaseConfig = {
 // Initialize Firebase & variables
 firebase.initializeApp(firebaseConfig);
 
-
+//Här deklareras alla variablar
 
 let TheValue1;
 let TheValue2;
@@ -18,6 +18,8 @@ let TheValue3;
 let TheValue4;
 let TheValue5;
 
+
+//New DAte och d.getMinute används för att få ut minuter, och timmar
 let d = new Date();
 
 let Minute = d.getMinutes();
@@ -29,14 +31,15 @@ let hourLars = d.getHours();
 
 let hour = d.getHours();
 
-
+//Här läggs till en timme på nuvarande timme för att firebase timmarna är I fel timezone 
 hourSimon = hourSimon+1
 hourHallon = hourHallon+1
 hourTerraria = hourTerraria+1
 hourKlassrum = hourKlassrum+1
 hourLars = hourLars+1
 
-
+//Här är den sämsta delen av hela koden. Kan inte ändra på grund att on() functionen hade stora problem att få in sig en Varibel av
+//en for loop. Jag hade planerat hur vi skulle göra men tyvärr var det visst omöjligt /:  Jag frågade lisa och hon fattade inte heller. 
 let dag = 7
 
 let dagSimon = dag
