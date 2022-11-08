@@ -21,7 +21,6 @@ let TheValue3;
 let TheValue4;
 let TheValue5;
 
-const d = new Date();
 
 let Minute = d.getMinutes();
 let hourSimon = d.getHours();
@@ -39,7 +38,7 @@ hourKlassrum = hourKlassrum+1
 hourLars = hourLars+1
 
 
-let dag = 6
+let dag = 7
 
 let dagSimon = dag
 let dagHallon = dag
