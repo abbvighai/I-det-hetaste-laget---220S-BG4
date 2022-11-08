@@ -77,6 +77,7 @@
 
         <!-- Allt kopplat till Graf1: -->
 
+        <!-- Alla 3 select-knappar för att hämta data från klienten till Graf1-JS(V5JS-Graf.JS) -->
             <select id="hej"  onchange="Refreshgraph()">
                 <option value="99">Välj mätplats:</option>
               <option value="1">Simonsplats</option>
@@ -119,7 +120,6 @@
             </select>
 
           </div>
-          
           <!-- Flera div som visas vid sidan av grafen och innehåller textinformation.
           Visar av default en beskrivning av respektive divs syfte. -->
           <div class="Graf">
@@ -132,11 +132,14 @@
               <div id="Nummer9"><p></p></div>
               <div id="Nummer10"><p>Lägsta mätningen: </p></div>
         
-              <!-- <img src=""></img> -->
         
         
             </div>
-            <!-- Graf1: -->
+            <!-- Boxar för "mätområdet" i graf1.
+            Detta är en flexbox som i sig är placerad i en större flexbox.
+            Mätytan innehåller 29 lodräta kolumner med 10 boxar repektive i höjd.
+            Data från JS är 1-10 och anges med hjälp av order-egenskapen hos de ifyllda(blåa) boxarna i respektive kolumn för att visualisera mätningarna. -->
+
                 <div class="MainGraf">
                   <div id="rad0"></div>
                   <div id="rad1"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><button id="boxtarget1"onmouseenter="b1()">    </button></div>
