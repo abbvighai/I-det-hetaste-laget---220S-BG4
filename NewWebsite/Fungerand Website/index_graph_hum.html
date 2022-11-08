@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-base.min.js"></script>
 
+<!--         Hämtar all nödvendiga filer som: Stylesheets, jv, css  -->
         <script type ="text/javascript" src="V5JS-Graf.JS"></script>
         <link rel="stylesheet" href="V5.css">
         <script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-base.min.js"></script>
@@ -18,6 +19,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap" rel="stylesheet">
 </head>
 <body>
+<!-- Skapar all design runtomkring rubriken samt rubriken -->
         <div class="f-col-start-center w-100 pa-b-100">
             <div class="top-design">
                 <div id="orange-rect">
@@ -38,13 +40,14 @@
         </div>
        
 
-
+<!-- Alla länkar till hemsidans alla grenar: Home, Contact us, Grafer och Meet the team -->
         <div class="Menu">
             <a href="index_home.html">Home</a>
             <a href="index_graph_hum.html">Graphs & Data</a>
             <a href="index_team.html">Meet The Team</a>
             <a href="index_contact.html">Contact us</a>
         </div>
+<!-- skapar all mellanrunm -->
         <div class="divider">
         </div>
         <div class="divider">
@@ -61,7 +64,7 @@
             <a href="index_graph_hum.html">Luftfuktighet</a>
             <a href="index_graph_temp.html">Temperatur</a>
         </div>
-
+<!-- Skapar alla alterativ till graferna -->
         <div id ="simPlats"></div>
         <div id ="hallon"></div>
         <div id ="terra"></div>
@@ -78,6 +81,7 @@
                 <a href="index_graph_temp.html" id="temprat">Temperatur</a>
             </div> -->
 
+                <!-- Alla olika alterativa platser -->
             <select id="hej"  onchange="Refreshgraph()">
                 <option value="99">Välj mätplats:</option>
               <option value="1">Simonsplats</option>
@@ -87,14 +91,14 @@
               <option value="5">Lars</option>
               <option value="6">Genomsnitt</option>
             </select>
-        
+        <!-- Alternativ imellan temperatur och fuktighet -->
         <select id="hejj"  onchange="Refreshgraph()">
             <option value="99">Välj läge:</option>
               <option value="1" id="humorad">Temperatur</option>
               <option value="2" id="humorad">Fuktighet</option>
             </select>
 
-
+<!-- Alternativ för viken dag man vill se  -->
             <select id="hejjj"  onchange="Refreshgraph()">
                 <option value="99">Välj dag:</option>
                 <option value="1">1</option>
@@ -135,7 +139,8 @@
         
         
             </div>
-            <!-- Graf1: -->
+            <!-- Graf1: fingerade flexboxar 
+             Skapar flexboxar för Lodräta Rader och sedan boxar som plaeras imellan olika temperaturena-->
                 <div class="MainGraf">
                   <div id="rad0"></div>
                   <div id="rad1"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><button id="boxtarget1"onmouseenter="b1()">    </button></div>
@@ -169,7 +174,7 @@
                   <div id="rad1"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><button id="boxtarget8"onmouseenter="b8()">    </button></div>
               
                 </div>
-                
+<!-- Fixar alla tider under grafen  -->
           </div>
           <div class="undergraf">
             <div class="undergrafbox">
