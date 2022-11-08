@@ -437,9 +437,7 @@ tempLars();
 
 
 
-//  Firebase -> Lokal Array(Graf1 Js)(temp & hum):
-
-// var Datalistacopy = new Array
+// !!!!!!!!!! ALL KOD NEDAN ÄR DETSAMMA SOM "index_graph_hum.js" KOMMENTARER FINNS ENDAST I DEN FILEN
 
 var humvalue
 var tempvalue
