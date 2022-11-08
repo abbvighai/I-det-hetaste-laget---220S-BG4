@@ -1,3 +1,4 @@
+/*Anger storlek för hemsidan*/
 body, html {
     padding: 0;
     margin: 0;
@@ -15,7 +16,7 @@ body {
 
 
 
-body {
+body { /*Anger bakgrunden för hemsidan och en konstant position*/
     font-size: 14px;
     background: url('https://free4kwallpapers.com/uploads/originals/2015/10/27/beautiful-clouds-from-the-top-view-wallpaper.jpg') no-repeat center center fixed; 
     -webkit-background-size: cover;
@@ -26,7 +27,7 @@ body {
 }
 
 
-* {
+* {  /* Ändrar alla boxar till att passa skärmen, anger även fonten*/
     box-sizing: border-box;
     font-family: 'Inria Sans', sans-serif;
     }
@@ -37,11 +38,11 @@ body {
     text-decoration: none;
 }
 
-.Menu a:hover {
+.Menu a:hover {  /*Lägger till en understrykning då muspekaren rör vid texten*/
     text-decoration: underline;
 }
 
-.Menu {
+.Menu { /*Flexbox för menyn*/
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -56,7 +57,7 @@ body {
     color: white;
     
 }
-.divider {
+.divider { /*Används för mellanrum, tydligare i html*/
     display: flex;
     width:100%;
     height: 20px;
@@ -64,7 +65,7 @@ body {
 
 
 
-.f-col-start-center {
+.f-col-start-center {  /*Innehåller titel design, boxar samt text*/
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -74,6 +75,8 @@ body {
 .w-100 {
     width: 100%;
 }
+
+/*Sätter stil för olika texter*/
 
 .text {
     display: flex;
@@ -108,6 +111,8 @@ body {
     color: #000000;
 
 }
+
+/*selector för design element*/
 
 #orange-rect {
     width: 848px;
@@ -149,6 +154,9 @@ body {
 .pa-b-100 {
     padding-bottom: 100px;
 }
+
+/*Selektor för info texten*/
+
 .info_box {
     display: flex;
     flex-direction: column;
@@ -160,6 +168,7 @@ body {
     
     background: #D9D9D9;
 }
+/* Selektor som gör bilder med klassen picture runda */
 .picture {
     width: 250px;
     height: 320px;
@@ -167,6 +176,7 @@ body {
     display: inline-block;
     
 }
+/* Selektor för vanlig text */
 .normal{
     font-family: 'Inter';
     font-style: normal;
@@ -177,6 +187,7 @@ body {
 
     color: #000000;
 }
+/* Ger div taggen med klassen the_team egenskapen flexbox alltså möjligheten att ändra riktningen av sitt innehåll */
 .the_team {
     display: flex;
     flex-direction: column;
@@ -187,6 +198,7 @@ body {
     
     background: white;
 }
+/*Selektorer för innehållet på höger sidan*/
 .sub_box_right{
     display: flex;
     flex-direction: row;
@@ -239,7 +251,7 @@ body {
     height: 22px;
     background: #787878;
 }
-
+/*Selektorer för innehållet på vänster sidan*/
 .sub_box_left{
     display: flex;
     flex-direction: row;

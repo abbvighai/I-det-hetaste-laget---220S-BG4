@@ -1,3 +1,5 @@
+// Graferna fungerar på samma sätt oavsett Temperatur/Humidity
+
 const firebaseConfig = {
     apiKey: "AIzaSyDY7wGtFEKln8NJ3LFDqO26V5dzsEu_Dhs",
     authDomain: "i-det-hetaste-laget-bg4.firebaseapp.com",
@@ -7,10 +9,10 @@ const firebaseConfig = {
     messagingSenderId: "364821865365",
     appId: "1:364821865365:web:29a23ec2b7b918d8be8c9c"
 };
-// Initialize Firebase & variables
+// Initialize Firebase & variables.
 firebase.initializeApp(firebaseConfig);
 
-
+//Här deklareras alla variablar.
 
 let TheValue1;
 let TheValue2;
@@ -18,6 +20,8 @@ let TheValue3;
 let TheValue4;
 let TheValue5;
 
+
+//New DAte och d.getMinute används för att få ut minuter, och timmar
 let d = new Date();
 
 let Minute = d.getMinutes();
@@ -29,14 +33,15 @@ let hourLars = d.getHours();
 
 let hour = d.getHours();
 
-
+//Här läggs till en timme på nuvarande timme för att firebase timmarna är I fel timezone 
 hourSimon = hourSimon+1
 hourHallon = hourHallon+1
 hourTerraria = hourTerraria+1
 hourKlassrum = hourKlassrum+1
 hourLars = hourLars+1
 
-
+//Här är den sämsta delen av hela koden. Kan inte ändra på grund att on() functionen hade stora problem att få in sig en Varibel av
+//en for loop. Jag hade planerat hur vi skulle göra men tyvärr var det visst omöjligt /:  Jag frågade lisa och hon fattade inte heller. 
 let dag = 7
 
 let dagSimon = dag
@@ -57,6 +62,7 @@ let HumListKlassrum = [];
 let HumListLars = [];
 let HourList = [];
 
+//Här sätts referatet till firebase databasen
 const db = firebase.database();
 
 // Checkar om det är en ny dag och om timmen ska ändras
@@ -78,24 +84,26 @@ function otherDayChange(tim,dat) {
     }
 }
 
-
+//Lägger in nuvarande timme till timmen för 24 timmar sen I en 24 lång array.
 for(let i=0; i<24;i++){
     HourList.push(hour);
     hour = hour-1;
     hour = otherDayCheck(hour);
 }
-//Bygger en array för Hum
+//Bygger en array för Humidity value
+//Görs en gång för varje graf/rum
 for(let i=0; i<24;i++){
     var HumidityRef1 = db.ref("SimonsPlats/Dagar-" + dagSimon + "/Hour-" + hourSimon + "/Minute-0/Humidity");
     HumidityRef1.on("value", (Hum) => {
         let TheValue1 = Hum.val();
         HumListSimon.push(TheValue1)
-        //console.log(HumListSimon)
     });
 
     hourSimon = hourSimon-1;
     dagSimon = otherDayChange(hourSimon,dagSimon);
     hourSimon = otherDayCheck(hourSimon);
+    //Den letar efter minut 0 av timmen som är vald och pushar in det I humidity arrayen. 
+    //Sedan ändras Timme och kanske dag. ifall det behövs.
 
 }
 for(let i=0; i<24;i++){
@@ -103,7 +111,6 @@ for(let i=0; i<24;i++){
     HumidityRef2.on("value", (Hum) => {
         let TheValue2 = Hum.val();
         HumListHallon.push(TheValue2)
-        //console.log(HumListHallon)
     });
 
     hourHallon = hourHallon-1;
@@ -154,22 +161,23 @@ for(let i=0; i<24;i++){
 
 }
 
-//Grafen
+//Grafenrna
 function HumsimPlats(){
 HumidityRef1.once("value").then((snapshot) => {
 anychart.onDocumentReady(function () {
+//     När sidan är redo skickas alla värden från listan in i variabeln. Datan mappas till x:0 i div-taggen
     let simonsPlatsHum = anychart.data.set(getHumData1());
 
     let thermometerData1 = simonsPlatsHum.mapAs({ x: 0, value: 1 });
 
     let chart = anychart.line();
-
+// Titlar
     chart.title('Luftfuktighet: Simons plats');
 
     chart.yAxis().title('Luftfuktighet (%)');
 
     chart.xAxis().title('Klockan:')
-
+// Bestämmer vilken div datan skrivs in i, beskriver startposition och ritar ut
     chart.line(thermometerData1);
 
     chart.container('simPlats');
@@ -280,6 +288,7 @@ function HumHallon(){
                 
                 });
                 }
+// Listor (returnerar värden)
 function getHumData1(){
     return[
     [HourList[23],HumListSimon[23]],
@@ -424,6 +433,8 @@ function getHumData5(){
         [HourList[0],HumListLars[0]],
         ];
     }
+
+// Här på slutet körs graferna så att de kommet upp på hemsidan
 HumsimPlats();
 HumHallon();
 HumTerraria();

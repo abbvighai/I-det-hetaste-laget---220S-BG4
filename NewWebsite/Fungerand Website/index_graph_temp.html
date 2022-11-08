@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-base.min.js"></script>
 
+        <!-- Hämtar alla nödvendiga länkar -->
         <script type ="text/javascript" src="V5JS-Graf.JS"></script>
         <link rel="stylesheet" href="V5.css">
         <script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-base.min.js"></script>
@@ -18,6 +19,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap" rel="stylesheet">
 </head>
 <body>
+        <!-- Designen runt rubriken samt rubriken -->
         <div class="f-col-start-center w-100 pa-b-100">
             <div class="top-design">
                 <div id="orange-rect">
@@ -45,17 +47,19 @@
         </div>
        
 
-
+        <!-- Alla alterativ för menyn -->
         <div class="Menu">
             <a href="index_home.html">Home</a>
             <a href="index_graph_temp.html">Graphs & Data</a>
             <a href="index_team.html">Meet The Team</a>
             <a href="index_contact.html">Contact us</a>
         </div>
+        <!--Skapar mellanrum -->      
         <div class="divider">
         </div>
         <div class="divider">
         </div>
+        <!-- Skapar onödigtext -->
         <div class="info_box">
             <div class="normal">Welcome to graphs & data. Here you can find submitted graphs & useful info for the project, the graphs show the latest temperature & humidity submitted from our high end weather measuring device ESP 8266 with AM2320 sensor attachment.
                 <br></br>Välkommen till grafer och data. Här kan du hitta inskickade grafer och användbar information för projektet, graferna visar den senaste temperaturen och luftfuktigheten som skickats in från vår avancerade vädermätare ESP 8266 med AM2320-sensor.
@@ -67,8 +71,8 @@
         <div class="graphmenu">
             <a href="index_graph_hum.html" id="humorad">Luftfuktighet</a>
             <a href="index_graph_temp.html" id="temprat">Temperatur</a>
-        </div>
-        
+        </div> 
+          <!-- Skapar olika alternativ på platser för mätningarna -->        
         <div id ="simPlats"></div>
         <div id ="hallon"></div>
         <div id ="terra"></div>
@@ -90,14 +94,15 @@
               <option value="5">Lars</option>
               <option value="6">Genomsnitt</option>
             </select>
-        
+
+                <!-- Alternativ Hum samt Temp -->
         <select id="hejj"  onchange="Refreshgraph()">
             <option value="99">Välj läge:</option>
               <option value="1" id="humorad">Temperatur</option>
               <option value="2" id="humorad">Fuktighet</option>
             </select>
 
-
+                <!-- Alternativ för dagar -->
             <select id="hejjj"  onchange="Refreshgraph()">
                 <option value="99">Välj dag:</option>
                 <option value="1">1</option>
@@ -123,7 +128,7 @@
             </select>
 
           </div>
-          
+        <!-- Exenpel på Tidigare grafs Olika funtioner -->
           <div class="Graf">
             <div class="Nummer">
               <div id="Nummer1"><p>Högsta mätningen: </p></div>
@@ -138,7 +143,8 @@
         
         
             </div>
-            <!-- Graf1: -->
+            <!-- Graf1:-->
+                <!-- Skapar Lodrata rader samt boxar i raderna och sedan plaserar ut de efte alla mätningarna -->
                 <div class="MainGraf">
                   <div id="rad0"></div>
                   <div id="rad1"><div id="box1"></div><div id="box2"></div><div id="box3"></div><div id="box4"></div><div id="box5"></div><div id="box6"></div><div id="box7"></div><div id="box8"></div><div id="box9"></div><button id="boxtarget1"onmouseenter="b1()">    </button></div>
@@ -174,6 +180,7 @@
                 </div>
                 
           </div>
+                <!-- Tid -->            
           <div class="undergraf">
             <div class="undergrafbox">
               <div id="Tid1"> <div id="L"><p>Tider -></p></div></div>
