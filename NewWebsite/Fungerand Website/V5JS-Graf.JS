@@ -172,13 +172,13 @@ Mellan3Kolumn78 = 0
 Grafbotten = 100
 Graftopp = 0
 
-// Hämtas varje värde från Datalista(Lokal array med komprimerad data från firebase)
-// Varje lång beråkning som t.ex "((((Datalista[i]) % 1000000000) - (Datalista[i] % 10000000))/10000000)" "bryter ut" specefik data och kollar om den matchar inställningarna hos HTML.
+// Hämtar varje värde från Datalista(Lokal array med komprimerad data från firebase)
+// Varje lång beråkning som t.ex "((((Datalista[i]) % 1000000000) - (Datalista[i] % 10000000))/10000000)" "bryter ut" en specefik del data och kollar om den matchar inställningarna hos HTML.
 // Om all data matchar så kommer datan att läsas av och användas vid vidare beräkningar. 
 // Det är sedan en lång process tills att ny data returneras till HTML(~ rad 380), och i fallet att klienten efterfrågar data om ett genomsnitt(Valtmode == 6) kommer mycket kod ej genomföras
 
 // För varje kolumn i grafen används OLIKA variabler.
-// Jag fann inget sätt att systematiskt hämta flera olika variabler och av den anledningen behöver vissa delar kod repeteras för alla dessa 8 variabler.
+// Jag fann inget sätt att systematiskt hämta olika variabler och av den anledningen behöver vissa delar kod repeteras för alla dessa 8 variabler.
 if(Valtmode != 6){
 for (let i = Datalista.length; i > 0; i--) {
 if(((((Datalista[i]) % 1000000000) - (Datalista[i] % 10000000))/10000000) == Valdstation && (((((Datalista[i]) % 10000000) - (Datalista[i] % 100000))/100000) == Valtdatum)){
