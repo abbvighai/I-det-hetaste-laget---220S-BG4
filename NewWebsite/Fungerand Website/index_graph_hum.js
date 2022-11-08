@@ -10,7 +10,7 @@ const firebaseConfig = {
 // Initialize Firebase & variables
 firebase.initializeApp(firebaseConfig);
 
-//Här deklareras alla variablar
+//Här deklareras alla variablar.
 
 let TheValue1;
 let TheValue2;
