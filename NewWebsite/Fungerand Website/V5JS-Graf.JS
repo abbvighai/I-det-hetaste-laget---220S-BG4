@@ -403,11 +403,11 @@ console.log("Graphfunctioncomplete")
 
 // Ange Graftopp & Grafbotten till HTML
 if(Valtmode == 1){
-document.getElementById("Nummer1").innerHTML = "Högsta temperatur: " + (Graftopp/10 + 18) + "°C ->"
-document.getElementById("Nummer10").innerHTML = "Lägsta temperatur: " + (Grafbotten/10 + 18) + "°C ->"
+document.getElementById("Nummer1").innerHTML = "Högsta temperatur: " + (Graftopp/10 + 18) + "°C"
+document.getElementById("Nummer10").innerHTML = "Lägsta temperatur: " + (Grafbotten/10 + 18) + "°C"
 }else{
-      document.getElementById("Nummer1").innerHTML = "Högsta fuktighet: " + (Graftopp/10 + 16) + "% ->"
-      document.getElementById("Nummer10").innerHTML = "Lägsta fuktighet: " + (Grafbotten/10 + 16) + "% ->"
+      document.getElementById("Nummer1").innerHTML = "Högsta fuktighet: " + (Graftopp/10 + 16) + "%"
+      document.getElementById("Nummer10").innerHTML = "Lägsta fuktighet: " + (Grafbotten/10 + 16) + "%"
 }
 // Beräkna temp/hum högsta & lägsta mätning.
 // Görs bara vid öppning av hemsida
