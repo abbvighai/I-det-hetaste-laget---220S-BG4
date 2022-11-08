@@ -446,9 +446,9 @@ HumLars();
 // All data från firebase komprimeras till "datarader" i en lokal array(Tillhörande Graf1).
 // En rad ser ungefär ut som följande ex: "13614582".
 // Varje "datarad" innehåller data om vilken mätstation mätningen togs av, vilken dag, vilken tid på dagen, samt vilket temperatur respektive fuktighet som observerades(med 1 decimal säkerhet).
-// Utseendet på en datarad går bara att läsa av med en matematisk operation först, det används alltså en enkel form av kryptering.
 // Anledningen att data till grafen inte hämtas direkt från firebase är för att inte behöva vänta på servrarna vilket tar lång tid.
 
+// 
 var humvalue
 var tempvalue
 // Simonsplats
