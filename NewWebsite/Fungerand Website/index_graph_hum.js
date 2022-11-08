@@ -18,6 +18,8 @@ let TheValue3;
 let TheValue4;
 let TheValue5;
 
+let d = new Date();
+
 let Minute = d.getMinutes();
 let hourSimon = d.getHours();
 let hourHallon = d.getHours();
