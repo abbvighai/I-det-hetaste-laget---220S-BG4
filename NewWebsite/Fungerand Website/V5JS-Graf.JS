@@ -184,19 +184,13 @@ for (let i = Datalista.length; i > 0; i--) {
 if(((((Datalista[i]) % 1000000000) - (Datalista[i] % 10000000))/10000000) == Valdstation && (((((Datalista[i]) % 10000000) - (Datalista[i] % 100000))/100000) == Valtdatum)){
 
 if(Valtmode == 1) {
-
-   
 // Beräkna Anpassad grafbotten utifrån visad data
 if((((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100 < Grafbotten){
-
 Grafbotten = (((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100
-
 }
 // Beräkna Anpassad graftopp utifrån visad data
 if((((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100 > Graftopp){
-
 Graftopp = (((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100
-
 }
 // Tilldela datarad till rätt tidpunkt(1-8)
 switch(((((Datalista[i]) % 100000) - (Datalista[i] % 10000))/10000)){
