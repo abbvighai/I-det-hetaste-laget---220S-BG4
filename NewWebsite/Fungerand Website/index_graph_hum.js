@@ -161,22 +161,23 @@ for(let i=0; i<24;i++){
 
 }
 
-//Grafen
+//Grafenrna
 function HumsimPlats(){
 HumidityRef1.once("value").then((snapshot) => {
 anychart.onDocumentReady(function () {
+//     När sidan är redo skickas alla värden från listan in i variabeln. Datan mappas till x:0 i div-taggen
     let simonsPlatsHum = anychart.data.set(getHumData1());
 
     let thermometerData1 = simonsPlatsHum.mapAs({ x: 0, value: 1 });
 
     let chart = anychart.line();
-
+// Titlar
     chart.title('Luftfuktighet: Simons plats');
 
     chart.yAxis().title('Luftfuktighet (%)');
 
     chart.xAxis().title('Klockan:')
-
+// Bestämmer vilken div datan skrivs in i, beskriver startposition och ritar ut
     chart.line(thermometerData1);
 
     chart.container('simPlats');
@@ -287,6 +288,7 @@ function HumHallon(){
                 
                 });
                 }
+// Listor (returnerar värden)
 function getHumData1(){
     return[
     [HourList[23],HumListSimon[23]],
