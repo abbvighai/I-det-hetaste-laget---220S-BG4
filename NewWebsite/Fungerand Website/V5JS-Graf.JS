@@ -186,7 +186,7 @@ if(((((Datalista[i]) % 1000000000) - (Datalista[i] % 10000000))/10000000) == Val
 if(Valtmode == 1) {
 
    
-// Beräkna Anpassad graftopp utifrån visad data
+// Beräkna Anpassad grafbotten utifrån visad data
 if((((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100 < Grafbotten){
 
 Grafbotten = (((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100
@@ -232,19 +232,12 @@ break
 
 // Samma fast för Valtmode = 2 (hum) SKIPPA TILL "HIT"
   if(Valtmode == 2){
-
 if((((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1 < Grafbotten){
-
 Grafbotten = (((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1
-
 }
-
 if((((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1 > Graftopp){
-
 Graftopp = (((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1
-
 }
-
     switch((((Datalista[i]) % 100000) - (Datalista[i] % 10000))/10000){
         case 1:  
         Kolumn1order = (((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1
@@ -282,7 +275,6 @@ console.log("Columndatadistributioncomplete")
 
 // "Medel" står på plats 6 i listan över mätplatser. Om "Medel"-alternativet är valt görs den nedre koden ISTÄLLET för ALLT ovan som tillhör funktionen "Refreshgraph"
 if(Valdstation == 6){
- 
       if(Valtmode == 1){
       // Ge medelvärden till grafen. Beräkningen av medelvärden är redan gjorda utanför funktionen "Refreshgraph"
       Kolumn1order = Kolumn1genomsnittTempoutput
@@ -295,20 +287,15 @@ if(Valdstation == 6){
       Kolumn8order = Kolumn8genomsnittTempoutput
       // Uppdatera graftopp & grafbotten
       Listavgtemps = [Kolumn1genomsnittTempoutput, Kolumn2genomsnittTempoutput, Kolumn3genomsnittTempoutput, Kolumn4genomsnittTempoutput, Kolumn5genomsnittTempoutput, Kolumn6genomsnittTempoutput, Kolumn7genomsnittTempoutput, Kolumn8genomsnittTempoutput]
-      
       for (let i = Listavgtemps.length; i > 0; i--){
-      
       if(Listavgtemps[i] < Grafbotten){
          Grafbotten = Listavgtemps[i]
       }
       if(Listavgtemps[i] > Graftopp){
          Graftopp = Listavgtemps[i]
-      }
-      }
-      }
+      }}}
       // Samma fast för Valtmode == 2(hum) SKIPPA TILL "HIT"
       if(Valtmode == 2){
-      
       Kolumn1order = Kolumn1genomsnittHumoutput
       Kolumn2order = Kolumn2genomsnittHumoutput
       Kolumn3order = Kolumn3genomsnittHumoutput
@@ -421,9 +408,7 @@ for (let i = Datalista.length; i > 0; i--) {
         else {
         if((((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100 > Temprekordhögoutput) {
             Temprekordhögoutput = (((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100
-        }
-        }
-      
+        }}
       //hum:
         if((((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1 < Humrekordlågoutput) {
             Humrekordlågoutput = (((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1
@@ -438,9 +423,7 @@ for (let i = Datalista.length; i > 0; i--) {
       // Gå igenom hela listan av datarader för att beräkna medelvärden över alla (mättillfällen / tidperspektiv), för både Valtmode = 1(temp) och Valtmode = 2(hum). Alltså t.ex snitttemperaturen klockan 09:00 mellan alla dagar.
       for (let i = Datalista.length; i > 0; i--) {
            if((((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100 != 18){
-
         switch((((Datalista[i]) % 100000) - (Datalista[i] % 10000))/10000){
-      
             case 1:
             Kolumn1genomsnittTemp = Kolumn1genomsnittTemp + ((((Datalista[i]) % 10000) - ((Datalista[i]) % 100))/100)
       Kolumn1genomsnittHum = Kolumn1genomsnittHum + ((((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1)
@@ -494,7 +477,6 @@ for (let i = Datalista.length; i > 0; i--) {
       Kolumn8genomsnittHum = Kolumn8genomsnittHum + ((((Datalista[i]) % 100) - ((Datalista[i]) % 1))/1)
       Kolumn8genomsnittcounterTemp++
       Kolumn8genomsnittcounterHum++
-      
             break
             default:
               console.log("erroravgvaluecalcnocasefound")
@@ -519,10 +501,8 @@ for (let i = Datalista.length; i > 0; i--) {
       Kolumn7genomsnittHumoutput = Math.round(Kolumn7genomsnittHum / Kolumn7genomsnittcounterHum)
       Kolumn8genomsnittHumoutput = Math.round(Kolumn8genomsnittHum / Kolumn8genomsnittcounterHum)
   }
-
 // Log för alla frekvent använda variabler, inputs och outputs från funktionen - Devsyfte
 console.log("Startvaluediagnostic")
-
 
 console.log("värdemängd")
 
@@ -608,8 +588,8 @@ console.log(LängdDatalista)
 
 console.log("Endvaluediagnostic")
 
-// Beräkningar vid "onmousehover" för mätningarna visade i Grafen.
-// Anledningen till till att det är 8 olika funktioner är för att urskilja de 8 olika mätningarna i grafen, därav används endast en bråkdel av koden av programmet.
+// Beräkningar vid "onmousehover" för blåfärade boxarna visade i grafen.
+// Anledningen till att det är 8 olika funktioner är för att urskilja de 8 olika mätningarna i grafen, därav används endast en bråkdel av koden av programmet.
 // Därav den stora mängden repeterad kod.
 function b1(){
 // temp/hum
