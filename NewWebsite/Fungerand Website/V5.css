@@ -42,7 +42,7 @@
         height: 10%;
         background-color:black;
         color: white;
-        font-size: 90;
+        font-size: 80%;
         }#Nummer2 {
         display:flex;
         justify-content: center;
@@ -51,6 +51,7 @@
         height: 10%;
         background-color:black;
         color: white;
+        font-size: 80%;
         }#Nummer3 {
         display:flex;
         justify-content: center;
@@ -67,7 +68,7 @@
         height: 10%;
         background-color:black;
         color: white;
-        font-size: 90%;
+        font-size: 80%;
         }#Nummer5 {
         display:flex;
         justify-content: center;
@@ -100,7 +101,7 @@
         height: 10%;
         background-color:black;
         color: white;
-        font-size:90%;
+        font-size:80%;
         }#Nummer9 {
         display:flex;
         justify-content: center;
@@ -117,7 +118,7 @@
         height: 10%;
         background-color:black;
         color: white;
-        font-size: 90%;
+        font-size: 80%;
         }.MainGraf {
         display: flex;
         align-items: center;
